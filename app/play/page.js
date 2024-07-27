@@ -1,27 +1,30 @@
-'use client'
-import { Canvas, useFrame } from "@react-three/fiber";
+'use client';
 import React from 'react';
 
-const MyMesh = () => {
-  const myMesh = React.useRef()
-  useFrame(({ clock }) => {
-    myMesh.current.rotation.x = clock.getElapsedTime()
-  })
+import {Canvas, useFrame} from '@react-three/fiber';
+
+function MyMesh() {
+  const myMesh = React.useRef();
+  useFrame(({clock}) => {
+    myMesh.current.rotation.z = clock.getElapsedTime();
+  });
   return (
     <mesh ref={myMesh}>
       <boxGeometry />
+
       <meshBasicMaterial color="royalblue" />
     </mesh>
-  )
+  );
 }
 
-export default function Play () {
+export default function Play() {
   return (
     <div>
-      <p style={{textAlign: "center"}}>Play</p>
+      <p style={{textAlign: 'center'}}>Play</p>
+
       <Canvas>
         <MyMesh />
       </Canvas>
     </div>
-  )
+  );
 }
