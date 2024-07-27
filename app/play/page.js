@@ -4,8 +4,8 @@ import React from 'react';
 
 const MyMesh = () => {
   const myMesh = React.useRef()
-  useFrame(({ clock }) => {
-    myMesh.current.rotation.x = clock.getElapsedTime()
+  useFrame(({clock}) => {
+    myMesh.current.rotation.z = clock.getElapsedTime()
   })
   return (
     <mesh ref={myMesh}>
