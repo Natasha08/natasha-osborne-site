@@ -12,7 +12,7 @@ export default function Main() {
         />
       </div>
 
-      <p style={{ textAlign: 'center' }}>Hello World</p>
+      <p style={{textAlign: 'center'}}>Hello World</p>
     </main>
   );
 }

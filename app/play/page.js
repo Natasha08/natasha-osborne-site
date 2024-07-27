@@ -1,10 +1,11 @@
 'use client';
-import { Canvas, useFrame } from '@react-three/fiber';
 import React from 'react';
+
+import {Canvas, useFrame} from '@react-three/fiber';
 
 function MyMesh() {
   const myMesh = React.useRef();
-  useFrame(({ clock }) => {
+  useFrame(({clock}) => {
     myMesh.current.rotation.z = clock.getElapsedTime();
   });
   return (
@@ -19,7 +20,7 @@ function MyMesh() {
 export default function Play() {
   return (
     <div>
-      <p style={{ textAlign: 'center' }}>Play</p>
+      <p style={{textAlign: 'center'}}>Play</p>
 
       <Canvas>
         <MyMesh />
