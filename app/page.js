@@ -10,19 +10,24 @@ function SkyBox({imageName}) {
   const {scene} = useThree();
   const loader = new CubeTextureLoader();
   // The CubeTextureLoader load method takes an array of urls representing all 6 sides of the cube.
-  const texture = loader.load([
-    `/${imageName}_reverse.jpg`, //right
-    `/${imageName}_reverse.jpg`, //left
-    `/${imageName}_reverse.jpg`, //top
-    `/${imageName}_reverse.jpg`, //bottom
-    `/${imageName}.jpg`, //front
-    `/${imageName}.jpg`, //back
-  ], function(result) {
-    if (result.isTexture == true) {
-      // Set the scene background property to the resulting texture.
-      scene.background = result;
-    }
-  });
+  loader.load(
+    [
+      `/${imageName}_reverse.jpg`, //right
+      `/${imageName}_reverse.jpg`, //left
+      `/${imageName}_reverse.jpg`, //top
+      `/${imageName}_reverse.jpg`, //bottom
+      `/${imageName}.jpg`, //front
+      `/${imageName}.jpg`, //back
+    ],
+    function (result) {
+      if (result.isTexture == true) {
+        // Set the scene background property to the resulting texture.
+        scene.background = result;
+      } else {
+        console.error('Texture not loaded', result);
+      }
+    },
+  );
 
   return null;
 }
