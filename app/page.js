@@ -1,12 +1,14 @@
 'use client';
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef, useState, useEffect, useMemo} from 'react';
 import {useRouter} from 'next/navigation';
 import {Canvas, useFrame} from '@react-three/fiber';
 import {OrbitControls, useTexture, useProgress} from '@react-three/drei';
 
 //TODO: extract
+/* eslint-disable no-unused-vars */
 const usePreloader = () => {
-  const { progress } = useProgress();
+  /* eslint-enable no-unused-vars */
+  const {progress} = useProgress();
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -27,8 +29,10 @@ function RotatingImage({imageUrl, staticImageUrl, backgroundUrl, width = 3}) {
   const backgroundTexture = useTexture(backgroundUrl);
   const [rotation, setRotation] = useState(true);
 
-  // Load the sound
-  const sound = new Audio("/stargate_lock_shevron_sound.mp3");
+  // Load and memoize the sound
+  //#TODO: this is a specialized behavior. I should extract this (pass in soundurl or something)
+  const soundUrl = '/stargate_lock_shevron_sound.mp3';
+  const sound = useMemo(() => new Audio(soundUrl), [soundUrl]);
 
   // Toggle rotation every 5 seconds
   useEffect(() => {
@@ -43,13 +47,11 @@ function RotatingImage({imageUrl, staticImageUrl, backgroundUrl, width = 3}) {
   // Play the sound when rotation stops
   useEffect(() => {
     if (!rotation) {
-      sound.play()
-        .catch((error) => {
-          console.log("Sound Play error, error")
-          // #TODO: I think I should display a sound button, muted when this fails.
-        });
+      sound.play().catch(() => {
+        // #TODO: I think I should display a sound button, muted when this fails.
+      });
     }
-  }, [rotation]);
+  }, [rotation, sound]);
 
   // Rotate the image
   useFrame(() => {
@@ -58,12 +60,8 @@ function RotatingImage({imageUrl, staticImageUrl, backgroundUrl, width = 3}) {
     }
   });
 
-  // Calculate aspect ratio of the textures
-  const aspect = texture.image ? texture.image.width / texture.image.height : 1;
-  const planeHeight = width / aspect;
-
-  const staticAspect = staticTexture.image ? staticTexture.image.width / staticTexture.image.height : 1;
-  const staticPlaneRadius = width / 2.75; // Make it smaller for demonstration
+  // Calculate width for static plane
+  const staticPlaneRadius = width / 2.75;
 
   return (
     <>
@@ -75,7 +73,7 @@ function RotatingImage({imageUrl, staticImageUrl, backgroundUrl, width = 3}) {
 
       {/* Rotating Image */}
       <mesh ref={rotatingMeshRef}>
-        <circleGeometry args={[width/2, 32]} />
+        <circleGeometry args={[width / 2, 32]} />
         <meshBasicMaterial map={texture} />
       </mesh>
 
@@ -88,14 +86,12 @@ function RotatingImage({imageUrl, staticImageUrl, backgroundUrl, width = 3}) {
   );
 }
 
-
 export default function ImageCanvas({
- imageUrl = '/stargate_outer_ring_original.png',
- staticImageUrl = '/initial_inner_wormhole.png',
- backgroundUrl = '/unknown_space_location.png',
- width = 3
+  imageUrl = '/stargate_outer_ring_original.png',
+  staticImageUrl = '/initial_inner_wormhole.png',
+  backgroundUrl = '/unknown_space_location.png',
+  width = 3,
 }) {
-
   const router = useRouter();
 
   //#TODO: change this back to use preloader when I'm not simulating load anymore
@@ -122,17 +118,22 @@ export default function ImageCanvas({
 
   //TODO: animation should go for at least 3 seconds before transitioning
 
- return (
-  <div className="max-h-screen flex flex-col items-center justify-center">
-   <main className="flex flex-col items-center justify-center w-full">
-    <div className="w-full h-[100vh]">
-     <Canvas camera={{position: [0, 0, 5], fov: 75}}>
-      <ambientLight />
-      <OrbitControls enableZoom={true} enablePan={true} />
-      <RotatingImage imageUrl={imageUrl} staticImageUrl={staticImageUrl} backgroundUrl={backgroundUrl} width={width} />
-     </Canvas>
+  return (
+    <div className="max-h-screen flex flex-col items-center justify-center">
+      <main className="flex flex-col items-center justify-center w-full">
+        <div className="w-full h-[100vh]">
+          <Canvas camera={{position: [0, 0, 5], fov: 75}}>
+            <ambientLight />
+            <OrbitControls enableZoom={true} enablePan={true} />
+            <RotatingImage
+              imageUrl={imageUrl}
+              staticImageUrl={staticImageUrl}
+              backgroundUrl={backgroundUrl}
+              width={width}
+            />
+          </Canvas>
+        </div>
+      </main>
     </div>
-   </main>
-  </div>
- );
+  );
 }
