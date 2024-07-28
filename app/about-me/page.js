@@ -1,9 +1,7 @@
-export default function Work() {
+export default function AboutMe() {
   return (
     <main>
-      <div className="container">
-        <p style={{textAlign: 'center'}}>About Me</p>
-      </div>
+      <p style={{textAlign: 'center'}}>About Me</p>
     </main>
   );
 }

@@ -1,9 +1,7 @@
-export default function Work() {
+export default function Resume() {
   return (
     <main>
-      <div className="container">
-        <p style={{textAlign: 'center'}}>Resume</p>
-      </div>
+      <p style={{textAlign: 'center'}}>Resume</p>
     </main>
   );
 }
