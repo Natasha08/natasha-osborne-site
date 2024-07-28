@@ -1,8 +1,8 @@
 'use client';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {Canvas, useThree} from '@react-three/fiber';
 import {CubeTextureLoader} from 'three';
-import {OrbitControls} from '@react-three/drei';
+import {OrbitControls, useProgress} from '@react-three/drei';
 
 import RotatingPortal from './components/rotating-portal';
 
@@ -33,17 +33,29 @@ function SkyBox({imageName}) {
   return null;
 }
 
-function App() {
+const usePreloader = () => {
+  const {progress} = useProgress();
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    if (progress === 100) {
+      setLoaded(true);
+    }
+  }, [progress]);
+
+  return loaded;
+};
+
+function App() {
+  const loaded = usePreloader();
+
   return (
-    <Canvas className="canvas" camera={{position: [0, 0, 10], fov: 75}}>
+    <Canvas className="canvas" camera={{position: [100, 100, 100], fov: 75}}>
       <OrbitControls enableZoom={true} enablePan={true} />
       <ambientLight />
       <RotatingPortal
         width={3}
         loaded={loaded}
-        setLoaded={setLoaded}
       />
       <SkyBox imageName="colorful_stars_and_nebulae" />
     </Canvas>

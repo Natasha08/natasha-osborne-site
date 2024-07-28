@@ -9,7 +9,6 @@ export default function RotatingPortal({
   imageUrl='/stargate_outer_ring_original.png',
   staticImageUrl='/initial_inner_wormhole.png',
   transitionStaticUrl='/transition_static_image.png',
-  setLoaded,
   defaultRotation = true,
   width = 3,
   loaded = false,
@@ -34,7 +33,7 @@ export default function RotatingPortal({
 
   //portal texture is warped due to torus shape, so add a repeating pattern for a better result
   useEffect(() => {
-    portalTexture.repeat.set(60, 1);
+    portalTexture.repeat.set(70, 1);
     portalTexture.wrapS = portalTexture.wrapT = THREE.RepeatWrapping;
     portalTexture.needsUpdate = true;
   }, [portalTexture]);
@@ -74,15 +73,6 @@ export default function RotatingPortal({
     },
     [loaded, camera.position],
   );
-
-  useEffect(() => {
-    // Simulate asset loading
-    const loadAssets = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 5000)); // Simulate loading delay
-      setLoaded(true);
-    };
-    loadAssets();
-  }, [setLoaded]);
 
   return (
     <>
