@@ -6,9 +6,9 @@ import * as THREE from 'three';
 import {useRouter} from 'next/navigation';
 
 export default function RotatingPortal({
-  imageUrl,
-  staticImageUrl,
-  transitionStaticUrl,
+  imageUrl='/stargate_outer_ring_original.png',
+  staticImageUrl='/initial_inner_wormhole.png',
+  transitionStaticUrl='/transition_static_image.png',
   setLoaded,
   defaultRotation = true,
   width = 3,
