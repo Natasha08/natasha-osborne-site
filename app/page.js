@@ -53,10 +53,7 @@ function App() {
     <Canvas className="canvas" camera={{position: [100, 100, 100], fov: 75}}>
       <OrbitControls enableZoom={true} enablePan={true} />
       <ambientLight />
-      <RotatingPortal
-        width={3}
-        loaded={loaded}
-      />
+      <RotatingPortal width={3} loaded={loaded} />
       <SkyBox imageName="colorful_stars_and_nebulae" />
     </Canvas>
   );

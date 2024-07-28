@@ -6,9 +6,9 @@ import * as THREE from 'three';
 import {useRouter} from 'next/navigation';
 
 export default function RotatingPortal({
-  imageUrl='/stargate_outer_ring_original.png',
-  staticImageUrl='/initial_inner_wormhole.png',
-  transitionStaticUrl='/transition_static_image.png',
+  imageUrl = '/stargate_outer_ring_original.png',
+  staticImageUrl = '/initial_inner_wormhole.png',
+  transitionStaticUrl = '/transition_static_image.png',
   defaultRotation = true,
   width = 3,
   loaded = false,
@@ -78,7 +78,12 @@ export default function RotatingPortal({
     <>
       {/*. Additional Lights */}
       <pointLight position={[5, 5, 5]} intensity={50} />
-      <spotLight position={[-5, 5, 5]} intensity={50} angle={0.3} penumbra={1} />
+      <spotLight
+        position={[-5, 5, 5]}
+        intensity={50}
+        angle={0.3}
+        penumbra={1}
+      />
 
       {/* Rotating Torus for Portal */}
       <mesh ref={rotatingMeshRef} position={[0, 0, 0]}>
