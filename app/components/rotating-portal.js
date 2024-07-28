@@ -1,23 +1,27 @@
 'use client';
-import React, { useRef, useState, useEffect } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { useTexture, Torus } from '@react-three/drei';
+import React, {useRef, useEffect} from 'react';
+import {useFrame} from '@react-three/fiber';
+import {useTexture, Torus} from '@react-three/drei';
 import * as THREE from 'three';
 
-export default function RotatingPortal({imageUrl, staticImageUrl, width = 3}) {
+export default function RotatingPortal({
+  imageUrl,
+  staticImageUrl,
+  defaultRotation = true,
+  width = 3,
+}) {
   const rotatingMeshRef = useRef();
   const staticMeshRef = useRef();
   const staticTexture = useTexture(staticImageUrl);
   const portalTexture = useTexture(imageUrl);
-  const [rotation, setRotation] = useState(true);
+  const rotation = defaultRotation;
 
   //portal texture is warped due to torus shape, so add a repeating pattern for a better result
   useEffect(() => {
     portalTexture.repeat.set(60, 1);
     portalTexture.wrapS = portalTexture.wrapT = THREE.RepeatWrapping;
     portalTexture.needsUpdate = true;
-  }, [Torus, portalTexture]);
-
+  }, [portalTexture]);
 
   //Rotate the image
   useFrame(() => {
@@ -36,7 +40,11 @@ export default function RotatingPortal({imageUrl, staticImageUrl, width = 3}) {
       </mesh>
 
       {/* Static Circular Image */}
-      <mesh ref={staticMeshRef} position={[0, 0, -0.1]} rotation={[0, Math.PI, 0]}>
+      <mesh
+        ref={staticMeshRef}
+        position={[0, 0, -0.1]}
+        rotation={[0, Math.PI, 0]}
+      >
         <circleGeometry args={[3, 32]} />
         <meshBasicMaterial map={staticTexture} side={THREE.DoubleSide} />
       </mesh>
