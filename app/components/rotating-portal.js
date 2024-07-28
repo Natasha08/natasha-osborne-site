@@ -24,7 +24,7 @@ export default function RotatingPortal({
   };
 
   const portalTexture = useTexture(imageUrl);
-  const rotation = defaultRotation;
+  const [rotation, setRotation] = useState(defaultRotation);
   const router = useRouter();
   const {camera} = useThree();
   const intermediatePosition = new THREE.Vector3(-0.6, 0.58, 10); // Position in front of the portal
@@ -60,6 +60,7 @@ export default function RotatingPortal({
           // Move towards the intermediate position
           cameraPosition.lerp(intermediatePosition, 0.4 * delta);
         } else {
+          setRotation(false);
           updateTexture(transitionStaticUrl);
           // Move towards the target position
           cameraPosition.lerp(targetPosition, 0.4 * delta);
@@ -85,6 +86,10 @@ export default function RotatingPortal({
 
   return (
     <>
+      {/*. Additional Lights */}
+      <pointLight position={[5, 5, 5]} intensity={50} />
+      <spotLight position={[-5, 5, 5]} intensity={50} angle={0.3} penumbra={1} />
+
       {/* Rotating Torus for Portal */}
       <mesh ref={rotatingMeshRef} position={[0, 0, 0]}>
         <Torus args={[width, width / 10, 16, 300]}>

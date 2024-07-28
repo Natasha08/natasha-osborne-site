@@ -41,9 +41,6 @@ function App() {
       <OrbitControls enableZoom={true} enablePan={true} />
       <ambientLight />
       <RotatingPortal
-        imageUrl="/stargate_outer_ring_original.png"
-        staticImageUrl="/initial_inner_wormhole.png"
-        transitionStaticUrl="/transition_static_image.png"
         width={3}
         loaded={loaded}
         setLoaded={setLoaded}
