@@ -4,10 +4,9 @@ import { useFrame } from '@react-three/fiber';
 import { useTexture, Torus } from '@react-three/drei';
 import * as THREE from 'three';
 
-export default function RotatingPortal({imageUrl, staticImageUrl, backgroundUrl, width = 3}) {
+export default function RotatingPortal({imageUrl, staticImageUrl, width = 3}) {
   const rotatingMeshRef = useRef();
   const staticMeshRef = useRef();
-  const backgroundTexture = useTexture(backgroundUrl);
   const staticTexture = useTexture(staticImageUrl);
   const portalTexture = useTexture(imageUrl);
   const [rotation, setRotation] = useState(true);
@@ -29,12 +28,6 @@ export default function RotatingPortal({imageUrl, staticImageUrl, backgroundUrl,
 
   return (
     <>
-      {/* Background Image */}
-      <mesh position={[0, 0, -10]}>
-        <planeGeometry args={[100, 100]} />
-        <meshStandardMaterial map={backgroundTexture} />
-      </mesh>
-
       {/* Rotating Torus for Portal */}
       <mesh ref={rotatingMeshRef} position={[0, 0, 0]}>
         <Torus args={[width, width / 10, 16, 300]}>
@@ -47,7 +40,6 @@ export default function RotatingPortal({imageUrl, staticImageUrl, backgroundUrl,
         <circleGeometry args={[3, 32]} />
         <meshBasicMaterial map={staticTexture} side={THREE.DoubleSide} />
       </mesh>
-
     </>
   );
 }
