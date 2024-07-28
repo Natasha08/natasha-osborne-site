@@ -27,10 +27,10 @@ export default function RotatingPortal({
   const rotation = defaultRotation;
   const router = useRouter();
   const {camera} = useThree();
-  const intermediatePosition = new THREE.Vector3(0, 0, 10); // Position in front of the portal
+  const intermediatePosition = new THREE.Vector3(-0.6, 0.58, 10); // Position in front of the portal
   const targetPosition = new THREE.Vector3(0, 0, -0.1); // Position at the portal
   const lookAtPosition = new THREE.Vector3(0, 0, -0.1); // Look at the portal
-  const finalPosition = new THREE.Vector3(0, 0, -5); // Position past the portal
+  const finalPosition = new THREE.Vector3(0, 0, -2); // Position past the portal
 
   //portal texture is warped due to torus shape, so add a repeating pattern for a better result
   useEffect(() => {
