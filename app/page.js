@@ -1,4 +1,5 @@
 'use client';
+import {useState} from 'react';
 import {Canvas, useThree} from '@react-three/fiber';
 import {CubeTextureLoader} from 'three';
 import {OrbitControls} from '@react-three/drei';
@@ -33,6 +34,8 @@ function SkyBox({imageName}) {
 }
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <Canvas className="canvas" camera={{position: [0, 0, 10], fov: 75}}>
       <OrbitControls enableZoom={true} enablePan={true} />
@@ -40,7 +43,10 @@ function App() {
       <RotatingPortal
         imageUrl="/stargate_outer_ring_original.png"
         staticImageUrl="/initial_inner_wormhole.png"
+        transitionStaticUrl="/transition_static_image.png"
         width={3}
+        loaded={loaded}
+        setLoaded={setLoaded}
       />
       <SkyBox imageName="colorful_stars_and_nebulae" />
     </Canvas>

@@ -1,20 +1,37 @@
 'use client';
-import React, {useRef, useEffect} from 'react';
-import {useFrame} from '@react-three/fiber';
+import React, {useRef, useEffect, useState} from 'react';
+import {useFrame, useThree} from '@react-three/fiber';
 import {useTexture, Torus} from '@react-three/drei';
 import * as THREE from 'three';
+import {useRouter} from 'next/navigation';
+
 
 export default function RotatingPortal({
   imageUrl,
   staticImageUrl,
+  transitionStaticUrl,
   defaultRotation = true,
   width = 3,
+  loaded = false,
+  setLoaded = _.noop
 }) {
   const rotatingMeshRef = useRef();
   const staticMeshRef = useRef();
-  const staticTexture = useTexture(staticImageUrl);
+  const [staticTextureUrl, setstaticTextureUrl] = useState(staticImageUrl);
+  const staticTexture = useTexture(staticTextureUrl);
+
+  const updateTexture = (newTextureUrl) => {
+    setstaticTextureUrl(newTextureUrl);
+  };
+
   const portalTexture = useTexture(imageUrl);
   const rotation = defaultRotation;
+  const router = useRouter();
+  const {camera} = useThree();
+  const intermediatePosition = new THREE.Vector3(0, 0, 10); // Position in front of the portal
+  const targetPosition = new THREE.Vector3(0, 0, -0.1); // Position at the portal
+  const lookAtPosition = new THREE.Vector3(0, 0, -0.1); // Look at the portal
+  const finalPosition = new THREE.Vector3(0, 0, -5); // Position past the portal
 
   //portal texture is warped due to torus shape, so add a repeating pattern for a better result
   useEffect(() => {
@@ -24,11 +41,44 @@ export default function RotatingPortal({
   }, [portalTexture]);
 
   //Rotate the image
-  useFrame(() => {
+  useFrame((_, delta) => {
     if (rotation && rotatingMeshRef.current) {
       rotatingMeshRef.current.rotation.z -= 0.01; // Rotate clockwise (negative value for clockwise rotation)
     }
-  });
+
+    if (loaded) {
+      const cameraPosition = new THREE.Vector3().copy(camera.position);
+      const distanceToIntermediate = camera.position.distanceTo(intermediatePosition);
+      const distanceToTarget = camera.position.distanceTo(targetPosition);
+
+      if (distanceToTarget <= 0.2) {
+        // Once the camera reaches the target position, move to the final position
+        cameraPosition.lerp(finalPosition, 0.2 * delta);
+        router.push('/home');
+      } else if (distanceToIntermediate > 0.1 && distanceToTarget > 10) {
+        // Move towards the intermediate position
+        cameraPosition.lerp(intermediatePosition, 0.4 * delta);
+      } else {
+        updateTexture(transitionStaticUrl);
+        // Move towards the target position
+        cameraPosition.lerp(targetPosition, 0.4 * delta);
+      }
+
+      camera.position.copy(cameraPosition);
+
+      // Always look at the portal
+      camera.lookAt(lookAtPosition);
+    }
+  }, [loaded, camera.position]);
+
+  useEffect(() => {
+    // Simulate asset loading
+    const loadAssets = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 5000)); // Simulate loading delay
+      setLoaded(true);
+    };
+    loadAssets();
+  }, []);
 
   return (
     <>
