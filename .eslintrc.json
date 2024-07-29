@@ -18,6 +18,16 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@/lib", "./lib"],
+          ["@/components", "./app/components"],
+          ["@/context", "./context"]
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   },
   "parserOptions": {
