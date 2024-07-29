@@ -4,6 +4,7 @@ import {useState} from 'react';
 import {Inter} from 'next/font/google';
 import {SpeedInsights} from '@vercel/speed-insights/next';
 import Link from 'next/link';
+import {usePathname} from 'next/navigation'
 
 import Providers from './providers';
 import './globals.css';
@@ -20,14 +21,25 @@ const PAGES = [
 //#TODO convert and extract if needed
 export default function MyApp({children}) {
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [navInitialized, setNavInitialized] = useState(false);
 
   const saveSelectedindex = (index) => {
     setSelectedIndex(index);
   };
 
+  if (!navInitialized) {
+    const pathname = usePathname().replace(/\//g,'');
+
+    if (pathname) {
+      const initialIndex = PAGES.findIndex((page) => Object.keys(page)[0] === pathname);
+      setSelectedIndex(initialIndex);
+      setNavInitialized(true);
+    }
+  }
+
   const navigationLink = '-navigation-link-';
   const mobileNavigationLink = '-nmobile-avigation-link-';
-  let navigationIncrement = 1;
+  var navigationIncrement = 1;
 
   return (
     <html lang="en">
