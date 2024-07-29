@@ -3,8 +3,5 @@
 import AssetsLoadedProvider from '../context/assets-loaded';
 
 export default function Providers({children}) {
-  return (
-    <AssetsLoadedProvider value={false}>{children}</AssetsLoadedProvider>
-  );
+  return <AssetsLoadedProvider value={false}>{children}</AssetsLoadedProvider>;
 }
-

@@ -18,6 +18,14 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@/lib", "./lib"] // This should match your jsconfig.json paths configuration
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   },
   "parserOptions": {

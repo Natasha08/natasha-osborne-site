@@ -1,5 +1,5 @@
-import { getAllPosts } from "@/lib/api";
-import Link from "next/link";
+import {getAllPosts} from '@/lib/api';
+import Link from 'next/link';
 
 export default function Index() {
   const allPosts = getAllPosts();
@@ -21,14 +21,28 @@ export default function Index() {
         {heroPost.excerpt}
       </div>
       <div className="container">
-        {morePosts.length ? morePosts.map((post) => {
-          {post.title}
-          {post.coverImage}
-          {post.date}
-          {post.author}
-          {post.slug}
-          {post.excerpt}
-        }) : null}
+        {morePosts.length
+          ? morePosts.map((post) => {
+              {
+                post.title;
+              }
+              {
+                post.coverImage;
+              }
+              {
+                post.date;
+              }
+              {
+                post.author;
+              }
+              {
+                post.slug;
+              }
+              {
+                post.excerpt;
+              }
+            })
+          : null}
       </div>
     </main>
   );

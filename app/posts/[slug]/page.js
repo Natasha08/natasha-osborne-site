@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
-import markdownToHtml from "@/lib/markdownToHtml";
+import {notFound} from 'next/navigation';
+import {getPostBySlug} from '@/lib/api';
+import markdownToHtml from '@/lib/markdownToHtml';
 
 export default async function Post({params}) {
   const post = getPostBySlug(params.slug);
@@ -9,7 +9,7 @@ export default async function Post({params}) {
     return notFound();
   }
 
-  const content = await markdownToHtml(post.content || "");
+  const content = await markdownToHtml(post.content || '');
 
   return (
     <main>
@@ -22,8 +22,8 @@ export default async function Post({params}) {
           <div className="max-w-2xl mx-auto">
             <div
               className="markdown"
-              dangerouslySetInnerHTML={{ __html: content }}>
-            </div>
+              dangerouslySetInnerHTML={{__html: content}}
+            ></div>
           </div>
         </article>
       </div>
