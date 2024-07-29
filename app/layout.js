@@ -4,7 +4,6 @@ import {useState} from 'react';
 import {Inter} from 'next/font/google';
 import {SpeedInsights} from '@vercel/speed-insights/next';
 import Link from 'next/link';
-import {useRouter} from 'next/navigation';
 
 import Providers from './providers';
 import './globals.css';
@@ -15,20 +14,19 @@ const PAGES = [
   {work: 'Work'},
   {resume: 'Resume'},
   {posts: 'Blog'},
-  {'about-me': 'About Me'}
+  {'about-me': 'About Me'},
 ];
 
 //#TODO convert and extract if needed
 export default function MyApp({children}) {
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const router = useRouter();
 
   const saveSelectedindex = (index) => {
     setSelectedIndex(index);
   };
 
-  const navigationLink = '-navigation-link-'
-  const mobileNavigationLink = '-nmobile-avigation-link-'
+  const navigationLink = '-navigation-link-';
+  const mobileNavigationLink = '-nmobile-avigation-link-';
   let navigationIncrement = 1;
 
   return (
