@@ -1,5 +1,3 @@
 export default function Play() {
-  return (
-    <main></main>
-  );
+  return <main></main>;
 }
