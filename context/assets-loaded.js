@@ -1,8 +1,8 @@
-import { createContext, useContext, useState } from "react";
+import {createContext, useContext, useState} from "react";
 
 const Context = createContext();
 
-export default function AssetsLoadedProvider({ children }) {
+export default function AssetsLoadedProvider({children}) {
   const [assetsLoaded, setAssetsLoaded] = useState(false);
 
   return (

@@ -1,4 +1,5 @@
 'use client';
+
 import {useEffect} from 'react';
 import {useProgress} from '@react-three/drei';
 import {useAssetsLoadedContext} from '../../context/assets-loaded';
