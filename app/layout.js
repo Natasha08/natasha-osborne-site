@@ -1,17 +1,17 @@
+'use client';
+
 import {Inter} from 'next/font/google';
+import AssetsLoadedProvider from "../context/assets-loaded";
 import './globals.css';
 
 const inter = Inter({subsets: ['latin']});
 
-export const metadata = {
-  title: 'Natasha Osborne',
-  description: 'Portfolio Website',
-};
-
-export default function RootLayout({children}) {
+export default function MyApp({children}) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AssetsLoadedProvider value={false}>{children}</AssetsLoadedProvider>
+      </body>
     </html>
   );
 }
