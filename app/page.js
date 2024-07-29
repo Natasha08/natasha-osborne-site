@@ -1,10 +1,12 @@
 'use client';
-import {useState, useEffect} from 'react';
+import {memo} from 'react';
 import {Canvas, useThree} from '@react-three/fiber';
 import {CubeTextureLoader} from 'three';
-import {OrbitControls, useProgress} from '@react-three/drei';
+import {OrbitControls} from '@react-three/drei';
 
+import { useAssetsLoadedContext } from "../context/assets-loaded";
 import RotatingPortal from './components/rotating-portal';
+import AssetsPreloader from './components/assets-preloader';
 
 // Loads the skybox texture and applies it to the scene.
 function SkyBox({imageName}) {
@@ -33,30 +35,21 @@ function SkyBox({imageName}) {
   return null;
 }
 
-const usePreloader = () => {
-  const {progress} = useProgress();
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    if (progress === 100) {
-      setLoaded(true);
-    }
-  }, [progress]);
-
-  return loaded;
-};
-
-function App() {
-  const loaded = usePreloader();
+const Main = memo(() => {
+  const [assetsLoaded, _] = useAssetsLoadedContext();
 
   return (
-    <Canvas className="canvas" camera={{position: [100, 100, 100], fov: 75}}>
+    <>
+    <Canvas className="canvas">
       <OrbitControls enableZoom={true} enablePan={true} />
       <ambientLight />
-      <RotatingPortal width={3} loaded={loaded} />
+      <RotatingPortal assetsLoaded={assetsLoaded} />
       <SkyBox imageName="colorful_stars_and_nebulae" />
     </Canvas>
+    <AssetsPreloader />
+    </>
   );
-}
+})
 
-export default App;
+
+export default Main;
