@@ -4,9 +4,9 @@ import {Canvas, useThree} from '@react-three/fiber';
 import {CubeTextureLoader} from 'three';
 import {OrbitControls} from '@react-three/drei';
 
-import {useAssetsLoadedContext} from '../context/assets-loaded';
-import RotatingPortal from './components/rotating-portal';
-import AssetsPreloader from './components/assets-preloader';
+import {useAssetsLoadedContext} from '@/context/assets-loaded';
+import RotatingPortal from '@/components/rotating-portal';
+import AssetsPreloader from '@/components/assets-preloader';
 
 // Loads the skybox texture and applies it to the scene.
 function SkyBox({imageName}) {
