@@ -4,7 +4,7 @@ import {Canvas, useThree} from '@react-three/fiber';
 import {CubeTextureLoader} from 'three';
 import {OrbitControls} from '@react-three/drei';
 
-import { useAssetsLoadedContext } from "../context/assets-loaded";
+import {useAssetsLoadedContext} from '../context/assets-loaded';
 import RotatingPortal from './components/rotating-portal';
 import AssetsPreloader from './components/assets-preloader';
 
@@ -35,21 +35,20 @@ function SkyBox({imageName}) {
   return null;
 }
 
-const Main = memo(() => {
-  const [assetsLoaded, _] = useAssetsLoadedContext();
+const Main = memo(function Main() {
+  const [assetsLoaded] = useAssetsLoadedContext();
 
   return (
     <>
-    <Canvas className="canvas">
-      <OrbitControls enableZoom={true} enablePan={true} />
-      <ambientLight />
-      <RotatingPortal assetsLoaded={assetsLoaded} />
-      <SkyBox imageName="colorful_stars_and_nebulae" />
-    </Canvas>
-    <AssetsPreloader />
+      <Canvas className="canvas">
+        <OrbitControls enableZoom={true} enablePan={true} />
+        <ambientLight />
+        <RotatingPortal assetsLoaded={assetsLoaded} />
+        <SkyBox imageName="colorful_stars_and_nebulae" />
+      </Canvas>
+      <AssetsPreloader />
     </>
   );
-})
-
+});
 
 export default Main;

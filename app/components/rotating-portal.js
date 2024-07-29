@@ -5,8 +5,16 @@ import {useTexture, Torus} from '@react-three/drei';
 import * as THREE from 'three';
 import {useRouter} from 'next/navigation';
 
-const Camera = ({setDecelerating, updateTexture, transitionStaticUrl, stopped, decelerationStartTime, decelerating, assetsLoaded}) => {
-  const { camera } = useThree();
+const Camera = ({
+  setDecelerating,
+  updateTexture,
+  transitionStaticUrl,
+  stopped,
+  decelerationStartTime,
+  decelerating,
+  assetsLoaded,
+}) => {
+  const {camera} = useThree();
   const [elapsedTime, setElapsedTime] = useState(0);
   const router = useRouter();
   const intermediatePosition = new THREE.Vector3(-0.6, 0.58, 10); // Position in front of the portal
@@ -18,7 +26,11 @@ const Camera = ({setDecelerating, updateTexture, transitionStaticUrl, stopped, d
   const startPos = useRef(new THREE.Vector3(0, 0, 500));
 
   const updateCameraVectors = (x, y, z) => {
-    camera.position.lerpVectors(startPos.current, new THREE.Vector3(x, y, z), elapsedTime / 1);
+    camera.position.lerpVectors(
+      startPos.current,
+      new THREE.Vector3(x, y, z),
+      elapsedTime / 1,
+    );
     camera.lookAt(0, 0, 0);
   };
 
@@ -60,7 +72,7 @@ const Camera = ({setDecelerating, updateTexture, transitionStaticUrl, stopped, d
           nextStagePreparation('travel');
         }
         break;
-      case 'travel':
+      case 'travel': {
         const cameraPosition = new THREE.Vector3().copy(camera.position);
         const distanceToIntermediate =
           camera.position.distanceTo(intermediatePosition);
@@ -90,6 +102,7 @@ const Camera = ({setDecelerating, updateTexture, transitionStaticUrl, stopped, d
         camera.lookAt(lookAtPosition);
 
         break;
+      }
 
       default:
         break;
@@ -131,34 +144,32 @@ const RotatingPortal = ({
   }, [portalTexture]);
 
   //Rotate the image
-  useFrame(
-    ({clock}) => {
-      if (rotatingMeshRef.current) {
-        rotatingMeshRef.current.rotation.z -= rotationSpeed; // Rotate clockwise (negative value for clockwise rotation)
-      }
+  useFrame(({clock}) => {
+    if (rotatingMeshRef.current) {
+      rotatingMeshRef.current.rotation.z -= rotationSpeed; // Rotate clockwise (negative value for clockwise rotation)
+    }
 
-      if (decelerating) {
-        const elapsed = clock.elapsedTime - decelerationStartTime.current;
-        const decelerationDuration = 3; // Duration of deceleration in seconds
+    if (decelerating) {
+      const elapsed = clock.elapsedTime - decelerationStartTime.current;
+      const decelerationDuration = 3; // Duration of deceleration in seconds
 
-        if (elapsed < decelerationDuration) {
-          const t = elapsed / decelerationDuration;
-          const easedSpeed = (t * (2 - t));
+      if (elapsed < decelerationDuration) {
+        const t = elapsed / decelerationDuration;
+        const easedSpeed = t * (2 - t);
 
-          if (easedSpeed >= 0) {
-            setRotationSpeed(0);
-            setDecelerating(false);
-            setStopped(true);
-          } else {
-            setRotationSpeed(easedSpeed);
-          }
-
-        } else {
+        if (easedSpeed >= 0) {
           setRotationSpeed(0);
           setDecelerating(false);
           setStopped(true);
+        } else {
+          setRotationSpeed(easedSpeed);
         }
+      } else {
+        setRotationSpeed(0);
+        setDecelerating(false);
+        setStopped(true);
       }
+    }
   });
 
   return (
@@ -188,7 +199,8 @@ const RotatingPortal = ({
         <circleGeometry args={[3, 32]} />
         <meshBasicMaterial map={staticTexture} side={THREE.DoubleSide} />
       </mesh>
-      <PortalCamera updateTexture={updateTexture}
+      <PortalCamera
+        updateTexture={updateTexture}
         setDecelerating={setDecelerating}
         transitionStaticUrl={transitionStaticUrl}
         decelerationStartTime={decelerationStartTime}
@@ -198,6 +210,6 @@ const RotatingPortal = ({
       />
     </>
   );
-}
+};
 
 export default React.memo(RotatingPortal);

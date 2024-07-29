@@ -1,7 +1,7 @@
 'use client';
 
 import {Inter} from 'next/font/google';
-import AssetsLoadedProvider from "../context/assets-loaded";
+import AssetsLoadedProvider from '../context/assets-loaded';
 import './globals.css';
 
 const inter = Inter({subsets: ['latin']});
