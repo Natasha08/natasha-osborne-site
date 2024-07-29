@@ -22,7 +22,9 @@
     "import/resolver": {
       "alias": {
         "map": [
-          ["@/lib", "./lib"] // This should match your jsconfig.json paths configuration
+          ["@/lib", "./lib"],
+          ["@/components", "./app/components"],
+          ["@/context", "./context"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }

@@ -175,10 +175,22 @@ const RotatingPortal = ({
   return (
     <>
       {/*. Additional Lights */}
-      <pointLight position={[5, 5, 5]} intensity={50} />
+      <pointLight position={[5, 5, 5]} intensity={100} />
       <spotLight
         position={[-5, 5, 5]}
-        intensity={50}
+        intensity={500}
+        angle={0.3}
+        penumbra={1}
+      />
+      <spotLight
+        position={[5, 5, -5]}
+        intensity={500}
+        angle={0.3}
+        penumbra={1}
+      />
+      <spotLight
+        position={[5, -5, 5]}
+        intensity={500}
         angle={0.3}
         penumbra={1}
       />
