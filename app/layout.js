@@ -4,7 +4,7 @@ import {useState} from 'react';
 import {Inter} from 'next/font/google';
 import {SpeedInsights} from '@vercel/speed-insights/next';
 import Link from 'next/link';
-import {usePathname} from 'next/navigation'
+import {usePathname} from 'next/navigation';
 
 import Providers from './providers';
 import './globals.css';
@@ -22,16 +22,17 @@ const PAGES = [
 export default function MyApp({children}) {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [navInitialized, setNavInitialized] = useState(false);
+  const pathname = usePathname().replace(/\//g, '');
 
   const saveSelectedindex = (index) => {
     setSelectedIndex(index);
   };
 
   if (!navInitialized) {
-    const pathname = usePathname().replace(/\//g,'');
-
     if (pathname) {
-      const initialIndex = PAGES.findIndex((page) => Object.keys(page)[0] === pathname);
+      const initialIndex = PAGES.findIndex(
+        (page) => Object.keys(page)[0] === pathname,
+      );
       setSelectedIndex(initialIndex);
       setNavInitialized(true);
     }
