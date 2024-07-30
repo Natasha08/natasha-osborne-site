@@ -13,21 +13,13 @@ const PAGES = [
 /*
   #TODO:
   - mobile navbar
-  - make loading page background everywhere black
+  - need a better loading page
 */
 
 const setClassForText = (selectedIndex, index) => {
   if (selectedIndex === index)
     return 'text-interactive border-b-2 font-medium border-blue-500';
   return 'text-white';
-};
-
-const navBackgroundClasses = (pathname) => {
-  if (pathname) {
-    return 'bg-earth-sky-view bg-opacity-0';
-  }
-
-  return 'bg-black bg-opacity-50 text-text fixed top-0 left-0 w-full z-10';
 };
 
 export default function AppNav() {
@@ -52,7 +44,7 @@ export default function AppNav() {
   return (
     <div className="z-2">
       <nav
-        className={`flex flex-col sm:flex-row-reverse ${navBackgroundClasses(pathname)}`}
+        className="flex flex-col sm:flex-row-reverse bg-black bg-opacity-50 text-text fixed top-0 left-0 w-full z-10"
       >
         {PAGES.map((page, index) => (
           <Link
