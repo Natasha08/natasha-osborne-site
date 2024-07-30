@@ -10,8 +10,6 @@
   --background-color: #F1FAEE;
   --text-color: #E63946;
   --accent-color: #E63946;
-
-
   --orange-rgb: 176, 107, 67;
 }
 
@@ -31,10 +29,6 @@ body,
 p {
   position: relative;
 }
-
-{{/* nav {
-  background: transparent;
-} */}}
 
 @layer utilities {
   .text-balance {
