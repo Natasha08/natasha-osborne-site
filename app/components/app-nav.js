@@ -10,7 +10,12 @@ const PAGES = [
   {home: 'Home'},
 ];
 
-const PagesList = ({selectedIndex, setSelectedIndex, navigationLink, isMobile = false}) => (
+const PagesList = ({
+  selectedIndex,
+  setSelectedIndex,
+  navigationLink,
+  isMobile = false,
+}) =>
   PAGES.map((page, index) => (
     <Link
       key={`${index}-${navigationLink}`}
@@ -21,8 +26,7 @@ const PagesList = ({selectedIndex, setSelectedIndex, navigationLink, isMobile = 
     >
       {Object.values(page)[0]}
     </Link>
-  ))
-);
+  ));
 
 const setClassForText = (selectedIndex, index, isMobile) => {
   if (selectedIndex === index)
@@ -54,8 +58,7 @@ export default function AppNav() {
       setPathname(parsedPathname);
       setToggleMobileMenu(false);
     }
-
-  }, [pathname, parsedPathname])
+  }, [pathname, parsedPathname]);
 
   const NavigationList = ({containerClasses, navClasses}) => (
     <div className={containerClasses}>
@@ -71,8 +74,15 @@ export default function AppNav() {
 
   const MobileNavigationList = ({containerClasses, navClasses, navId}) => (
     <div className={containerClasses}>
-      <button className="fixed text-blue-600 p-3" aria-controls={navId} onClick={() => setToggleMobileMenu(!toggleMobileMenu)}>
-        <svg className="block h-4 w-4 fill-current text-white" viewBox="0 0 20 20">
+      <button
+        className="fixed text-blue-600 p-3"
+        aria-controls={navId}
+        onClick={() => setToggleMobileMenu(!toggleMobileMenu)}
+      >
+        <svg
+          className="block h-4 w-4 fill-current text-white"
+          viewBox="0 0 20 20"
+        >
           <title>Mobile menu</title>
           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
         </svg>
