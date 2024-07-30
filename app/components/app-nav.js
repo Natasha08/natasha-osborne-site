@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
 const PAGES = [
-  {'about-me': 'About Me'},
+  {'about': 'About'},
   {posts: 'Blog'},
   {resume: 'Resume'},
   {work: 'Work'},

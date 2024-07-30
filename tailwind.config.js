@@ -13,7 +13,9 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'earth-sky-view': 'url(/a-sky-view-of-earth-from-suomi-npp.jpg)',
-        'colorful-stars-and-nebulae': 'url(/colorful_stars_and_nebulae.jpg)'
+        'colorful-stars-and-nebulae': 'url(/colorful_stars_and_nebulae.jpg)',
+        'surface-of-europa': 'url(/surface_of_europa.png)',
+        'rocky-mountain-1': 'url(/rocky_mountain_1_cropped.jpg)'
       },
       screens: {
         'rotate': {'raw': '(orientation: landscape)'},
