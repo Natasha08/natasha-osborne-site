@@ -121,7 +121,8 @@ const RotatingPortal = ({
 }) => {
   const gateMeshRef = useRef();
   const wormholeMeshRef = useRef();
-  const [wormholeTextureUrl, setWormholeTextureUrl] = useState(wormholeImageUrl);
+  const [wormholeTextureUrl, setWormholeTextureUrl] =
+    useState(wormholeImageUrl);
   const wormholeTexture = useTexture(wormholeTextureUrl);
   const [rotationSpeed, setRotationSpeed] = useState(-2); // Initial rotation speed
   const [decelerating, setDecelerating] = useState(false);

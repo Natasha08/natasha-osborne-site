@@ -1,14 +1,13 @@
-
 import {useState} from 'react';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
 const PAGES = [
   {'about-me': 'About Me'},
-  {'posts': 'Blog'},
-  {'resume': 'Resume'},
-  {'work': 'Work'},
-  {'home': 'Home'},
+  {posts: 'Blog'},
+  {resume: 'Resume'},
+  {work: 'Work'},
+  {home: 'Home'},
 ];
 
 export default function AppNav() {
@@ -16,7 +15,8 @@ export default function AppNav() {
   const [navInitialized, setNavInitialized] = useState(false);
   const pathname = usePathname().replace(/\//g, '');
   const navigationLink = '-navigation-link-';
-  const mobileNavigationLink = '-nmobile-avigation-link-';
+  // #TODO: make mobile nav
+  // const mobileNavigationLink = '-nmobile-avigation-link-';
   var navigationIncrement = 1;
 
   const saveSelectedindex = (index) => {
@@ -24,7 +24,8 @@ export default function AppNav() {
   };
 
   const setClassForText = (selectedIndex, index) => {
-    if (selectedIndex === index) return 'text-interactive border-b-2 font-medium border-blue-500';
+    if (selectedIndex === index)
+      return 'text-interactive border-b-2 font-medium border-blue-500';
     return 'text-white';
   };
 
