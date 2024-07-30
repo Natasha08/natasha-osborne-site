@@ -34,7 +34,7 @@ const setClassForText = (selectedIndex, index, isMobile) => {
   return 'text-white';
 };
 
-const navBackgroundClasses = (pathname) => {
+const navBackgroundClasses = () => {
   return 'bg-black bg-opacity-50 text-text fixed top-0 left-0 w-full z-10';
 };
 
@@ -108,12 +108,12 @@ export default function AppNav() {
     <>
       <NavigationList
         containerClasses="hidden md:block"
-        navClasses={`flex flex-col sm:flex-row-reverse ${navBackgroundClasses(pathname)}`}
+        navClasses={`flex flex-col sm:flex-row-reverse ${navBackgroundClasses()}`}
         ariaControls="mobile-menu"
       />
       <MobileNavigationList
         containerClasses="shown md:hidden"
-        navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses(pathname)}`}
+        navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses()}`}
         navId="mobile-menu"
       />
     </>
