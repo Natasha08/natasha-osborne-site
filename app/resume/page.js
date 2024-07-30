@@ -1,7 +1,3 @@
 export default function Resume() {
-  return (
-    <main>
-      <p style={{textAlign: 'center'}}>Resume</p>
-    </main>
-  );
+  return <main className="bg-earth-sky-view bg-cover h-full"></main>;
 }

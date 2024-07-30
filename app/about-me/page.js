@@ -1,7 +1,3 @@
 export default function AboutMe() {
-  return (
-    <main>
-      <p style={{textAlign: 'center'}}>About Me</p>
-    </main>
-  );
+  return <main className="bg-earth-sky-view bg-cover h-full"></main>;
 }

@@ -9,7 +9,7 @@ export default function Index() {
   const morePosts = allPosts.slice(1);
 
   return (
-    <main>
+    <main className="bg-earth-sky-view bg-cover h-full">
       <div className="container">
         <header>{heroPost.title}</header>
         <p>{heroPost.coverImage}</p>

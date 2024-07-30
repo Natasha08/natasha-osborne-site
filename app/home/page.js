@@ -1,7 +1,3 @@
 export default function Home() {
-  return (
-    <main>
-      <p style={{textAlign: 'center'}}>Home</p>
-    </main>
-  );
+  return <main className="bg-earth-sky-view bg-cover h-full"></main>;
 }

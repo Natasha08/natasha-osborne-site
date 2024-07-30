@@ -4,16 +4,21 @@
 
 :root {
   --background-rgb: 0, 0, 0;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --primary-color: #A8DADC;
+  --secondary-color: #457B9D;
+  --background-color: #F1FAEE;
+  --text-color: #E63946;
+  --accent-color: #E63946;
+  --orange-rgb: 176, 107, 67;
 }
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: black;
 }
 
 html,
@@ -23,11 +28,6 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
 }
 
 p {
@@ -57,4 +57,11 @@ p {
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+#home {
+  background-image: url("/a-sky-view-of-earth-from-suomi-npp.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
 }
