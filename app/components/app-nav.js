@@ -34,6 +34,10 @@ const setClassForText = (selectedIndex, index, isMobile) => {
   return 'text-white';
 };
 
+const navBackgroundClasses = (pathname) => {
+  return 'bg-black bg-opacity-50 text-text fixed top-0 left-0 w-full z-10';
+};
+
 export default function AppNav() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [navInitialized, setNavInitialized] = useState(false);
@@ -74,21 +78,21 @@ export default function AppNav() {
 
   const MobileNavigationList = ({containerClasses, navClasses, navId}) => (
     <div className={containerClasses}>
-      <button
-        className="fixed text-blue-600 p-3"
-        aria-controls={navId}
-        onClick={() => setToggleMobileMenu(!toggleMobileMenu)}
-      >
-        <svg
-          className="block h-4 w-4 fill-current text-white"
-          viewBox="0 0 20 20"
-        >
-          <title>Mobile menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-        </svg>
-      </button>
       <div className={navClasses} id={navId}>
-        <div className="fixed top-10">
+        <button
+          className="fixed text-blue-600 p-3 z-10"
+          aria-controls={navId}
+          onClick={() => setToggleMobileMenu(!toggleMobileMenu)}
+        >
+          <svg
+            className="block h-4 w-4 fill-current text-white"
+            viewBox="0 0 20 20"
+          >
+            <title>Mobile menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+        </button>
+        <div className={`m-5 ${toggleMobileMenu ? 'shown' : 'hidden'}`}>
           <PagesList
             selectedIndex={selectedIndex}
             setSelectedIndex={setSelectedIndex}
@@ -103,13 +107,13 @@ export default function AppNav() {
   return (
     <>
       <NavigationList
-        containerClasses="hidden md:block z-10"
-        navClasses="flex flex-col sm:flex-row-reverse bg-black bg-opacity-50 text-text fixed top-0 left-0 w-full "
+        containerClasses="hidden md:block"
+        navClasses={`flex flex-col sm:flex-row-reverse ${navBackgroundClasses(pathname)}`}
         ariaControls="mobile-menu"
       />
       <MobileNavigationList
-        containerClasses="shown md:hidden z-10"
-        navClasses={`flex flex-col sm:flex-row-reverse bg-black bg-opacity-50 fixed text-text top-0 right-0 w-full ${toggleMobileMenu ? 'shown' : 'hidden'}`}
+        containerClasses="shown md:hidden"
+        navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses(pathname)}`}
         navId="mobile-menu"
       />
     </>
