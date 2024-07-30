@@ -51,7 +51,9 @@ export default function AppNav() {
 
   return (
     <div className="z-2">
-      <nav className={`flex flex-col sm:flex-row-reverse ${navBackgroundClasses(pathname)}`}>
+      <nav
+        className={`flex flex-col sm:flex-row-reverse ${navBackgroundClasses(pathname)}`}
+      >
         {PAGES.map((page, index) => (
           <Link
             key={index + navigationLink + navigationIncrement++}
