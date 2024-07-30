@@ -8,7 +8,7 @@ import {useRouter} from 'next/navigation';
 const Camera = ({
   setDecelerating,
   updateTexture,
-  transitionStaticUrl,
+  transitionWormholeUrl,
   stopped,
   decelerationStartTime,
   decelerating,
@@ -18,9 +18,8 @@ const Camera = ({
   const [elapsedTime, setElapsedTime] = useState(0);
   const router = useRouter();
   const intermediatePosition = new THREE.Vector3(-0.6, 0.58, 10); // Position in front of the portal
-  const targetPosition = new THREE.Vector3(0, 0, -0.1); // Position at the portal
-  const lookAtPosition = new THREE.Vector3(0, 0, -0.1); // Look at the portal
-  const finalPosition = new THREE.Vector3(0, 0, -2); // Position past the portal
+  const targetPosition = new THREE.Vector3(0, 0, 0.5); // Position at the portal
+  const lookAtPosition = new THREE.Vector3(0, 0, 0.5); // Look at the portal
   const [stage, setStage] = useState('lookLeft'); // Initial stage
 
   const startPos = useRef(new THREE.Vector3(0, 0, 500));
@@ -80,13 +79,12 @@ const Camera = ({
 
         if (distanceToTarget <= 0.2 && assetsLoaded) {
           // Once the camera reaches the target position, move to the final position
-          cameraPosition.lerp(finalPosition, 0.2 * delta);
           router.push('/home');
         } else if (distanceToIntermediate > 0.1 && distanceToTarget > 10) {
           // Move towards the intermediate position
           cameraPosition.lerp(intermediatePosition, 0.4 * delta);
         } else if (stopped && assetsLoaded) {
-          updateTexture(transitionStaticUrl);
+          updateTexture(transitionWormholeUrl);
           // Move towards the target position
           cameraPosition.lerp(targetPosition, 0.4 * delta);
         } else {
@@ -116,22 +114,23 @@ const PortalCamera = React.memo(Camera);
 
 const RotatingPortal = ({
   imageUrl = '/stargate_outer_ring_original.png',
-  staticImageUrl = '/initial_inner_wormhole.png',
-  transitionStaticUrl = '/transition_static_image.png',
+  wormholeImageUrl = '/initial_inner_wormhole.png',
+  transitionWormholeUrl = '/transition_static_image.png',
   width = 3,
   assetsLoaded = false,
 }) => {
-  const rotatingMeshRef = useRef();
-  const staticMeshRef = useRef();
-  const [staticTextureUrl, setstaticTextureUrl] = useState(staticImageUrl);
-  const staticTexture = useTexture(staticTextureUrl);
+  const gateMeshRef = useRef();
+  const wormholeMeshRef = useRef();
+  const [wormholeTextureUrl, setWormholeTextureUrl] = useState(wormholeImageUrl);
+  const wormholeTexture = useTexture(wormholeTextureUrl);
   const [rotationSpeed, setRotationSpeed] = useState(-2); // Initial rotation speed
   const [decelerating, setDecelerating] = useState(false);
   const [stopped, setStopped] = useState(false);
   const decelerationStartTime = useRef(null);
 
   const updateTexture = (newTextureUrl) => {
-    setstaticTextureUrl(newTextureUrl);
+    setWormholeTextureUrl(newTextureUrl);
+    wormholeMeshRef.current.rotation.z -= rotationSpeed; // Rotate clockwise (negative value for clockwise rotation)
   };
 
   const portalTexture = useTexture(imageUrl);
@@ -145,8 +144,12 @@ const RotatingPortal = ({
 
   //Rotate the image
   useFrame(({clock}) => {
-    if (rotatingMeshRef.current) {
-      rotatingMeshRef.current.rotation.z -= rotationSpeed; // Rotate clockwise (negative value for clockwise rotation)
+    if (gateMeshRef.current) {
+      gateMeshRef.current.rotation.z -= rotationSpeed; // Rotate clockwise (negative value for clockwise rotation)
+    }
+
+    if (stopped && wormholeMeshRef.current) {
+      wormholeMeshRef.current.rotation.z -= 0.02; // Rotate clockwise (negative value for clockwise rotation)
     }
 
     if (decelerating) {
@@ -196,7 +199,7 @@ const RotatingPortal = ({
       />
 
       {/* Rotating Torus for Portal */}
-      <mesh ref={rotatingMeshRef} position={[0, 0, 0]}>
+      <mesh ref={gateMeshRef} position={[0, 0, 0]}>
         <Torus args={[width, width / 10, 16, 300]}>
           <meshStandardMaterial map={portalTexture} />
         </Torus>
@@ -204,17 +207,17 @@ const RotatingPortal = ({
 
       {/* Static Circular Image */}
       <mesh
-        ref={staticMeshRef}
+        ref={wormholeMeshRef}
         position={[0, 0, -0.1]}
-        rotation={[0, Math.PI, 0]}
+        // rotation={[0, Math.PI, 0]}
       >
         <circleGeometry args={[3, 32]} />
-        <meshBasicMaterial map={staticTexture} side={THREE.DoubleSide} />
+        <meshBasicMaterial map={wormholeTexture} side={THREE.DoubleSide} />
       </mesh>
       <PortalCamera
         updateTexture={updateTexture}
         setDecelerating={setDecelerating}
-        transitionStaticUrl={transitionStaticUrl}
+        transitionWormholeUrl={transitionWormholeUrl}
         decelerationStartTime={decelerationStartTime}
         decelerating={decelerating}
         assetsLoaded={assetsLoaded}
