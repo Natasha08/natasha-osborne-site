@@ -43,9 +43,7 @@ export default function AppNav() {
 
   return (
     <div className="z-2">
-      <nav
-        className="flex flex-col sm:flex-row-reverse bg-black bg-opacity-50 text-text fixed top-0 left-0 w-full z-10"
-      >
+      <nav className="flex flex-col sm:flex-row-reverse bg-black bg-opacity-50 text-text fixed top-0 left-0 w-full z-10">
         {PAGES.map((page, index) => (
           <Link
             key={index + navigationLink + navigationIncrement++}
