@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-module.exports = {
+export default {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -28,7 +28,8 @@ module.exports = {
         'interactive': 'rgb(173, 121, 95)', // nebula orange
         'text': '#F8F8F8',                  // starlight white
         'important': '#8A2BE2',  // nebula purple
-        'highlight': '#FFD700'  // star yellow
+        'highlight': '#FFD700',  // star yellow
+        'europa-glow': 'rgba(79, 53, 17, 0.5)'
       },
     },
   },
