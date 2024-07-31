@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
 const PAGES = [
-  {'about-me': 'About Me'},
+  {about: 'About'},
   {posts: 'Blog'},
   {resume: 'Resume'},
   {work: 'Work'},
@@ -92,7 +92,9 @@ export default function AppNav() {
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
           </svg>
         </button>
-        <div className={`m-5 ${toggleMobileMenu ? 'shown' : 'hidden'}`}>
+        <div
+          className={`m-5 bg-black fixed ${toggleMobileMenu ? 'shown' : 'hidden'}`}
+        >
           <PagesList
             selectedIndex={selectedIndex}
             setSelectedIndex={setSelectedIndex}

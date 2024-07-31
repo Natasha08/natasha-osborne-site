@@ -24,7 +24,8 @@
         "map": [
           ["@/lib", "./lib"],
           ["@/components", "./app/components"],
-          ["@/context", "./context"]
+          ["@/context", "./context"],
+          ["@/public", "./public"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }

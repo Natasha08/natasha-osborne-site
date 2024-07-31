@@ -59,9 +59,3 @@ p {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
 
-#home {
-  background-image: url("/a-sky-view-of-earth-from-suomi-npp.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 2;
-}
