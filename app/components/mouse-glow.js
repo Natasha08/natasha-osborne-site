@@ -39,7 +39,7 @@ const MouseGlow = () => {
             radial-gradient(circle at 60% 60%, rgba(0, 128, 255, 0.2), rgba(0, 128, 255, 0) 70%),
             radial-gradient(circle at 50% 50%, rgba(0, 128, 255, 0.5), rgba(0, 128, 255, 0) 50%)
           `,
-          filter: 'blur(15px)'
+          filter: 'blur(15px)',
         }}
       />
     </div>

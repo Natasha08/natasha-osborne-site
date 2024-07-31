@@ -4,7 +4,6 @@ import shipImage from '@/public/satellite_1.jpg';
 import satelliteImage from '@/public/starbuck_ship.png';
 import characterImage from '@/public/character_leaning.png';
 
-
 export default function Home() {
   return (
     <main className="h-full flex flex-col md:block">
@@ -44,4 +43,3 @@ export default function Home() {
     </main>
   );
 }
-
