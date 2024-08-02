@@ -16,7 +16,9 @@ export default {
         'colorful-stars-and-nebulae': 'url(/colorful_stars_and_nebulae.jpg)',
         'surface-of-europa': 'url(/surface_of_europa.png)',
         'rocky-mountain-1': 'url(/rocky_mountain_1_cropped.jpg)',
-        'mobile-rocky-mountain-1': 'url(/mobile_rocky_mountain_1_cropped.jpg)'
+        'mobile-rocky-mountain-1': 'url(/mobile_rocky_mountain_1_cropped.jpg)',
+        'hubble-hd-189733b': 'url(/hubble_hd_189733b.jpg)',
+        'earth-center-view': 'url(/earth_center_view.jpg)'
       },
       screens: {
         'rotate': {'raw': '(orientation: landscape)'},

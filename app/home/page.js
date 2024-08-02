@@ -1,5 +1,6 @@
 import MouseGlow from '@/components/mouse-glow';
 import StealthItem from '@/components/stealth-item';
+import Footer from '@/components/footer';
 import shipImage from '@/public/satellite_1.jpg';
 import satelliteImage from '@/public/starbuck_ship.png';
 import characterImage from '@/public/character_leaning.png';
@@ -28,7 +29,7 @@ export default function Home() {
           />
         </header>
         <p className="block h-3 text-white text-2l xs:text-6xl pb-10 font-bold">
-          Software Engineer
+          Full Stack Software Engineer
         </p>
       </div>
       <div
@@ -40,6 +41,7 @@ export default function Home() {
         </header>
       </div>
       <MouseGlow />
+      <Footer />
     </main>
   );
 }

@@ -18,7 +18,9 @@ export default function MyApp({children}) {
       ></meta>
       <body className={`${inter.className}`}>
         <AppNav />
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+        </Providers>
         <SpeedInsights />
       </body>
     </html>
