@@ -15,9 +15,9 @@ const Footer = () => (
           </a>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <button className="font-medium hover:underline hover:underline">
             Contact
-          </a>
+          </button>
         </li>
       </ul>
     </div>
