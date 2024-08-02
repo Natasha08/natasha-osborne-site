@@ -24,3 +24,8 @@ jobs:
           destination: playwright-report-first
       - store_artifacts:
           path: /tmp/artifacts
+      - save_cache:
+        key: dependency-cache-{{ checksum "yarn.lock" }}
+        paths:
+          - ./node_modules
+          - ./.next/cache
