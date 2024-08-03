@@ -9,3 +9,4 @@ partials.js
 /blob-report/
 /playwright/.cache/
 tests-examples
+.env
