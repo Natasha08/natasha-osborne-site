@@ -31,7 +31,7 @@ const PagesList = ({
 const setClassForText = (selectedIndex, index, isMobile) => {
   if (selectedIndex === index)
     return `text-interactive font-medium ${!isMobile ? 'border-blue-500 border-b-2' : ''}`;
-  return 'text-white';
+  return 'text-text';
 };
 
 const navBackgroundClasses = () => {
@@ -85,7 +85,7 @@ export default function AppNav() {
           onClick={() => setToggleMobileMenu(!toggleMobileMenu)}
         >
           <svg
-            className="block h-4 w-4 fill-current text-white"
+            className="block h-4 w-4 fill-current text-text"
             viewBox="0 0 20 20"
           >
             <title>Mobile menu</title>
