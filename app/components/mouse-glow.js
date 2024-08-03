@@ -2,11 +2,39 @@
 
 import {useEffect, useState, useRef} from 'react';
 
+const BACKGROUNDS = [
+  '.bg-surface-of-europa', '.bg-mobile-rocky-mountain-1',
+];
+
+const DEFAULT_GLOW = [0, 128, 255];
+
+const BACKGROUND_MOUSE_GLOW = {
+  '.bg-surface-of-europa': DEFAULT_GLOW,
+  '.bg-mobile-rocky-mountain-1': [157, 105, 193]
+};
+
+const getBackgroundMouseGlow = (currentElement, background=BACKGROUNDS[0]) => {
+  const parent = currentElement.closest(background);
+
+  if (parent) {
+    return BACKGROUND_MOUSE_GLOW[background];
+  } else {
+    const newIndex = BACKGROUNDS.indexOf(background) + 1;
+
+    if (newIndex >= BACKGROUNDS.length) return DEFAULT_GLOW;
+
+    return getBackgroundMouseGlow(currentElement, BACKGROUNDS[newIndex]);
+  }
+
+};
+
 const MouseGlow = () => {
   const [position, setPosition] = useState({x: 0, y: 0});
+  const [currentGlowColor, setCurrentGlowColor] = useState([0, 128, 255])
 
   useEffect(() => {
     const handleMouseMove = (e) => {
+      setCurrentGlowColor(getBackgroundMouseGlow(e.target));
       setPosition({x: e.clientX, y: e.clientY});
     };
 
@@ -35,9 +63,9 @@ const MouseGlow = () => {
           marginLeft: '-100px',
           marginTop: '-100px',
           background: `
-            radial-gradient(circle at 40% 40%, rgba(0, 128, 255, 0.3), rgba(0, 128, 255, 0) 60%),
-            radial-gradient(circle at 60% 60%, rgba(0, 128, 255, 0.2), rgba(0, 128, 255, 0) 70%),
-            radial-gradient(circle at 50% 50%, rgba(0, 128, 255, 0.5), rgba(0, 128, 255, 0) 50%)
+            radial-gradient(circle at 40% 40%, rgba(${currentGlowColor}, 0.1), rgba(${currentGlowColor}, 0) 60%),
+            radial-gradient(circle at 60% 60%, rgba(${currentGlowColor}, 0.2), rgba(${currentGlowColor}, 0) 70%),
+            radial-gradient(circle at 50% 50%, rgba(${currentGlowColor}, 0.3), rgba(${currentGlowColor}, 0) 50%)
           `,
           filter: 'blur(15px)',
         }}
