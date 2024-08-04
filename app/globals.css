@@ -21,6 +21,10 @@ body {
   background-color: black;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
@@ -57,5 +61,26 @@ p {
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+@media (max-width: 2000px) {
+  .menu {
+      top: 50%;
+      transform: translateY(-50%);
+  }
+}
+
+.menu {
+  flex-direction: column;
+  border: 1px solid rgb(143, 141, 133);
+  border-radius: 30px;
+  position: fixed;
+  left: 68px;
+  top: 322px;
+  width: 55px;
+  text-align: center;
+  gap: 20px;
+  padding: 24px 0;
+  z-index: 20;
 }
 

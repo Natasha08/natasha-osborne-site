@@ -1,76 +1,70 @@
-import {useEffect, useState} from 'react';
-import Link from 'next/link';
-import {usePathname} from 'next/navigation';
+'use client';
 
-const PAGES = [
-  {about: 'About'},
-  {posts: 'Blog'},
-  {resume: 'Resume'},
-  {work: 'Work'},
-  {home: 'Home'},
+import {useEffect, useState} from 'react';
+// import {usePathname} from 'next/navigation';
+import { HomeIcon, UserIcon, FolderIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid';
+
+export const PAGES = [
+  {id: 'home', label: 'Home', icon: HomeIcon},
+  {id: 'about', label: 'About', icon: UserIcon},
+  {id: 'resume', label: 'Resume', icon: FolderIcon},
+  {id: 'skills', label: 'Skills', icon: ComputerDesktopIcon},
 ];
 
-const PagesList = ({
-  selectedIndex,
-  setSelectedIndex,
-  navigationLink,
-  isMobile = false,
-}) =>
-  PAGES.map((page, index) => (
-    <Link
-      key={`${index}-${navigationLink}`}
-      href={`/${Object.keys(page)[0]}`}
-      className={`text-background py-4 px-6 block hover:text-interactive focus:outline-none ${setClassForText(selectedIndex, index, isMobile)}`}
-      aria-current="page"
-      onClick={() => setSelectedIndex(index)}
-    >
-      {Object.values(page)[0]}
-    </Link>
-  ));
+export const NAV_PAGES = [
+  {id: 'about', label: 'About'},
+  {id: 'home', label: 'Home'},
+];
 
-const setClassForText = (selectedIndex, index, isMobile) => {
-  if (selectedIndex === index)
+const Menu = ({
+  activeSection,
+  sectionRefs,
+  pages,
+  isMobile = false,
+}) => (
+<div className="pt-40 flex col-span-1 flex-col h-screen w-full items-center">
+  <ul className="pt-12 menu items-center">
+    {pages.map((page, index) => {
+      const Icon = page.icon;
+      return <li key={index}>
+        <button
+          key={page.id}
+          className={`${setClassForText(activeSection, page.id, isMobile)}`}
+          onClick={() => {
+            sectionRefs[index].current.scrollIntoView({behavior: 'smooth'})}}
+        >
+          <Icon className={`size-6 ${setClassForText(activeSection, page.id, isMobile)}`} />
+        </button>
+      </li>
+    })}
+    </ul>
+  </div>
+);
+
+const setClassForText = (activeSection, id, isMobile) => {
+  if (activeSection === id)
     return `text-interactive font-medium ${!isMobile ? 'border-blue-500 border-b-2' : ''}`;
   return 'text-text';
 };
 
 const navBackgroundClasses = () => {
-  return 'bg-black bg-opacity-50 text-text fixed top-0 left-0 w-full z-10';
+  return 'text-text fixed top-0 left-0 w-full z-10';
 };
 
-export default function AppNav() {
-  const [selectedIndex, setSelectedIndex] = useState(null);
-  const [navInitialized, setNavInitialized] = useState(false);
+export default function AppNav({activeSection, sectionRefs, pages=PAGES, visible=true}) {
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
-  const parsedPathname = usePathname().replace(/\//g, '');
-  const [pathname, setPathname] = useState(parsedPathname);
-  const navigationLink = '-navigation-link-';
-  const mobileNavigationLink = '-nmobile-avigation-link-';
-
-  if (!navInitialized) {
-    if (pathname) {
-      const initialIndex = PAGES.findIndex(
-        (page) => Object.keys(page)[0] === pathname,
-      );
-      setSelectedIndex(initialIndex);
-      setNavInitialized(true);
-    }
-  }
 
   useEffect(() => {
-    if (parsedPathname != pathname) {
-      setPathname(parsedPathname);
-      setToggleMobileMenu(false);
-    }
-  }, [pathname, parsedPathname]);
+    setToggleMobileMenu(false);
+  }, []);
 
   const NavigationList = ({containerClasses, navClasses}) => (
     <div className={containerClasses}>
       <nav className={navClasses}>
-        <PagesList
-          selectedIndex={selectedIndex}
-          setSelectedIndex={setSelectedIndex}
-          navigationLink={navigationLink}
+        <Menu
+          activeSection={activeSection}
+          sectionRefs={sectionRefs}
+          pages={pages}
         />
       </nav>
     </div>
@@ -95,11 +89,11 @@ export default function AppNav() {
         <div
           className={`m-5 bg-black fixed ${toggleMobileMenu ? 'shown' : 'hidden'}`}
         >
-          <PagesList
-            selectedIndex={selectedIndex}
-            setSelectedIndex={setSelectedIndex}
-            mobileNavigationLink={mobileNavigationLink}
+          <Menu
+            activeSection={activeSection}
+            sectionRefs={sectionRefs}
             isMobile={true}
+            pages={pages}
           />
         </div>
       </div>
@@ -110,7 +104,7 @@ export default function AppNav() {
     <>
       <NavigationList
         containerClasses="hidden md:block"
-        navClasses={`flex flex-col sm:flex-row-reverse ${navBackgroundClasses()}`}
+        navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses()}`}
         ariaControls="mobile-menu"
       />
       <MobileNavigationList

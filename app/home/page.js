@@ -1,47 +1,85 @@
-import MouseGlow from '@/components/mouse-glow';
-import StealthItem from '@/components/stealth-item';
-import Footer from '@/components/footer';
-import shipImage from '@/public/satellite_1.jpg';
-import satelliteImage from '@/public/starbuck_ship.png';
-import characterImage from '@/public/character_leaning.png';
+'use client';
 
-export default function Home() {
+import {useEffect, useState, useRef} from 'react';
+import MouseGlow from '@/components/mouse-glow';
+import Footer from '@/components/footer';
+import useIntersection from '@/components/use-intersection';
+import AppNav from '@/components/app-nav';
+import Home from '@/components/home';
+import About from '@/components/about';
+import { HomeIcon, UserIcon, FolderIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid';
+
+const SCROLL_COMPONENTS = [
+  { id: 'home', Component: Home },
+  { id: 'about', Component: About },
+  { id: 'resume', Component: function() {
+    return <div>Resume!</div>
+  } },
+  {id: 'skills', label: 'Skills', icon: function() {
+    return <div>Skills!</div>
+  }},
+];
+
+export const PAGES = [
+  {id: 'home', label: 'Home', icon: HomeIcon},
+  {id: 'about', label: 'About', icon: UserIcon},
+  {id: 'resume', label: 'Resume', icon: FolderIcon},
+  {id: 'skills', label: 'Skills', icon: ComputerDesktopIcon},
+];
+
+export default function Main() {
+  const [activeSection, sectionRefs, observerRefs] = useIntersection(PAGES);
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsAboutVisible(entry.isIntersecting);
+      },
+      { threshold: 1.0 }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <main className="h-full flex flex-col md:block">
-      <StealthItem
-        src={shipImage}
-        alt="satellite in orbit that is hidden until mousever"
-        positionClasses="top-40 right-36"
-      />
-      <StealthItem
-        src={satelliteImage}
-        alt="ship that is hidden until mouseover"
-        positionClasses="top-40 left-20"
-      />
-      <div className="pt-40 flex flex-col h-full w-full text-center bg-surface-of-europa bg-cover">
-        <header className="block h-3 text-white text-xl pb-10 font-extralight">
-          NATASHA OSBORNE
-          <StealthItem
-            src={characterImage}
-            alt="Natasha character that is hidden until mouseover"
-            positionClasses="top-32 inset-1/2 w-12"
-            width="12"
-          />
-        </header>
-        <p className="block h-3 text-white text-2l xs:text-6xl pb-10 font-bold">
-          Full Stack Software Engineer
-        </p>
-      </div>
-      <div
-        className="pt-40 flex flex-col h-full w-full text-center bg-mobile-rocky-mountain-1 bg-cover"
-        alt="rocky mountains photo background"
-      >
-        <header className="block h-3 text-white text-1l xs:text-xl pt-5 font-extralight">
-          BASED IN COLORADO, USA
-        </header>
-      </div>
-      <MouseGlow />
-      <Footer />
-    </main>
+    <>
+      <AppNav pages={PAGES} activeSection={activeSection} sectionRefs={sectionRefs} visible={false} />
+      <main className="h-full flex flex-col md:block">
+        <div>
+          {PAGES.map((page, index) => {
+            const Component = SCROLL_COMPONENTS.find((c) => c.id == page.id)?.Component;
+            return (
+              <section
+                id={page.id}
+                key={page.id}
+                ref={(el) => {
+                  sectionRefs[index].current = el;
+                  observerRefs[index].current = el;
+
+                  if (page.id === 'about') {
+                    aboutRef.current = el;
+                  }
+                }}
+                className="h-screen overflow-hidden"
+              >
+                {Component ? <Component isAboutVisible={isAboutVisible} /> : page.label}
+              </section>
+            );
+          })}
+        </div>
+        <MouseGlow />
+        <Footer />
+      </main>
+    </>
   );
 }
