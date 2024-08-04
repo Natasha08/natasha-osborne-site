@@ -3,14 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background-rgb: 0, 0, 0;
-  --foreground-rgb: 255, 255, 255;
-  --primary-color: #A8DADC;
-  --secondary-color: #457B9D;
-  --background-color: #F1FAEE;
-  --text-color: #E63946;
-  --accent-color: #E63946;
-  --orange-rgb: 176, 107, 67;
+  --text-white: #F8F8F8;
+  --nebula-orange: rgb(173, 121, 95);
 }
 
 * {
@@ -84,3 +78,75 @@ p {
   z-index: 20;
 }
 
+/************************************************************
+                  Resume Timeline Styling
+*************************************************************/
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 160px;
+  padding: 20px 0;
+  list-style-type: none;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-in-out;
+}
+
+.timeline-item.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-content {
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 6px;
+  color: var(--text--white);
+
+  position: relative;
+  width: calc(50% - 40px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-content h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.timeline-content p {
+  margin: 0;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--text-white);
+  border-radius: 50%;
+  left: -48px;
+  top: 7px;
+  transition: .3s;
+}
+
+.timeline-content:hover::before {
+  background-color: var(--nebula-orange);
+}
+
+.timeline-content::after {
+  content: '';
+  background: #333333;
+  width: 1px;
+  height: 145%;
+  position: absolute;
+  left: -43px;
+  top: 10px;
+  z-index: -1;
+}

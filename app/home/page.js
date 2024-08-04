@@ -7,20 +7,16 @@ import useIntersection from '@/components/use-intersection';
 import AppNav, {PAGES} from '@/components/app-nav';
 import Home from '@/components/home';
 import About from '@/components/about';
+import ResumeTimeline from '@/components/resume-timeline';
 
 const SCROLL_COMPONENTS = [
   {id: 'home', Component: Home},
   {id: 'about', Component: About},
-  {
-    id: 'resume',
-    Component: function () {
-      return <div>Resume!</div>;
-    },
-  },
+  {id: 'resume', Component: ResumeTimeline},
   {
     id: 'skills',
     label: 'Skills',
-    icon: function () {
+    Component: function () {
       return <div>Skills!</div>;
     },
   },
@@ -57,7 +53,7 @@ export default function Main() {
         sectionRefs={sectionRefs}
         visible={false}
       />
-      <main className="h-full flex flex-col md:block">
+      <main>
         <div>
           {PAGES.map((page, index) => {
             const Component = SCROLL_COMPONENTS.find(
@@ -75,7 +71,7 @@ export default function Main() {
                     aboutRef.current = el;
                   }
                 }}
-                className="h-screen overflow-hidden"
+                className="h-screen"
               >
                 {Component ? (
                   <Component isAboutVisible={isAboutVisible} />

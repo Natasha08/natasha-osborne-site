@@ -16,7 +16,7 @@ export const PAGES = [
 ];
 
 const Menu = ({activeSection, sectionRefs, pages, isMobile = false}) => (
-  <div className="pt-40 flex col-span-1 flex-col h-screen w-full items-center">
+  <div className="pt-40 flex col-span-1 flex-col items-center">
     <ul className="pt-12 menu items-center">
       {pages.map((page, index) => {
         const Icon = page.icon;
@@ -30,7 +30,7 @@ const Menu = ({activeSection, sectionRefs, pages, isMobile = false}) => (
               }}
             >
               <Icon
-                className={`size-6 ${setClassForText(activeSection, page.id, isMobile)}`}
+                className={`size-6 hover:text-interactive ${setClassForText(activeSection, page.id, isMobile)}`}
               />
             </button>
           </li>

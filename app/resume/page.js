@@ -9,7 +9,7 @@ export default async function Resume() {
         <iframe
           title="Natasha Osborne's Resume"
           alt="Natasha Osborne's Resume"
-          className="h-full w-full pt-20"
+          className="h-full w-full"
           src={resumeUrl}
         />
       ) : (

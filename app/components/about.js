@@ -1,6 +1,6 @@
 export default function About({isAboutVisible}) {
   return (
-    <main className="flex flex-col h-full w-full text-text text-center items-center">
+    <main className="flex flex-col h-full w-full text-text text-start items-center">
       <div className="grid grid-cols-1 w-3/5 h-full">
         <div
           className={`flex col-span-1 flex-col h-screen w-full items-center ${isAboutVisible ? 'overflow-y-auto' : 'overflow-hidden'}`}
