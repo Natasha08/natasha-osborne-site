@@ -1,9 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import {useState, useEffect, useRef} from 'react';
 
 const useIntersection = (sections) => {
   const [activeSection, setActiveSection] = useState('');
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const sectionRefs = sections.map(() => useRef(null));
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const observerRefs = sections.map(() => useRef(null));
 
   useEffect(() => {
@@ -15,7 +17,7 @@ const useIntersection = (sections) => {
       });
     };
 
-    observerRefs.forEach((ref, index) => {
+    observerRefs.forEach((ref) => {
       if (ref.current) {
         const observer = new IntersectionObserver(handleIntersect, {
           threshold: 0.6,

@@ -7,17 +7,29 @@ import useIntersection from '@/components/use-intersection';
 import AppNav from '@/components/app-nav';
 import Home from '@/components/home';
 import About from '@/components/about';
-import { HomeIcon, UserIcon, FolderIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid';
+import {
+  HomeIcon,
+  UserIcon,
+  FolderIcon,
+  ComputerDesktopIcon,
+} from '@heroicons/react/24/solid';
 
 const SCROLL_COMPONENTS = [
-  { id: 'home', Component: Home },
-  { id: 'about', Component: About },
-  { id: 'resume', Component: function() {
-    return <div>Resume!</div>
-  } },
-  {id: 'skills', label: 'Skills', icon: function() {
-    return <div>Skills!</div>
-  }},
+  {id: 'home', Component: Home},
+  {id: 'about', Component: About},
+  {
+    id: 'resume',
+    Component: function () {
+      return <div>Resume!</div>;
+    },
+  },
+  {
+    id: 'skills',
+    label: 'Skills',
+    icon: function () {
+      return <div>Skills!</div>;
+    },
+  },
 ];
 
 export const PAGES = [
@@ -37,7 +49,7 @@ export default function Main() {
       ([entry]) => {
         setIsAboutVisible(entry.isIntersecting);
       },
-      { threshold: 1.0 }
+      {threshold: 1.0},
     );
 
     if (aboutRef.current) {
@@ -53,11 +65,18 @@ export default function Main() {
 
   return (
     <>
-      <AppNav pages={PAGES} activeSection={activeSection} sectionRefs={sectionRefs} visible={false} />
+      <AppNav
+        pages={PAGES}
+        activeSection={activeSection}
+        sectionRefs={sectionRefs}
+        visible={false}
+      />
       <main className="h-full flex flex-col md:block">
         <div>
           {PAGES.map((page, index) => {
-            const Component = SCROLL_COMPONENTS.find((c) => c.id == page.id)?.Component;
+            const Component = SCROLL_COMPONENTS.find(
+              (c) => c.id == page.id,
+            )?.Component;
             return (
               <section
                 id={page.id}
@@ -72,7 +91,11 @@ export default function Main() {
                 }}
                 className="h-screen overflow-hidden"
               >
-                {Component ? <Component isAboutVisible={isAboutVisible} /> : page.label}
+                {Component ? (
+                  <Component isAboutVisible={isAboutVisible} />
+                ) : (
+                  page.label
+                )}
               </section>
             );
           })}

@@ -2,7 +2,12 @@
 
 import {useEffect, useState} from 'react';
 // import {usePathname} from 'next/navigation';
-import { HomeIcon, UserIcon, FolderIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid';
+import {
+  HomeIcon,
+  UserIcon,
+  FolderIcon,
+  ComputerDesktopIcon,
+} from '@heroicons/react/24/solid';
 
 export const PAGES = [
   {id: 'home', label: 'Home', icon: HomeIcon},
@@ -16,27 +21,27 @@ export const NAV_PAGES = [
   {id: 'home', label: 'Home'},
 ];
 
-const Menu = ({
-  activeSection,
-  sectionRefs,
-  pages,
-  isMobile = false,
-}) => (
-<div className="pt-40 flex col-span-1 flex-col h-screen w-full items-center">
-  <ul className="pt-12 menu items-center">
-    {pages.map((page, index) => {
-      const Icon = page.icon;
-      return <li key={index}>
-        <button
-          key={page.id}
-          className={`${setClassForText(activeSection, page.id, isMobile)}`}
-          onClick={() => {
-            sectionRefs[index].current.scrollIntoView({behavior: 'smooth'})}}
-        >
-          <Icon className={`size-6 ${setClassForText(activeSection, page.id, isMobile)}`} />
-        </button>
-      </li>
-    })}
+const Menu = ({activeSection, sectionRefs, pages, isMobile = false}) => (
+  <div className="pt-40 flex col-span-1 flex-col h-screen w-full items-center">
+    <ul className="pt-12 menu items-center">
+      {pages.map((page, index) => {
+        const Icon = page.icon;
+        return (
+          <li key={index}>
+            <button
+              key={page.id}
+              className={`${setClassForText(activeSection, page.id, isMobile)}`}
+              onClick={() => {
+                sectionRefs[index].current.scrollIntoView({behavior: 'smooth'});
+              }}
+            >
+              <Icon
+                className={`size-6 ${setClassForText(activeSection, page.id, isMobile)}`}
+              />
+            </button>
+          </li>
+        );
+      })}
     </ul>
   </div>
 );
@@ -51,7 +56,7 @@ const navBackgroundClasses = () => {
   return 'text-text fixed top-0 left-0 w-full z-10';
 };
 
-export default function AppNav({activeSection, sectionRefs, pages=PAGES, visible=true}) {
+export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
 
   useEffect(() => {

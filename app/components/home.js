@@ -17,8 +17,7 @@ const Home = () => (
         alt="ship that is hidden until mouseover"
         positionClasses="top-40 left-20"
       />
-      <div className="pt-40 flex col-span-1 flex-col h-screen w-full items-center">
-      </div>
+      <div className="pt-40 flex col-span-1 flex-col h-screen w-full items-center"></div>
     </div>
     <div className="pt-40 flex col-span-1 flex-col h-screen w-full items-center">
       <header className="block h-3 text-text text-xl pb-10 font-extralight z-10">
