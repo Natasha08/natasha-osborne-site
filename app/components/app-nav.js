@@ -1,7 +1,6 @@
 'use client';
 
 import {useEffect, useState} from 'react';
-// import {usePathname} from 'next/navigation';
 import {
   HomeIcon,
   UserIcon,
@@ -14,11 +13,6 @@ export const PAGES = [
   {id: 'about', label: 'About', icon: UserIcon},
   {id: 'resume', label: 'Resume', icon: FolderIcon},
   {id: 'skills', label: 'Skills', icon: ComputerDesktopIcon},
-];
-
-export const NAV_PAGES = [
-  {id: 'about', label: 'About'},
-  {id: 'home', label: 'Home'},
 ];
 
 const Menu = ({activeSection, sectionRefs, pages, isMobile = false}) => (

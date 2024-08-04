@@ -4,15 +4,9 @@ import {useEffect, useState, useRef} from 'react';
 import MouseGlow from '@/components/mouse-glow';
 import Footer from '@/components/footer';
 import useIntersection from '@/components/use-intersection';
-import AppNav from '@/components/app-nav';
+import AppNav, {PAGES} from '@/components/app-nav';
 import Home from '@/components/home';
 import About from '@/components/about';
-import {
-  HomeIcon,
-  UserIcon,
-  FolderIcon,
-  ComputerDesktopIcon,
-} from '@heroicons/react/24/solid';
 
 const SCROLL_COMPONENTS = [
   {id: 'home', Component: Home},
@@ -30,13 +24,6 @@ const SCROLL_COMPONENTS = [
       return <div>Skills!</div>;
     },
   },
-];
-
-export const PAGES = [
-  {id: 'home', label: 'Home', icon: HomeIcon},
-  {id: 'about', label: 'About', icon: UserIcon},
-  {id: 'resume', label: 'Resume', icon: FolderIcon},
-  {id: 'skills', label: 'Skills', icon: ComputerDesktopIcon},
 ];
 
 export default function Main() {
@@ -66,7 +53,6 @@ export default function Main() {
   return (
     <>
       <AppNav
-        pages={PAGES}
         activeSection={activeSection}
         sectionRefs={sectionRefs}
         visible={false}

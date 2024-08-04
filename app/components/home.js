@@ -2,7 +2,6 @@ import StealthItem from '@/components/stealth-item';
 import characterImage from '@/public/character_leaning.png';
 import shipImage from '@/public/satellite_1.jpg';
 import satelliteImage from '@/public/starbuck_ship.png';
-// import { HomeIcon, UserIcon, FolderIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid';
 
 const Home = () => (
   <div>
