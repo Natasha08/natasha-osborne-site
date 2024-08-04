@@ -41,7 +41,12 @@ const Main = memo(function Main() {
 
   return (
     <>
-      <Link href="/home" className="text-text hover:text-interactive absolute z-10 left-0 right-0 text-center top-48">Skip to Home </Link>
+      <Link
+        href="/home"
+        className="text-text hover:text-interactive absolute z-10 left-0 right-0 text-center top-48"
+      >
+        Skip to Home{' '}
+      </Link>
       <Canvas className="canvas">
         <OrbitControls enableZoom={true} enablePan={true} />
         <ambientLight />
