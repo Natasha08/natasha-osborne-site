@@ -29,10 +29,10 @@ const Home = () => (
           width="12"
         />
       </header>
-      <p className="block h-3 text-text text-2l xs:text-2xl font-bold">
+      <p className="block h-3 text-text text-2l xs:text-2xl font-bold pb-10">
         Full Stack Software Engineer
       </p>
-      <p className="pt-12 block h-3 text-text text-1l xs:text-xl pt-5 font-extralight">
+      <p className="pt-4 block h-3 text-text text-1l xs:text-xl pt-5 font-extralight">
         BASED IN COLORADO, USA
       </p>
     </div>
