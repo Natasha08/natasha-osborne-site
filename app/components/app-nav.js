@@ -10,11 +10,11 @@ export const PAGES = [
 export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
   const setNavColors = () => {
     if (activeSection != 'home') {
-      return "border-interactive ";
+      return 'border-interactive ';
     } else {
-      return "border-blue-500 ";
+      return 'border-blue-500 ';
     }
-  }
+  };
 
   const Menu = ({activeSection, sectionRefs, pages}) => (
     <div className="pt-40 flex col-span-1 flex-col items-center">
@@ -30,7 +30,9 @@ export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
                 data-tooltip-target={`tooltip-default-${index}`}
                 className={`appearance-none w-4 h-4 border-2 rounded-full ${setNavColors()} ${activeSection == page.id ? 'bg-white' : ''}`}
                 onClick={() => {
-                  sectionRefs[index].current.scrollIntoView({behavior: 'smooth'});
+                  sectionRefs[index].current.scrollIntoView({
+                    behavior: 'smooth',
+                  });
                 }}
               />
               <span
