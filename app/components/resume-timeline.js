@@ -47,8 +47,14 @@ const ResumeTimeline = () => {
       ref={timelineRef}
       className="timeline text-start text-text z-20 flex flex-col pb-48"
     >
-      <div className="timeline-item mb-8 md:mb-16">
-        <div className="timeline-content w-1/2">
+      <div className="timeline-item mb-8">
+        <a
+          href="https://parentsquare.com"
+          target="_blank"
+          rel="noopener
+          noreferrer"
+          className="timeline-content w-1/2 hover:bg-deep-blue"
+        >
           <h2 className="hover:text-interactive text-gray-400 text-md">
             2022-2024
           </h2>
@@ -62,10 +68,16 @@ const ResumeTimeline = () => {
             <SkillBubble text="Building APIs" />
             <SkillBubble text="HTML & CSS" />
           </ul>
-        </div>
+        </a>
       </div>
-      <div className="timeline-item mb-8 md:mb-16">
-        <div className="timeline-content w-1/2">
+      <div className="timeline-item mb-8">
+        <a
+          href="https://radialdevgroup.com"
+          target="_blank"
+          rel="noopener
+          noreferrer"
+          className="timeline-content w-1/2 hover:bg-deep-blue"
+        >
           <h2 className="hover:text-interactive text-gray-400 text-md">
             2019-2022
           </h2>
@@ -83,10 +95,16 @@ const ResumeTimeline = () => {
             <SkillBubble text="Testing" />
             <SkillBubble text="Project Management" />
           </ul>
-        </div>
+        </a>
       </div>
-      <div className="timeline-item mb-8 md:mb-16">
-        <div className="timeline-content w-1/2">
+      <div className="timeline-item mb-8">
+        <a
+          href="https://originprotocol.com"
+          target="_blank"
+          rel="noopener
+          noreferrer"
+          className="timeline-content w-1/2 hover:bg-deep-blue"
+        >
           <h2 className="hover:text-interactive text-gray-400 text-md">
             2018-2019
           </h2>
@@ -102,10 +120,16 @@ const ResumeTimeline = () => {
             <SkillBubble text="GraphQL" />
             <SkillBubble text="HTML & CSS" />
           </ul>
-        </div>
+        </a>
       </div>
-      <div className="timeline-item mb-8 md:mb-16">
-        <div className="timeline-content w-1/2">
+      <div className="timeline-item mb-8">
+        <a
+          href="https://radialdevgroup.com"
+          target="_blank"
+          rel="noopener
+          noreferrer"
+          className="timeline-content w-1/2 hover:bg-deep-blue"
+        >
           <h2 className="hover:text-interactive text-gray-400 text-md">
             2017-2018
           </h2>
@@ -122,9 +146,9 @@ const ResumeTimeline = () => {
             <SkillBubble text="Testing" />
             <SkillBubble text="Project Management" />
           </ul>
-        </div>
+        </a>
       </div>
-      <div className="text-center text-text mb-8 md:mb-16 z-20">
+      <div className="text-center text-text mb-8 z-20">
         <Link
           href="/resume"
           target="_blank"
