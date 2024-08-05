@@ -3,7 +3,10 @@ const Footer = ({sectionRefs}) => (
     <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
       <span className="text-sm sm:text-center">
         © 2024{' '}
-        <a href="https://natasha-osborne.dev" className="hover:underline hover:text-interactive">
+        <a
+          href="https://natasha-osborne.dev"
+          className="hover:underline hover:text-interactive"
+        >
           Natasha Osborne
         </a>
         . All Rights Reserved.
@@ -14,9 +17,11 @@ const Footer = ({sectionRefs}) => (
             href="#about"
             className="hover:underline hover:text-interactive me-4 md:me-6"
             onClick={() => {
-              sectionRefs.find((ref) => ref.current.id == 'about').current.scrollIntoView({
-                behavior: 'smooth'
-              })
+              sectionRefs
+                .find((ref) => ref.current.id == 'about')
+                .current.scrollIntoView({
+                  behavior: 'smooth',
+                });
             }}
           >
             About
