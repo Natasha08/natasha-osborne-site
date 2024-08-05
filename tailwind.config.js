@@ -22,18 +22,20 @@ export default {
       },
       screens: {
         'rotate': {'raw': '(orientation: landscape)'},
-        'xs': '450px'
+        'xs': {'max': '450px'},
       },
       colors: {
         'transparent': 'rgba(0, 0, 0, 0)',
-        'background': 'rgb(26, 41, 92)',    // deep space blue
+        'background': 'rgb(26, 41, 92)',
+        'translucent-background': 'rgba(26, 41, 92, 0.3)',   // deep space blue
         'interactive': 'var(--nebula-orange)', // nebula orange
         'text': 'var(--text-white)',                  // starlight white
         'important': '#8A2BE2',  // nebula purple
         'highlight': '#FFD700',  // star yellow
         'europa-glow': 'rgba(79, 53, 17, 0.5)',
         'neon-blue': '#1F51FF',
-        'glow-blue': 'rgb(0, 128, 255)'
+        'glow-blue': 'rgb(0, 128, 255)',
+        'translucent-gray': 'rgba(128, 128, 128, 0.3)'
       },
     },
   },

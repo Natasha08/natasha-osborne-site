@@ -45,14 +45,14 @@ const ResumeTimeline = () => {
   return (
     <div
       ref={timelineRef}
-      className="timeline text-start text-text z-20 h-full"
+      className="timeline text-start text-text z-20 flex flex-col pb-48"
     >
       <div className="timeline-item mb-8 md:mb-16">
-        <div className="timeline-content">
-          <h2 className="hover:text-interactive text-lg md:text-xl lg:text-2xl">
+        <div className="timeline-content w-1/2">
+          <h2 className="hover:text-interactive text-gray-400 text-md">
             2022-2024
           </h2>
-          <p className="text-md md:text-lg">Full Stack Software Engineer</p>
+          <p className="text-lg md:text-xl lg:text-2xl">Full Stack Software Engineer</p>
           <p className="text-interactive text-sm md:text-base">ParentSquare</p>
           <ul className="mt-2 flex flex-wrap lg:flex-nowrap space-x-2">
             <SkillBubble text="Javascript" />
@@ -63,11 +63,11 @@ const ResumeTimeline = () => {
         </div>
       </div>
       <div className="timeline-item mb-8 md:mb-16">
-        <div className="timeline-content">
-          <h2 className="hover:text-interactive text-lg md:text-xl lg:text-2xl">
+        <div className="timeline-content w-1/2">
+          <h2 className="hover:text-interactive text-gray-400 text-md">
             2019-2022
           </h2>
-          <p className="text-md md:text-lg">Developer Lead</p>
+          <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
           <p className="text-interactive text-sm md:text-base">
             Radial Development Group
           </p>
@@ -84,11 +84,11 @@ const ResumeTimeline = () => {
         </div>
       </div>
       <div className="timeline-item mb-8 md:mb-16">
-        <div className="timeline-content">
-          <h2 className="hover:text-interactive text-lg md:text-xl lg:text-2xl">
+        <div className="timeline-content w-1/2">
+          <h2 className="hover:text-interactive text-gray-400 text-md">
             2018-2019
           </h2>
-          <p className="text-md md:text-lg">Full Stack Software Engineer</p>
+          <p className="text-lg md:text-xl lg:text-2xl">Full Stack Software Engineer</p>
           <p className="text-interactive text-sm md:text-base">
             Origin Protocol
           </p>
@@ -101,11 +101,11 @@ const ResumeTimeline = () => {
         </div>
       </div>
       <div className="timeline-item mb-8 md:mb-16">
-        <div className="timeline-content">
-          <h2 className="hover:text-interactive text-lg md:text-xl lg:text-2xl">
+        <div className="timeline-content w-1/2">
+          <h2 className="hover:text-interactive text-gray-400 text-md">
             2017-2018
           </h2>
-          <p className="text-md md:text-lg">Developer Lead</p>
+          <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
           <p className="text-interactive text-sm md:text-base">
             Radial Development Group
           </p>
@@ -120,12 +120,12 @@ const ResumeTimeline = () => {
           </ul>
         </div>
       </div>
-      <div className="text-center text-text mb-8 md:mb-16">
+      <div className="text-center text-text mb-8 md:mb-16 z-20">
         <Link
           href="/resume"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-interactive text-base md:text-lg lg:text-xl"
+          className="hover:text-interactive text-gray-300 md:text-lg lg:text-xl"
         >
           View Full Résumé
         </Link>

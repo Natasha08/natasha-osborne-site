@@ -1,9 +1,9 @@
-export default function About({isAboutVisible}) {
+export default function About() {
   return (
-    <main className="flex flex-col h-full w-full text-text text-start items-center">
-      <div className="grid grid-cols-1 w-3/5 h-full">
+    <main className="flex flex-col text-text text-start items-center z-20 pb-48">
+      <div className="xs:w-auto md:w-1/2">
         <div
-          className={`flex col-span-1 flex-col h-screen w-full items-center ${isAboutVisible ? 'overflow-y-auto' : 'overflow-hidden'}`}
+          className={`flex col-span-1 flex-col pb-10 w-full items-center text-gray-300 relative bg-translucent-background z-10`}
         >
           <div className="p-12 space-y-4">
             <p>
@@ -41,6 +41,7 @@ export default function About({isAboutVisible}) {
           </div>
         </div>
       </div>
+      <div className="xs:w-1/3 lg:w-1/2"></div>
     </main>
   );
 }
