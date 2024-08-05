@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const SkillBubble = ({text}) => (
   <li className="mr-1.5 mt-2">
-    <div className="flex items-center justify-center rounded-full bg-background px-3 py-1 text-xs font-medium leading-5 text-blue-500 min-w-max">
+    <div className="flex items-center justify-center rounded-full bg-deep-blue px-3 py-1 text-xs font-medium leading-5 text-blue-500 min-w-max">
       {text}
     </div>
   </li>

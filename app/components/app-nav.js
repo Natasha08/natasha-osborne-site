@@ -21,9 +21,10 @@ const Menu = ({activeSection, sectionRefs, pages, isMobile = false}) => (
       {pages.map((page, index) => {
         const Icon = page.icon;
         return (
-          <li key={index}>
+          <li key={index} className="group">
             <button
               key={page.id}
+              data-tooltip-target={`tooltip-default-${index}`}
               className={`${setClassForText(activeSection, page.id, isMobile)}`}
               onClick={() => {
                 sectionRefs[index].current.scrollIntoView({behavior: 'smooth'});
@@ -33,6 +34,9 @@ const Menu = ({activeSection, sectionRefs, pages, isMobile = false}) => (
                 className={`size-6 hover:text-interactive ${setClassForText(activeSection, page.id, isMobile)}`}
               />
             </button>
+            <span id={`tooltip-default-${index}`} role="tooltip" className="absolute z-10 inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-deep-blue rounded-lg shadow-sm opacity-0 tooltip z-20 hover:visible group-hover:opacity-100">
+              {page.label}
+            </span>
           </li>
         );
       })}
@@ -51,17 +55,11 @@ const navBackgroundClasses = () => {
 };
 
 export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
-  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
-
-  useEffect(() => {
-    setToggleMobileMenu(false);
-  }, []);
-
   const NavigationList = ({containerClasses, navClasses}) => (
     <div className={containerClasses}>
       <nav className={navClasses}>
         <Menu
-          activeSection={activeSection}
+          activeSection={activeSection ? activeSection : 'home'}
           sectionRefs={sectionRefs}
           pages={pages}
         />
@@ -69,48 +67,11 @@ export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
     </div>
   );
 
-  const MobileNavigationList = ({containerClasses, navClasses, navId}) => (
-    <div className={containerClasses}>
-      <div className={navClasses} id={navId}>
-        <button
-          className="fixed text-blue-600 p-3 z-10"
-          aria-controls={navId}
-          onClick={() => setToggleMobileMenu(!toggleMobileMenu)}
-        >
-          <svg
-            className="block h-4 w-4 fill-current text-text"
-            viewBox="0 0 20 20"
-          >
-            <title>Mobile menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-          </svg>
-        </button>
-        <div
-          className={`m-5 bg-black fixed ${toggleMobileMenu ? 'shown' : 'hidden'}`}
-        >
-          <Menu
-            activeSection={activeSection}
-            sectionRefs={sectionRefs}
-            isMobile={true}
-            pages={pages}
-          />
-        </div>
-      </div>
-    </div>
-  );
-
   return (
-    <>
-      <NavigationList
-        containerClasses="hidden md:block"
-        navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses()}`}
-        ariaControls="mobile-menu"
-      />
-      {/* <MobileNavigationList
-        containerClasses="shown md:hidden"
-        navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses()}`}
-        navId="mobile-menu"
-      /> */}
-    </>
+    <NavigationList
+      containerClasses="hidden md:block"
+      navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses()}`}
+      ariaControls="mobile-menu"
+    />
   );
 }
