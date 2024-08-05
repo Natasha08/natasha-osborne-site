@@ -14,9 +14,9 @@ export const PAGES = [
   {id: 'skills', label: 'Skills', icon: ComputerDesktopIcon},
 ];
 
-const Menu = ({activeSection, sectionRefs, pages, isMobile = false}) => (
+const Menu = ({activeSection, sectionRefs, pages}) => (
   <div className="pt-40 flex col-span-1 flex-col items-center">
-    <ul className={`pt-12 items-center menu ${isMobile ? 'mobile' : ''}`}>
+    <ul className={"pt-12 items-center menu"}>
       {pages.map((page, index) => {
         const Icon = page.icon;
         return (
@@ -24,13 +24,13 @@ const Menu = ({activeSection, sectionRefs, pages, isMobile = false}) => (
             <button
               key={page.id}
               data-tooltip-target={`tooltip-default-${index}`}
-              className={`${setClassForText(activeSection, page.id, isMobile)}`}
+              className={`${setClassForText(activeSection, page.id)}`}
               onClick={() => {
                 sectionRefs[index].current.scrollIntoView({behavior: 'smooth'});
               }}
             >
               <Icon
-                className={`size-6 hover:text-interactive ${setClassForText(activeSection, page.id, isMobile)}`}
+                className={`size-6 hover:text-interactive ${setClassForText(activeSection, page.id)}`}
               />
             </button>
             <span
@@ -47,9 +47,9 @@ const Menu = ({activeSection, sectionRefs, pages, isMobile = false}) => (
   </div>
 );
 
-const setClassForText = (activeSection, id, isMobile) => {
+const setClassForText = (activeSection, id) => {
   if (activeSection === id)
-    return `text-interactive font-medium ${!isMobile ? 'border-blue-500 border-b-2' : ''}`;
+    return "text-interactive font-medium";
   return 'text-text';
 };
 
