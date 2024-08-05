@@ -52,7 +52,9 @@ const ResumeTimeline = () => {
           <h2 className="hover:text-interactive text-gray-400 text-md">
             2022-2024
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl">Full Stack Software Engineer</p>
+          <p className="text-lg md:text-xl lg:text-2xl">
+            Full Stack Software Engineer
+          </p>
           <p className="text-interactive text-sm md:text-base">ParentSquare</p>
           <ul className="mt-2 flex flex-wrap lg:flex-nowrap space-x-2">
             <SkillBubble text="Javascript" />
@@ -88,7 +90,9 @@ const ResumeTimeline = () => {
           <h2 className="hover:text-interactive text-gray-400 text-md">
             2018-2019
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl">Full Stack Software Engineer</p>
+          <p className="text-lg md:text-xl lg:text-2xl">
+            Full Stack Software Engineer
+          </p>
           <p className="text-interactive text-sm md:text-base">
             Origin Protocol
           </p>

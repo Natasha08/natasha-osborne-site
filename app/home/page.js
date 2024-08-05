@@ -47,11 +47,7 @@ export default function Main() {
                 }}
                 className="h-fit col-start-1"
               >
-                {Component ? (
-                  <Component />
-                ) : (
-                  page.label
-                )}
+                {Component ? <Component /> : page.label}
               </section>
             );
           })}

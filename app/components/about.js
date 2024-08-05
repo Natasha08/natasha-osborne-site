@@ -2,9 +2,7 @@ export default function About() {
   return (
     <main className="flex flex-col text-text text-start items-center z-20 pb-48">
       <div className="xs:w-auto md:w-1/2">
-        <div
-          className={`flex col-span-1 flex-col pb-10 w-full items-center text-gray-300 relative bg-translucent-background z-10`}
-        >
+        <div className="flex col-span-1 flex-col pb-10 w-full items-center text-gray-300 relative bg-translucent-background z-10">
           <div className="p-12 space-y-4">
             <p>
               {`In 2016, I built an Excel spreadsheet that evolved into a PHP app
