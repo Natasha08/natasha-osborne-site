@@ -3,6 +3,7 @@ import {memo} from 'react';
 import {Canvas, useThree} from '@react-three/fiber';
 import {CubeTextureLoader} from 'three';
 import {OrbitControls} from '@react-three/drei';
+import Link from 'next/link';
 
 import {useAssetsLoadedContext} from '@/context/assets-loaded';
 import RotatingPortal from '@/components/rotating-portal';
@@ -40,6 +41,12 @@ const Main = memo(function Main() {
 
   return (
     <>
+      <Link
+        href="/home"
+        className="text-text hover:text-interactive absolute z-10 left-0 right-0 text-center top-48"
+      >
+        Skip to Home{' '}
+      </Link>
       <Canvas className="canvas">
         <OrbitControls enableZoom={true} enablePan={true} />
         <ambientLight />

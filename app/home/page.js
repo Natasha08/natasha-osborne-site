@@ -1,47 +1,60 @@
-import MouseGlow from '@/components/mouse-glow';
-import StealthItem from '@/components/stealth-item';
-import Footer from '@/components/footer';
-import shipImage from '@/public/satellite_1.jpg';
-import satelliteImage from '@/public/starbuck_ship.png';
-import characterImage from '@/public/character_leaning.png';
+'use client';
 
-export default function Home() {
+import MouseGlow from '@/components/mouse-glow';
+import Footer from '@/components/footer';
+import useIntersection from '@/components/use-intersection';
+import AppNav, {PAGES} from '@/components/app-nav';
+import Home from '@/components/home';
+import About from '@/components/about';
+import ResumeTimeline from '@/components/resume-timeline';
+
+const SCROLL_COMPONENTS = [
+  {id: 'home', Component: Home},
+  {id: 'about', Component: About},
+  {id: 'resume', Component: ResumeTimeline},
+  {
+    id: 'skills',
+    label: 'Skills',
+    Component: function () {
+      return <div>Skills!</div>;
+    },
+  },
+];
+
+export default function Main() {
+  const [activeSection, sectionRefs, observerRefs] = useIntersection(PAGES);
+
   return (
-    <main className="h-full flex flex-col md:block">
-      <StealthItem
-        src={shipImage}
-        alt="satellite in orbit that is hidden until mousever"
-        positionClasses="top-40 right-36"
+    <>
+      <AppNav
+        activeSection={activeSection}
+        sectionRefs={sectionRefs}
+        visible={false}
       />
-      <StealthItem
-        src={satelliteImage}
-        alt="ship that is hidden until mouseover"
-        positionClasses="top-40 left-20"
-      />
-      <div className="pt-40 flex flex-col h-full w-full text-center bg-surface-of-europa bg-cover">
-        <header className="block h-3 text-white text-xl pb-10 font-extralight">
-          NATASHA OSBORNE
-          <StealthItem
-            src={characterImage}
-            alt="Natasha character that is hidden until mouseover"
-            positionClasses="top-32 inset-1/2 w-12"
-            width="12"
-          />
-        </header>
-        <p className="block h-3 text-white text-2l xs:text-6xl pb-10 font-bold">
-          Full Stack Software Engineer
-        </p>
-      </div>
-      <div
-        className="pt-40 flex flex-col h-full w-full text-center bg-mobile-rocky-mountain-1 bg-cover"
-        alt="rocky mountains photo background"
-      >
-        <header className="block h-3 text-white text-1l xs:text-xl pt-5 font-extralight">
-          BASED IN COLORADO, USA
-        </header>
-      </div>
-      <MouseGlow />
-      <Footer />
-    </main>
+      <main>
+        <div className="grid grid-cols-1">
+          {PAGES.map((page, index) => {
+            const Component = SCROLL_COMPONENTS.find(
+              (c) => c.id == page.id,
+            )?.Component;
+            return (
+              <section
+                id={page.id}
+                key={page.id}
+                ref={(el) => {
+                  sectionRefs[index].current = el;
+                  observerRefs[index].current = el;
+                }}
+                className="h-fit col-start-1"
+              >
+                {Component ? <Component /> : page.label}
+              </section>
+            );
+          })}
+        </div>
+        <MouseGlow />
+        <Footer />
+      </main>
+    </>
   );
 }

@@ -5,7 +5,6 @@ import {SpeedInsights} from '@vercel/speed-insights/next';
 
 import Providers from './providers';
 import './globals.css';
-import AppNav from './components/app-nav';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -17,7 +16,6 @@ export default function MyApp({children}) {
         content="width=device-width, initial-scale=1.0"
       ></meta>
       <body className={`${inter.className}`}>
-        <AppNav />
         <Providers>{children}</Providers>
         <SpeedInsights />
       </body>
