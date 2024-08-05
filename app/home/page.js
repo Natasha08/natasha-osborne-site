@@ -52,7 +52,7 @@ export default function Main() {
           })}
         </div>
         <MouseGlow />
-        <Footer />
+        <Footer sectionRefs={sectionRefs}/>
       </main>
     </>
   );
