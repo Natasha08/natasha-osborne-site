@@ -16,7 +16,7 @@ export const PAGES = [
 
 const Menu = ({activeSection, sectionRefs, pages}) => (
   <div className="pt-40 flex col-span-1 flex-col items-center">
-    <ul className={"pt-12 items-center menu"}>
+    <ul className="pt-12 items-center menu">
       {pages.map((page, index) => {
         const Icon = page.icon;
         return (
@@ -48,8 +48,7 @@ const Menu = ({activeSection, sectionRefs, pages}) => (
 );
 
 const setClassForText = (activeSection, id) => {
-  if (activeSection === id)
-    return "text-interactive font-medium";
+  if (activeSection === id) return 'text-interactive font-medium';
   return 'text-text';
 };
 
