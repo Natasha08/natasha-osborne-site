@@ -62,7 +62,7 @@ const ResumeTimeline = () => {
             Full Stack Software Engineer
           </p>
           <p className="text-interactive text-sm md:text-base">ParentSquare</p>
-          <ul className="mt-2 flex flex-wrap lg:flex-nowrap space-x-2">
+          <ul className="mt-2 flex flex-wrap space-x-2">
             <SkillBubble text="Javascript" />
             <SkillBubble text="Ruby on Rails" />
             <SkillBubble text="Building APIs" />
@@ -85,7 +85,7 @@ const ResumeTimeline = () => {
           <p className="text-interactive text-sm md:text-base">
             Radial Development Group
           </p>
-          <ul className="mt-2 flex flex-wrap lg:flex-nowrap space-x-2">
+          <ul className="mt-2 flex flex-wrap space-x-2">
             <SkillBubble text="React" />
             <SkillBubble text="Ruby on Rails" />
             <SkillBubble text="Cordova" />
@@ -114,7 +114,7 @@ const ResumeTimeline = () => {
           <p className="text-interactive text-sm md:text-base">
             Origin Protocol
           </p>
-          <ul className="mt-2 flex flex-wrap lg:flex-nowrap space-x-2">
+          <ul className="mt-2 flex flex-wrap space-x-2">
             <SkillBubble text="Python" />
             <SkillBubble text="React" />
             <SkillBubble text="GraphQL" />
@@ -137,7 +137,7 @@ const ResumeTimeline = () => {
           <p className="text-interactive text-sm md:text-base">
             Radial Development Group
           </p>
-          <ul className="mt-2 flex flex-wrap lg:flex-nowrap space-x-2">
+          <ul className="mt-2 flex flex-wrap space-x-2">
             <SkillBubble text="React" />
             <SkillBubble text="Ruby on Rails" />
             <SkillBubble text="Django" />
