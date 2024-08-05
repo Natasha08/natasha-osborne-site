@@ -106,11 +106,11 @@ export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
         navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses()}`}
         ariaControls="mobile-menu"
       />
-      <MobileNavigationList
+      {/* <MobileNavigationList
         containerClasses="shown md:hidden"
         navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses()}`}
         navId="mobile-menu"
-      />
+      /> */}
     </>
   );
 }
