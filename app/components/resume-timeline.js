@@ -148,15 +148,15 @@ const ResumeTimeline = () => {
           </ul>
         </a>
       </div>
-      <div className="text-center text-text mb-8 z-20">
-        <Link
+      <div className="timeline-item mb-8">
+        <a
           href="/resume"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-interactive text-gray-300 md:text-lg lg:text-xl"
+          className="timeline-content w-1/2 hover:text-interactive font-semibold md:text-lg lg:text-xl"
         >
           View Full Résumé
-        </Link>
+        </a>
       </div>
     </div>
   );
