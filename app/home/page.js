@@ -31,7 +31,7 @@ export default function Main() {
         visible={false}
       />
       <main>
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 max-w-screen-xl">
           {PAGES.map((page, index) => {
             const Component = SCROLL_COMPONENTS.find(
               (c) => c.id == page.id,
@@ -52,7 +52,7 @@ export default function Main() {
           })}
         </div>
         <MouseGlow />
-        <Footer />
+        <Footer sectionRefs={sectionRefs} />
       </main>
     </>
   );

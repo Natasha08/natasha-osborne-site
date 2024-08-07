@@ -5,6 +5,7 @@
 :root {
   --text-white: #F8F8F8;
   --nebula-orange: rgb(173, 121, 95);
+  --deep-blue: rgb(26, 41, 92);
 }
 
 * {
@@ -38,6 +39,22 @@ p {
   }
 }
 
+#about .content {
+  margin-bottom: 50px;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+#about .content.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/************************************************************
+                            Markdown
+*************************************************************/
+
 .markdown {
   @apply text-lg leading-relaxed;
 }
@@ -56,6 +73,10 @@ p {
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+/************************************************************
+                            Menu
+*************************************************************/
 
 @media (max-width: 2000px) {
   .menu {
@@ -77,6 +98,11 @@ p {
 .menu.mobile {
   left: 12px;
   top: 138px;
+}
+
+::selection {
+  color: var(--deep-blue);
+  background: var(--nebula-orange);
 }
 
 /************************************************************

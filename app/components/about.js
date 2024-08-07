@@ -1,40 +1,87 @@
+import {useRef, useEffect} from 'react';
+
 export default function About() {
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const aboutItems = aboutRef.current.querySelectorAll('.content');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      },
+    );
+
+    aboutItems.forEach((item) => {
+      observer.observe(item);
+    });
+
+    return () => {
+      aboutItems.forEach((item) => {
+        observer.unobserve(item);
+      });
+    };
+  }, []);
+
   return (
-    <main className="flex flex-col text-text text-start items-center z-20 pb-48">
-      <div className="xs:w-auto md:w-1/2">
-        <div className="flex col-span-1 flex-col pb-10 w-full items-center text-gray-300 relative bg-translucent-background z-10">
+    <main
+      ref={aboutRef}
+      className="flex flex-col text-text text-start items-center z-20 pb-48 about"
+    >
+      <div className="xs:w-auto md:w-1/2 content">
+        <div className="flex col-span-1 flex-col w-full items-center text-gray-300 relative bg-translucent-background z-10">
           <div className="p-12 space-y-4">
             <p>
-              {`In 2016, I built an Excel spreadsheet that evolved into a PHP app
-              to track my workouts while I awaited news for my Master's in
-              Occupational Therapy.`}
+              In 2016, I built an Excel spreadsheet that evolved into a PHP app
+              to track my workouts. I obtained my first gig as a software
+              engineer 6 months into teaching myself Node and React.
             </p>
             <p>
-              {`When I wasn't selected, I pivoted to learning how to build apps.`}
+              Since then, I&apos;ve worked with many technologies and projects.
+              I love building software! In my latest venture, I am rebuilding
+              the{' '}
+              <a
+                href="https://github.com/Natasha08/fitness-tracker"
+                target="_blank"
+                rel="noopener
+          noreferrer"
+                className="text-interactive"
+              >
+                workout app
+              </a>{' '}
+              that started it all with NextJS.
             </p>
             <p>
-              {`Little did I know that in the year that I waited to reapply for my
-              master's, I would go on to learn Angular, Node, React, Ruby on
-              Rails and get my first gig as a software engineer 6 months into
-              learning.`}
-            </p>
-            <p>
-              {`Since then, I have worked with firmware, Ethereum, mobile apps
-              (native and cross-platform technologies), and many other projects
-              and companies, the latest of which is one of the best EdTech
-              companies out there.`}
-            </p>
-            <p>
-              {`I love building software! In my latest venture, I'm rebuilding the
-              workout app that started it all with NextJS.`}
-            </p>
-            <p>
-              {`When I'm not writing code, I'm hanging out with my husband and
-              cats, playing the latest Zelda game or World of Warcraft.`}
-            </p>
-            <p>
-              {`I'm currently reading the Expanse series, and when I'm not in the
-              mountains, I'm scuba diving at some reef in the Cayman Islands.`}
+              When I&apos;m not{' '}
+              <a
+                href="https://github.com/Natasha08"
+                target="_blank"
+                rel="noopener
+          noreferrer"
+                className="text-interactive"
+              >
+                writing code
+              </a>
+              , I&apos;m reading or playing the latest Zelda game or{' '}
+              <a
+                href="https://github.com/Natasha08/LUA-EditMacroTargets"
+                target="_blank"
+                rel="noopener
+          noreferrer"
+                className="text-interactive"
+              >
+                World of Warcraft
+              </a>
+              World of Warcraft.
             </p>
           </div>
         </div>
