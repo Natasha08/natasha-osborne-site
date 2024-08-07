@@ -27,7 +27,7 @@ export default {
       },
       colors: {
         'transparent': 'rgba(0, 0, 0, 0)',
-        'deep-blue': 'rgb(26, 41, 92)',
+        'deep-blue': 'var(--deep-blue)',
         'translucent-background': 'rgba(26, 41, 92, 0.5)',   // deep space blue
         'interactive': 'var(--nebula-orange)', // nebula orange
         'text': 'var(--text-white)',                  // starlight white
