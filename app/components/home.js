@@ -5,7 +5,7 @@ import satelliteImage from '@/public/starbuck_ship.png';
 
 const Home = () => (
   <div>
-    <div className="bg-surface-of-europa bg-cover blur-sm bg-fixed fixed w-screen">
+    <div className="bg-europa-illustration bg-cover bg-fixed fixed w-screen">
       <StealthItem
         src={shipImage}
         alt="satellite in orbit that is hidden until mousever"
@@ -28,7 +28,7 @@ const Home = () => (
           width="12"
         />
       </header>
-      <p className="block h-3 text-interactive xs:text-lg text-2xl md:text-4xl font-extrabold pb-10">
+      <p className="block h-3 text-interactive xs:text-lg text-2xl md:text-4xl font-[1200] pb-10">
         Full Stack Software Engineer
       </p>
       <p className="pt-4 block h-3 text-text xs:text-sm text-1xl md:text-2xl pt-5 font-extralight">

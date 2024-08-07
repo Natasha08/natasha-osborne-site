@@ -15,6 +15,7 @@ export default {
         'earth-sky-view': 'url(/a-sky-view-of-earth-from-suomi-npp.jpg)',
         'colorful-stars-and-nebulae': 'url(/colorful_stars_and_nebulae.jpg)',
         'surface-of-europa': 'url(/surface_of_europa.png)',
+        'europa-illustration': 'url(/europa_surface_illustration.jpg)',
         'rocky-mountain-1': 'url(/rocky_mountain_1_cropped.jpg)',
         'mobile-rocky-mountain-1': 'url(/mobile_rocky_mountain_1_cropped.jpg)',
         'hubble-hd-189733b': 'url(/hubble_hd_189733b.jpg)',
