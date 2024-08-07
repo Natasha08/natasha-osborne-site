@@ -1,4 +1,5 @@
 import {useRef, useEffect} from 'react';
+import Link from 'next/link';
 
 export default function About() {
   const aboutRef = useRef(null);
@@ -49,7 +50,7 @@ export default function About() {
               Since then, I&apos;ve worked with many technologies and projects.
               I love building software! In my latest venture, I am rebuilding
               the{' '}
-              <a
+              <Link
                 href="https://github.com/Natasha08/fitness-tracker"
                 target="_blank"
                 rel="noopener
@@ -57,12 +58,12 @@ export default function About() {
                 className="text-interactive"
               >
                 workout app
-              </a>{' '}
+              </Link>{' '}
               that started it all with NextJS.
             </p>
             <p>
               When I&apos;m not{' '}
-              <a
+              <Link
                 href="https://github.com/Natasha08"
                 target="_blank"
                 rel="noopener
@@ -70,9 +71,9 @@ export default function About() {
                 className="text-interactive"
               >
                 writing code
-              </a>
+              </Link>
               , I&apos;m reading or playing the latest Zelda game or{' '}
-              <a
+              <Link
                 href="https://github.com/Natasha08/LUA-EditMacroTargets"
                 target="_blank"
                 rel="noopener
@@ -80,7 +81,7 @@ export default function About() {
                 className="text-interactive"
               >
                 World of Warcraft
-              </a>
+              </Link>
               World of Warcraft.
             </p>
           </div>
