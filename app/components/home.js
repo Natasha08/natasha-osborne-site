@@ -18,7 +18,7 @@ const Home = () => (
       />
       <div className="pt-40 flex flex-col h-screen w-full items-center"></div>
     </div>
-    <div className="pt-40 flex flex-col h-screen w-full items-center">
+    <div className="pt-40 flex flex-col h-screen w-full items-center mx-auto">
       <header className="block h-3 text-text text-xl pb-10 font-extralight z-10">
         NATASHA OSBORNE
         <StealthItem
