@@ -94,6 +94,7 @@ const ResumeTimeline = () => {
             <SkillBubble text="Building APIs" />
             <SkillBubble text="Testing" />
             <SkillBubble text="Project Management" />
+            <SkillBubble text="Mentorship" />
           </ul>
         </Link>
       </div>
@@ -119,6 +120,7 @@ const ResumeTimeline = () => {
             <SkillBubble text="React" />
             <SkillBubble text="GraphQL" />
             <SkillBubble text="HTML & CSS" />
+            <SkillBubble text="Building APIs" />
           </ul>
         </Link>
       </div>
