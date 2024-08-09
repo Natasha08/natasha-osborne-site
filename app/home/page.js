@@ -13,9 +13,9 @@ const SCROLL_COMPONENTS = [
   {id: 'about', Component: About},
   {id: 'resume', Component: ResumeTimeline},
   {
-    id: 'skills',
+    id: 'projects',
     Component: function () {
-      return <div className="h-72">Skills!</div>;
+      return <div className="h-72 text-text">Projects</div>;
     },
   },
 ];

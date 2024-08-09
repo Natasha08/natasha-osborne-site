@@ -4,7 +4,7 @@ export const PAGES = [
   {id: 'home', label: 'Home'},
   {id: 'about', label: 'About'},
   {id: 'resume', label: 'Resume'},
-  {id: 'skills', label: 'Skills'},
+  {id: 'projects', label: 'Projects'},
 ];
 
 export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
