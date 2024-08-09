@@ -1,123 +1,75 @@
-import {useEffect, useState} from 'react';
-import Link from 'next/link';
-import {usePathname} from 'next/navigation';
+'use client';
 
-const PAGES = [
-  {about: 'About'},
-  {posts: 'Blog'},
-  {resume: 'Resume'},
-  {work: 'Work'},
-  {home: 'Home'},
+export const PAGES = [
+  {id: 'home', label: 'Home'},
+  {id: 'about', label: 'About'},
+  {id: 'resume', label: 'Resume'},
+  // {id: 'projects', label: 'Projects'},
 ];
 
-const PagesList = ({
-  selectedIndex,
-  setSelectedIndex,
-  navigationLink,
-  isMobile = false,
-}) =>
-  PAGES.map((page, index) => (
-    <Link
-      key={`${index}-${navigationLink}`}
-      href={`/${Object.keys(page)[0]}`}
-      className={`text-background py-4 px-6 block hover:text-interactive focus:outline-none ${setClassForText(selectedIndex, index, isMobile)}`}
-      aria-current="page"
-      onClick={() => setSelectedIndex(index)}
-    >
-      {Object.values(page)[0]}
-    </Link>
-  ));
-
-const setClassForText = (selectedIndex, index, isMobile) => {
-  if (selectedIndex === index)
-    return `text-interactive font-medium ${!isMobile ? 'border-blue-500 border-b-2' : ''}`;
-  return 'text-white';
-};
-
-const navBackgroundClasses = () => {
-  return 'bg-black bg-opacity-50 text-text fixed top-0 left-0 w-full z-10';
-};
-
-export default function AppNav() {
-  const [selectedIndex, setSelectedIndex] = useState(null);
-  const [navInitialized, setNavInitialized] = useState(false);
-  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
-  const parsedPathname = usePathname().replace(/\//g, '');
-  const [pathname, setPathname] = useState(parsedPathname);
-  const navigationLink = '-navigation-link-';
-  const mobileNavigationLink = '-nmobile-avigation-link-';
-
-  if (!navInitialized) {
-    if (pathname) {
-      const initialIndex = PAGES.findIndex(
-        (page) => Object.keys(page)[0] === pathname,
-      );
-      setSelectedIndex(initialIndex);
-      setNavInitialized(true);
+export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
+  const setNavColors = () => {
+    if (activeSection != 'home') {
+      return 'border-interactive ';
+    } else {
+      return 'border-blue-500 ';
     }
-  }
+  };
 
-  useEffect(() => {
-    if (parsedPathname != pathname) {
-      setPathname(parsedPathname);
-      setToggleMobileMenu(false);
-    }
-  }, [pathname, parsedPathname]);
+  const Menu = ({activeSection, sectionRefs, pages}) => (
+    <div className="pt-40 flex col-span-1 flex-col items-center">
+      <ul className="pt-12 items-center menu">
+        {pages.map((page, index) => {
+          return (
+            <li key={index} className="group">
+              <input
+                type="radio"
+                key={page.id}
+                name="nav-menu"
+                defaultChecked={activeSection === page.id}
+                data-tooltip-target={`tooltip-default-${index}`}
+                className={`appearance-none w-4 h-4 border-2 rounded-full ${setNavColors()} ${activeSection == page.id ? 'bg-white' : ''}`}
+                onClick={() => {
+                  sectionRefs[index].current.scrollIntoView({
+                    behavior: 'smooth',
+                  });
+                }}
+              />
+              <span
+                id={`tooltip-default-${index}`}
+                role="tooltip"
+                className="absolute z-10 inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-deep-blue rounded-lg shadow-sm opacity-0 tooltip z-20 hover:visible group-hover:opacity-100"
+              >
+                {page.label}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+
+  const navBackgroundClasses = () => {
+    return 'text-text fixed top-0 left-0 w-full z-10';
+  };
 
   const NavigationList = ({containerClasses, navClasses}) => (
     <div className={containerClasses}>
       <nav className={navClasses}>
-        <PagesList
-          selectedIndex={selectedIndex}
-          setSelectedIndex={setSelectedIndex}
-          navigationLink={navigationLink}
+        <Menu
+          activeSection={activeSection ? activeSection : 'home'}
+          sectionRefs={sectionRefs}
+          pages={pages}
         />
       </nav>
     </div>
   );
 
-  const MobileNavigationList = ({containerClasses, navClasses, navId}) => (
-    <div className={containerClasses}>
-      <div className={navClasses} id={navId}>
-        <button
-          className="fixed text-blue-600 p-3 z-10"
-          aria-controls={navId}
-          onClick={() => setToggleMobileMenu(!toggleMobileMenu)}
-        >
-          <svg
-            className="block h-4 w-4 fill-current text-white"
-            viewBox="0 0 20 20"
-          >
-            <title>Mobile menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-          </svg>
-        </button>
-        <div
-          className={`m-5 bg-black fixed ${toggleMobileMenu ? 'shown' : 'hidden'}`}
-        >
-          <PagesList
-            selectedIndex={selectedIndex}
-            setSelectedIndex={setSelectedIndex}
-            mobileNavigationLink={mobileNavigationLink}
-            isMobile={true}
-          />
-        </div>
-      </div>
-    </div>
-  );
-
   return (
-    <>
-      <NavigationList
-        containerClasses="hidden md:block"
-        navClasses={`flex flex-col sm:flex-row-reverse ${navBackgroundClasses()}`}
-        ariaControls="mobile-menu"
-      />
-      <MobileNavigationList
-        containerClasses="shown md:hidden"
-        navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses()}`}
-        navId="mobile-menu"
-      />
-    </>
+    <NavigationList
+      containerClasses="hidden md:block"
+      navClasses={`flex flex-col sm:flex-row ${navBackgroundClasses()}`}
+      ariaControls="mobile-menu"
+    />
   );
 }

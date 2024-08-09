@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "next lint --fix"
+    "lint-fix": "next lint --fix",
+    "test": "playwright test"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.623.0",
+    "@aws-sdk/s3-request-presigner": "^3.623.0",
+    "@heroicons/react": "^2.1.5",
     "@react-three/drei": "^9.109.2",
     "@react-three/fiber": "^8.16.8",
     "@vercel/speed-insights": "^1.0.12",
@@ -17,11 +21,15 @@
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-intersection-observer": "^9.13.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
+    "sharp": "^0.33.4",
     "three": "^0.167.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@types/node": "^22.1.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.5",
     "eslint-config-prettier": "^9.1.0",

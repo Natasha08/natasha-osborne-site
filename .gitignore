@@ -4,3 +4,9 @@ node_modules
 .git
 out
 partials.js
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+tests-examples
+.env

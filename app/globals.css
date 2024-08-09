@@ -3,14 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background-rgb: 0, 0, 0;
-  --foreground-rgb: 255, 255, 255;
-  --primary-color: #A8DADC;
-  --secondary-color: #457B9D;
-  --background-color: #F1FAEE;
-  --text-color: #E63946;
-  --accent-color: #E63946;
-  --orange-rgb: 176, 107, 67;
+  --text-white: #F8F8F8;
+  --nebula-orange: rgb(173, 121, 95);
+  --deep-blue: rgb(26, 41, 92);
 }
 
 * {
@@ -19,6 +14,10 @@
 
 body {
   background-color: black;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -40,6 +39,22 @@ p {
   }
 }
 
+#about .content {
+  margin-bottom: 50px;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+#about .content.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/************************************************************
+                            Markdown
+*************************************************************/
+
 .markdown {
   @apply text-lg leading-relaxed;
 }
@@ -59,3 +74,96 @@ p {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
 
+/************************************************************
+                            Menu
+*************************************************************/
+
+@media (max-width: 2000px) {
+  .menu {
+      top: 50%;
+      transform: translateY(-50%);
+  }
+}
+
+.menu {
+  position: fixed;
+  left: 20px;
+  top: 322px;
+  width: 55px;
+  text-align: center;
+  padding: 24px 0;
+  z-index: 20;
+}
+
+.menu.mobile {
+  left: 12px;
+  top: 138px;
+}
+
+::selection {
+  color: var(--deep-blue);
+  background: var(--nebula-orange);
+}
+
+/************************************************************
+                  Resume Timeline Styling
+*************************************************************/
+
+.timeline-item {
+  margin-bottom: 50px;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.timeline-item.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-content {
+  display: block;
+  padding: 15px;
+  border-radius: 6px;
+  color: var(--text--white);
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-content h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.timeline-content p {
+  margin: 0;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--text-white);
+  border-radius: 50%;
+  left: -48px;
+  top: 7px;
+  transition: .3s;
+}
+
+.timeline-content:hover::before {
+  background-color: var(--nebula-orange);
+}
+
+.timeline-content::after {
+  content: '';
+  background: #333333;
+  width: 1px;
+  height: 145%;
+  position: absolute;
+  left: -43px;
+  top: 10px;
+  z-index: -1;
+}
