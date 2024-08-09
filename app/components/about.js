@@ -48,18 +48,8 @@ export default function About() {
             </p>
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
-              I love building software! In my latest venture, I am rebuilding
-              the{' '}
-              <Link
-                href="https://github.com/Natasha08/fitness-tracker"
-                target="_blank"
-                rel="noopener
-          noreferrer"
-                className="text-interactive"
-              >
-                workout app
-              </Link>{' '}
-              that started it all with NextJS.
+              I love building software! In my latest venture, I am building a
+              budgeting app (link coming soon).
             </p>
             <p>
               When I&apos;m not{' '}
@@ -80,9 +70,8 @@ export default function About() {
           noreferrer"
                 className="text-interactive"
               >
-                World of Warcraft
+                World of Warcraft.
               </Link>
-              World of Warcraft.
             </p>
           </div>
         </div>

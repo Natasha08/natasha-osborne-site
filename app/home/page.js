@@ -12,12 +12,12 @@ const SCROLL_COMPONENTS = [
   {id: 'home', Component: Home},
   {id: 'about', Component: About},
   {id: 'resume', Component: ResumeTimeline},
-  {
-    id: 'skills',
-    Component: function () {
-      return <div className="h-72">Skills!</div>;
-    },
-  },
+  // {
+  //   id: 'projects',
+  //   Component: function () {
+  //     return <div className="h-72 text-text">Projects</div>;
+  //   },
+  // },
 ];
 
 export default function Main() {
