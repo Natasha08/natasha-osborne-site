@@ -3,6 +3,7 @@
 ### Screenshots
 
 ### Infrastructure Changes
+- [ ] Relevant environment variables have been updated before deployment
 
 ### Performance Testing
 
