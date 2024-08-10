@@ -4,7 +4,7 @@ export const PAGES = [
   {id: 'home', label: 'Home'},
   {id: 'about', label: 'About'},
   {id: 'resume', label: 'Resume'},
-  // {id: 'projects', label: 'Projects'},
+  {id: 'projects', label: 'Projects'},
 ];
 
 export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
@@ -28,7 +28,7 @@ export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
                 name="nav-menu"
                 defaultChecked={activeSection === page.id}
                 data-tooltip-target={`tooltip-default-${index}`}
-                className={`appearance-none w-4 h-4 border-2 rounded-full ${setNavColors()} ${activeSection == page.id ? 'bg-white' : ''}`}
+                className={`appearance-none w-4 h-4 border-2 rounded-full cursor-pointer ${setNavColors()} ${activeSection == page.id ? 'bg-white' : ''}`}
                 onClick={() => {
                   sectionRefs[index].current.scrollIntoView({
                     behavior: 'smooth',
@@ -38,7 +38,7 @@ export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
               <span
                 id={`tooltip-default-${index}`}
                 role="tooltip"
-                className="absolute z-10 inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-deep-blue rounded-lg shadow-sm opacity-0 tooltip z-20 hover:visible group-hover:opacity-100"
+                className="absolute inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-deep-blue rounded-lg shadow-sm opacity-0 tooltip z-20 hover:visible group-hover:opacity-100"
               >
                 {page.label}
               </span>
