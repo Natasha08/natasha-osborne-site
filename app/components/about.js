@@ -36,7 +36,8 @@ export default function About() {
   return (
     <main
       ref={aboutRef}
-      className="flex flex-col text-text text-start items-center z-20 pb-48 about"
+      id="about-me"
+      className="flex flex-col text-text text-start items-center z-20 pb-48"
     >
       <div className="xs:w-auto md:w-1/2 content">
         <div className="flex col-span-1 flex-col w-full items-center text-gray-300 relative bg-translucent-background z-10">
