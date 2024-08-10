@@ -63,7 +63,7 @@ export default function About() {
               >
                 writing code
               </Link>
-              , I&apos;m reading or playing the latest Zelda game or{' '}
+              , I&apos;m reading, playing the latest Zelda game or{' '}
               <Link
                 href="https://github.com/Natasha08/LUA-EditMacroTargets"
                 target="_blank"
