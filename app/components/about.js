@@ -34,11 +34,7 @@ export default function About() {
   }, []);
 
   return (
-    <main
-      ref={aboutRef}
-      id="about-me"
-      className="main-container"
-    >
+    <main ref={aboutRef} id="about-me" className="main-container">
       <div className="content">
         <header className="pb-12">ABOUT</header>
         <div className="flex col-span-1 flex-col w-full items-center relative bg-translucent-background z-10">

@@ -44,10 +44,7 @@ const ResumeTimeline = () => {
   }, []);
 
   return (
-    <div
-      ref={timelineRef}
-      className="timeline main-container"
-    >
+    <div ref={timelineRef} className="timeline main-container">
       <div className="content group">
         <header className="relative pb-12">RESUME & SKILLS</header>
 
@@ -66,7 +63,9 @@ const ResumeTimeline = () => {
             <p className="text-lg md:text-xl lg:text-2xl">
               Full Stack Software Engineer
             </p>
-            <p className="text-interactive text-sm md:text-base">ParentSquare</p>
+            <p className="text-interactive text-sm md:text-base">
+              ParentSquare
+            </p>
             <ul className="mt-2 flex flex-wrap space-x-2">
               <SkillBubble text="Javascript" />
               <SkillBubble text="Ruby on Rails" />
