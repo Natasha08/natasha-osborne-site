@@ -37,10 +37,11 @@ export default function About() {
     <main
       ref={aboutRef}
       id="about-me"
-      className="flex flex-col text-text text-start items-center z-20 pb-48"
+      className="main-container"
     >
-      <div className="xs:w-auto md:w-1/2 content">
-        <div className="flex col-span-1 flex-col w-full items-center text-gray-300 relative bg-translucent-background z-10">
+      <div className="content">
+        <header className="pb-12">ABOUT</header>
+        <div className="flex col-span-1 flex-col w-full items-center relative bg-translucent-background z-10">
           <div className="p-12 space-y-4">
             <p>
               In 2016, I built an Excel spreadsheet that evolved into a PHP app

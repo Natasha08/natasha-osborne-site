@@ -31,7 +31,7 @@ const Home = () => (
       <p className="block h-3 text-interactive xs:text-lg text-2xl md:text-4xl font-[1200] pb-10">
         Full Stack Software Engineer
       </p>
-      <p className="pt-4 block h-3 text-text xs:text-sm text-1xl md:text-2xl pt-5 font-extralight">
+      <p className="block h-3 text-text xs:text-sm text-1xl md:text-2xl pt-5 font-extralight">
         BASED IN COLORADO, USA
       </p>
     </div>
