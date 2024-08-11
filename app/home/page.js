@@ -30,8 +30,9 @@ export default function Main() {
         <div className="grid grid-cols-1 max-w-screen-xl">
           {PAGES.map((page, index) => {
             const Component = SCROLL_COMPONENTS.find(
-              (c) => c.id == page.id,
+              (c) => c.id === page.id,
             )?.Component;
+
             return (
               <section
                 id={page.id}

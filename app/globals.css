@@ -164,7 +164,7 @@ p {
   height: 12px;
   background: var(--text-white);
   border-radius: 50%;
-  left: -48px;
+  left: -30px;
   top: 7px;
   transition: .3s;
 }
@@ -179,7 +179,7 @@ p {
   width: 1px;
   height: 145%;
   position: absolute;
-  left: -43px;
+  left: -25px;
   top: 10px;
   z-index: -1;
 }
