@@ -7,17 +7,13 @@ import AppNav, {PAGES} from '@/components/app-nav';
 import Home from '@/components/home';
 import About from '@/components/about';
 import ResumeTimeline from '@/components/resume-timeline';
+import Projects from '@/components/projects';
 
 const SCROLL_COMPONENTS = [
   {id: 'home', Component: Home},
   {id: 'about', Component: About},
   {id: 'resume', Component: ResumeTimeline},
-  // {
-  //   id: 'projects',
-  //   Component: function () {
-  //     return <div className="h-72 text-text">Projects</div>;
-  //   },
-  // },
+  {id: 'projects', Component: Projects},
 ];
 
 export default function Main() {
@@ -44,7 +40,6 @@ export default function Main() {
                   sectionRefs[index].current = el;
                   observerRefs[index].current = el;
                 }}
-                className="h-fit col-start-1"
               >
                 {Component ? <Component /> : page.label}
               </section>
