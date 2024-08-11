@@ -1,5 +1,5 @@
 'use client';
-import React, {useRef, useEffect, useState} from 'react';
+import {useRef, useEffect, useState, memo} from 'react';
 import {useFrame, useThree} from '@react-three/fiber';
 import {useTexture, Torus} from '@react-three/drei';
 import * as THREE from 'three';
@@ -110,7 +110,7 @@ const Camera = ({
   return null;
 };
 
-const PortalCamera = React.memo(Camera);
+const PortalCamera = memo(Camera);
 
 const RotatingPortal = ({
   imageUrl = '/stargate_outer_ring_original.png',
@@ -228,4 +228,4 @@ const RotatingPortal = ({
   );
 };
 
-export default React.memo(RotatingPortal);
+export default memo(RotatingPortal);
