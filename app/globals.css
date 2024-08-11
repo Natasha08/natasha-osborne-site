@@ -10,6 +10,7 @@
 
 * {
   box-sizing: border-box;
+  @apply text-gray-300;
 }
 
 body {
@@ -38,6 +39,21 @@ p {
     text-wrap: balance;
   }
 }
+
+/************************************************************
+                          General
+*************************************************************/
+.main-container {
+  @apply flex flex-col text-text text-start items-center z-20 pb-48;
+}
+
+.main-container .content {
+  @apply w-3/4 xxs:w-full xs:w-3/4 md:w-1/2;
+}
+
+/************************************************************
+                            About
+*************************************************************/
 
 #about .content {
   margin-bottom: 50px;
