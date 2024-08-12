@@ -48,16 +48,18 @@ export default function About() {
             </p>
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
-              I love building software! In my latest venture, I am building a
-              budgeting app (link coming soon).
+              I love building software! In my latest personal project, I built a{' '}
+              <Link href="/space" className="text-interactive">
+                3d animation scene{' '}
+              </Link>
+              with ThreeJS.
             </p>
             <p>
               When I&apos;m not{' '}
               <Link
                 href="https://github.com/Natasha08"
                 target="_blank"
-                rel="noopener
-          noreferrer"
+                rel="noopener noreferrer"
                 className="text-interactive"
               >
                 writing code
@@ -66,8 +68,7 @@ export default function About() {
               <Link
                 href="https://github.com/Natasha08/LUA-EditMacroTargets"
                 target="_blank"
-                rel="noopener
-          noreferrer"
+                rel="noopener noreferrer"
                 className="text-interactive"
               >
                 World of Warcraft.
