@@ -1,3 +1,5 @@
+export const revalidate = 60 * 60; // Revalidate every hour
+
 import {getS3SignedUrl} from '@/lib/api';
 
 export default async function Resume() {
