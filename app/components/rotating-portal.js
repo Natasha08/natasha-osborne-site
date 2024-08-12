@@ -79,7 +79,7 @@ const Camera = ({
 
         if (distanceToTarget <= 0.2 && assetsLoaded) {
           // Once the camera reaches the target position, move to the final position
-          router.push('/home');
+          router.push('/');
         } else if (distanceToIntermediate > 0.1 && distanceToTarget > 10) {
           // Move towards the intermediate position
           cameraPosition.lerp(intermediatePosition, 0.4 * delta);
@@ -127,6 +127,7 @@ const RotatingPortal = ({
   const [rotationSpeed, setRotationSpeed] = useState(-2); // Initial rotation speed
   const [decelerating, setDecelerating] = useState(false);
   const [stopped, setStopped] = useState(false);
+  const [clockRestarted, setClockRestarted] = useState(false);
   const decelerationStartTime = useRef(null);
 
   const updateTexture = (newTextureUrl) => {
@@ -154,8 +155,13 @@ const RotatingPortal = ({
     }
 
     if (decelerating) {
+      if (!clockRestarted) {
+        clock = new THREE.Clock();
+        setClockRestarted(true);
+      }
+
       const elapsed = clock.elapsedTime - decelerationStartTime.current;
-      const decelerationDuration = 3; // Duration of deceleration in seconds
+      const decelerationDuration = 1; // Duration of deceleration in seconds
 
       if (elapsed < decelerationDuration) {
         const t = elapsed / decelerationDuration;
