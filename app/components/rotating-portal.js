@@ -155,6 +155,8 @@ const RotatingPortal = ({
     }
 
     if (decelerating) {
+      // TODO: This was added as a bandaid because line 167 was not performing well.
+
       if (!clockRestarted) {
         clock = new THREE.Clock();
         setClockRestarted(true);
