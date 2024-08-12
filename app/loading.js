@@ -4,10 +4,7 @@ import {useState, useEffect} from 'react';
 import Image from 'next/image';
 import PortalImage from '@/public/stargate_outer_ring_original.png';
 
-const LOADING_PATHS = [
-  '/',
-  '/space',
-];
+const LOADING_PATHS = ['/', '/space'];
 
 export default function Loading() {
   const [shouldPrioritize, setShouldPrioritize] = useState(false);
@@ -27,8 +24,7 @@ export default function Loading() {
           width="75"
           height="auto"
           priority={shouldPrioritize}
-        >
-        </Image>
+        ></Image>
         <span className="sr-only">Loading...</span>
       </div>
     </main>
