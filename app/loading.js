@@ -6,7 +6,7 @@ import PortalImage from '@/public/stargate_outer_ring_original.png';
 
 const LOADING_PATHS = [
   '/',
-  '/home',
+  '/space',
 ];
 
 export default function Loading() {
