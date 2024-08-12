@@ -48,8 +48,7 @@ export default function About() {
             </p>
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
-              I love building software! In my latest personal project, I
-              built a{' '}
+              I love building software! In my latest personal project, I built a{' '}
               <Link href="/space" className="text-interactive">
                 3d animation scene{' '}
               </Link>
