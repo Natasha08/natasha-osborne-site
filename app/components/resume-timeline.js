@@ -56,7 +56,7 @@ const ResumeTimeline = () => {
           className="timeline-content w-1/2 hover:bg-deep-blue"
         >
           <h2 className="hover:text-interactive text-gray-400 text-md">
-            2022-2024
+            2024-Present
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl">
             Full Stack Software Engineer
