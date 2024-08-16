@@ -61,7 +61,7 @@ const ResumeTimeline = () => {
           <p className="text-lg md:text-xl lg:text-2xl">
             Full Stack Software Engineer
           </p>
-          <p className="text-interactive text-sm md:text-base">Freelance</p>
+          <p className="text-interactive text-sm md:text-base font-extrabold">Freelance</p>
           <ul className="mt-2 flex flex-wrap">
             <SkillBubble text="React Native" />
             <SkillBubble text="Ruby on Rails" />
@@ -87,7 +87,7 @@ const ResumeTimeline = () => {
           <p className="text-lg md:text-xl lg:text-2xl">
             Full Stack Software Engineer
           </p>
-          <p className="text-interactive text-sm md:text-base">ParentSquare</p>
+          <p className="text-interactive text-sm md:text-base font-extrabold">ParentSquare</p>
           <ul className="mt-2 flex flex-wrap">
             <SkillBubble text="Javascript" />
             <SkillBubble text="Ruby on Rails" />
@@ -108,7 +108,7 @@ const ResumeTimeline = () => {
             2019-2022
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
-          <p className="text-interactive text-sm md:text-base">
+          <p className="text-interactive text-sm md:text-base font-extrabold">
             Radial Development Group
           </p>
           <ul className="mt-2 flex flex-wrap">
@@ -138,7 +138,7 @@ const ResumeTimeline = () => {
           <p className="text-lg md:text-xl lg:text-2xl">
             Full Stack Software Engineer
           </p>
-          <p className="text-interactive text-sm md:text-base">
+          <p className="text-interactive text-sm md:text-base font-extrabold">
             Origin Protocol
           </p>
           <ul className="mt-2 flex flex-wrap">
@@ -162,7 +162,7 @@ const ResumeTimeline = () => {
             2017-2018
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
-          <p className="text-interactive text-sm md:text-base">
+          <p className="text-interactive text-sm md:text-base font-extrabold">
             Radial Development Group
           </p>
           <ul className="mt-2 flex flex-wrap">
