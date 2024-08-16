@@ -7,6 +7,8 @@ import MPPileConfigImage from '@/public/mp_pile_config.png';
 import PTEIndexImage from '@/public/pte_index.png';
 import {ArrowTopRightOnSquareIcon} from '@heroicons/react/20/solid';
 
+//#TODO: Convert this style to the card style
+
 const ProjectsPage = () => {
   return (
     <main className="main-container">
