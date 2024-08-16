@@ -214,8 +214,7 @@
 
 // export default ProjectsPage;
 
-import React, { useState } from 'react';
-
+import React, {useState} from 'react';
 
 const projects = [
   // {
@@ -229,34 +228,40 @@ const projects = [
     title: 'Mindful Budgeter',
     year: 2024,
     technologies: ['React Native'],
-    image: { src: '/space_project.jpg', style: 'cover' },
-    description: 'A budgeting app that focuses on bringing awareness to each transaction',
+    image: {src: '/space_project.jpg', style: 'cover'},
+    description:
+      'A budgeting app that focuses on bringing awareness to each transaction',
   },
   {
     title: '3D Space',
     year: 2024,
     technologies: ['ThreeJS', 'NextJS'],
-    image: { src: '/space_project.jpg', style: 'cover' },
+    image: {src: '/space_project.jpg', style: 'cover'},
     description: 'Another project description.',
   },
   {
     title: '3D Space',
     year: 2024,
     technologies: ['Docker', 'NodeJS'],
-    image: { src: '/space_project.jpg', style: 'cover' },
+    image: {src: '/space_project.jpg', style: 'cover'},
     description: 'An article about dockerizing a legacy node project',
   },
   // More projects...
 ];
 
-const allTechnologies = [...new Set(projects.flatMap(project => project.technologies))];
+const allTechnologies = [
+  ...new Set(projects.flatMap((project) => project.technologies)),
+];
 
 export default function ProjectsList() {
   const [selectedTechnology, setSelectedTechnology] = useState('All');
 
-  const filteredProjects = selectedTechnology === 'All'
-    ? projects
-    : projects.filter(project => project.technologies.includes(selectedTechnology));
+  const filteredProjects =
+    selectedTechnology === 'All'
+      ? projects
+      : projects.filter((project) =>
+          project.technologies.includes(selectedTechnology),
+        );
 
   return (
     <div className="p-6 bg-deep-blue">
@@ -265,7 +270,9 @@ export default function ProjectsList() {
         <div className="flex flex-wrap mt-2">
           <button
             className={`px-4 py-2 mr-2 mb-2 text-sm font-medium rounded ${
-              selectedTechnology === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+              selectedTechnology === 'All'
+                ? 'bg-blue-600 text-white'
+                : 'bg-gray-200 text-gray-800'
             }`}
             onClick={() => setSelectedTechnology('All')}
           >
@@ -275,7 +282,9 @@ export default function ProjectsList() {
             <button
               key={index}
               className={`px-4 py-2 mr-2 mb-2 text-sm font-medium rounded ${
-                selectedTechnology === tech ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                selectedTechnology === tech
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-200 text-gray-800'
               }`}
               onClick={() => setSelectedTechnology(tech)}
             >
@@ -311,7 +320,9 @@ export default function ProjectsList() {
                   </span>
                 ))}
               </div>
-              <p className="mt-3 text-gray-700 text-wrap">{project.description}</p>
+              <p className="mt-3 text-gray-700 text-wrap">
+                {project.description}
+              </p>
             </div>
           </div>
         ))}
