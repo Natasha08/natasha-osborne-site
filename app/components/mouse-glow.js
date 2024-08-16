@@ -2,13 +2,18 @@
 
 import {useEffect, useState, useRef} from 'react';
 
-const BACKGROUNDS = ['.bg-surface-of-europa', '.bg-mobile-rocky-mountain-1'];
+const BACKGROUNDS = [
+  '.bg-surface-of-europa',
+  '.bg-mobile-rocky-mountain-1',
+  '.bg-deep-blue',
+];
 
 const DEFAULT_GLOW = [0, 128, 255];
 
 const BACKGROUND_MOUSE_GLOW = {
   '.bg-surface-of-europa': DEFAULT_GLOW,
   '.bg-mobile-rocky-mountain-1': [157, 105, 193],
+  '.bg-deep-blue': [216, 220, 225],
 };
 
 const getBackgroundMouseGlow = (
