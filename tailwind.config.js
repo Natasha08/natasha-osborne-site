@@ -12,6 +12,7 @@ export default {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'colorful-stars-and-nebulae': 'url(/colorful_stars_and_nebulae.jpg)',
         'europa-illustration': 'url(/europa_surface_illustration.jpg)',
+        'juno-jupiter': 'url(/juno_jupiter.jpg)'
       },
       screens: {
         'rotate': {'raw': '(orientation: landscape)'},
@@ -29,7 +30,9 @@ export default {
         'europa-glow': 'rgba(79, 53, 17, 0.5)',
         'neon-blue': '#1F51FF',
         'glow-blue': 'rgb(0, 128, 255)',
-        'translucent-gray': 'rgba(128, 128, 128, 0.3)'
+        'translucent-gray': 'rgba(128, 128, 128, 0.3)',
+        'jupiter-dark-beige': 'var(--jupiter-dark-beige)',
+        'test': '#5C4D1A'
       },
     },
   },
