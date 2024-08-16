@@ -7,4 +7,4 @@
 -
 
 ### Infrastructure Changes
-- [ ] Relevant environment variables have been updated before deployment
+- [ ] Relevant environment variables (and s3 uploads) have been updated before deployment
