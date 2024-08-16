@@ -44,6 +44,35 @@ const ResumeTimeline = () => {
         <div className="timeline-item mb-8 hover:bg-deep-blue group/a">
           <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/a:opacity-100" />
           <Link
+            href="/resume"
+            target="_blank"
+            rel="noopener
+            noreferrer"
+            className="timeline-content"
+          >
+            <h2 className="hover:text-interactive text-gray-400 text-md">
+              2024-Present
+            </h2>
+            <p className="text-lg md:text-xl lg:text-2xl">
+              Full Stack Software Engineer
+            </p>
+            <p className="text-interactive text-sm md:text-base font-extrabold">
+              Freelance
+            </p>
+            <ul className="mt-2 flex flex-wrap">
+              <SkillBubble text="React Native" />
+              <SkillBubble text="Ruby on Rails" />
+              <SkillBubble text="NextJS" />
+              <SkillBubble text="ThreeJS" />
+              <SkillBubble text="HTML & CSS" />
+              <SkillBubble text="Building APIs" />
+              <SkillBubble text="Technical blog posts" />
+            </ul>
+          </Link>
+        </div>
+        <div className="timeline-item mb-8 hover:bg-deep-blue group/a">
+          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/a:opacity-100" />
+          <Link
             href="https://parentsquare.com"
             target="_blank"
             rel="noopener
@@ -56,9 +85,11 @@ const ResumeTimeline = () => {
             <p className="text-lg md:text-xl lg:text-2xl">
               Full Stack Software Engineer
             </p>
-            <p className="text-interactive text-sm md:text-base">
+            <p className="text-interactive text-sm md:text-base font-extrabold">
+
               ParentSquare
-            </p>
+
+          </p>
             <ul className="mt-2 flex flex-wrap">
               <SkillBubble text="Javascript" />
               <SkillBubble text="Ruby on Rails" />
@@ -74,13 +105,13 @@ const ResumeTimeline = () => {
             target="_blank"
             rel="noopener
             noreferrer"
-            className="timeline-content :hover:bg-deep-blue"
+            className="timeline-content"
           >
             <h2 className="hover:text-interactive text-gray-400 text-md">
               2019-2022
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
-            <p className="text-interactive text-sm md:text-base">
+            <p className="text-interactive text-sm md:text-base font-extrabold">
               Radial Development Group
             </p>
             <ul className="mt-2 flex flex-wrap">
@@ -103,7 +134,7 @@ const ResumeTimeline = () => {
             target="_blank"
             rel="noopener
             noreferrer"
-            className="timeline-content :hover:bg-deep-blue"
+            className="timeline-content"
           >
             <h2 className="hover:text-interactive text-gray-400 text-md">
               2018-2019
@@ -111,7 +142,7 @@ const ResumeTimeline = () => {
             <p className="text-lg md:text-xl lg:text-2xl">
               Full Stack Software Engineer
             </p>
-            <p className="text-interactive text-sm md:text-base">
+            <p className="text-interactive text-sm md:text-base font-extrabold">
               Origin Protocol
             </p>
             <ul className="mt-2 flex flex-wrap">
@@ -130,13 +161,13 @@ const ResumeTimeline = () => {
             target="_blank"
             rel="noopener
             noreferrer"
-            className="timeline-content :hover:bg-deep-blue"
+            className="timeline-content"
           >
             <h2 className="hover:text-interactive text-gray-400 text-md">
               2017-2018
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
-            <p className="text-interactive text-sm md:text-base">
+            <p className="text-interactive text-sm md:text-base font-extrabold">
               Radial Development Group
             </p>
             <ul className="mt-2 flex flex-wrap">
@@ -147,16 +178,17 @@ const ResumeTimeline = () => {
               <SkillBubble text="Building APIs" />
               <SkillBubble text="Testing" />
               <SkillBubble text="Project Management" />
-            </ul>
+              <SkillBubble text="Technical blog posts" />
+          </ul>
           </Link>
         </div>
-        <div className="timeline-item mb-8 hover:bg-deep-blue group/e">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/e:opacity-100" />
+        <div className="timeline-item mb-8 group/e">
+          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-5 left-48 opacity-0 text-gray-500 group-hover/e:opacity-100" />
           <Link
             href="/resume"
             target="_blank"
             rel="noopener noreferrer"
-            className="timeline-content :hover:bg-deep-blue hover:text-interactive font-semibold md:text-lg lg:text-xl"
+            className="timeline-content hover:text-interactive font-semibold md:text-lg lg:text-xl"
           >
             View Full Résumé
           </Link>
