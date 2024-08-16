@@ -61,7 +61,9 @@ const ResumeTimeline = () => {
           <p className="text-lg md:text-xl lg:text-2xl">
             Full Stack Software Engineer
           </p>
-          <p className="text-interactive text-sm md:text-base font-extrabold">Freelance</p>
+          <p className="text-interactive text-sm md:text-base font-extrabold">
+            Freelance
+          </p>
           <ul className="mt-2 flex flex-wrap">
             <SkillBubble text="React Native" />
             <SkillBubble text="Ruby on Rails" />
@@ -87,7 +89,9 @@ const ResumeTimeline = () => {
           <p className="text-lg md:text-xl lg:text-2xl">
             Full Stack Software Engineer
           </p>
-          <p className="text-interactive text-sm md:text-base font-extrabold">ParentSquare</p>
+          <p className="text-interactive text-sm md:text-base font-extrabold">
+            ParentSquare
+          </p>
           <ul className="mt-2 flex flex-wrap">
             <SkillBubble text="Javascript" />
             <SkillBubble text="Ruby on Rails" />
