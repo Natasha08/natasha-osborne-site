@@ -49,6 +49,32 @@ const ResumeTimeline = () => {
     >
       <div className="timeline-item mb-8">
         <Link
+          href="/resume"
+          target="_blank"
+          rel="noopener
+          noreferrer"
+          className="timeline-content w-1/2 hover:bg-deep-blue"
+        >
+          <h2 className="hover:text-interactive text-gray-400 text-md">
+            2022-2024
+          </h2>
+          <p className="text-lg md:text-xl lg:text-2xl">
+            Full Stack Software Engineer
+          </p>
+          <p className="text-interactive text-sm md:text-base">Freelance</p>
+          <ul className="mt-2 flex flex-wrap">
+            <SkillBubble text="React Native" />
+            <SkillBubble text="Ruby on Rails" />
+            <SkillBubble text="NextJS" />
+            <SkillBubble text="ThreeJS" />
+            <SkillBubble text="HTML & CSS" />
+            <SkillBubble text="Building APIs" />
+            <SkillBubble text="Technical blog posts" />
+          </ul>
+        </Link>
+      </div>
+      <div className="timeline-item mb-8">
+        <Link
           href="https://parentsquare.com"
           target="_blank"
           rel="noopener
@@ -147,6 +173,7 @@ const ResumeTimeline = () => {
             <SkillBubble text="Building APIs" />
             <SkillBubble text="Testing" />
             <SkillBubble text="Project Management" />
+            <SkillBubble text="Technical blog posts" />
           </ul>
         </Link>
       </div>
