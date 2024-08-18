@@ -39,8 +39,8 @@ export default function About() {
       className="flex flex-col text-text text-start items-center z-20 pb-48 about"
     >
       <div className="xs:w-auto md:w-1/2 content">
-        <div className="flex col-span-1 flex-col w-full items-center text-gray-300 relative bg-translucent-background z-10">
-          <div className="p-12 space-y-4">
+        <div className="flex col-span-1 flex-col w-full items-center text-gray-300 relative translucent-background z-10 py-5 px-5">
+          <div className="p-4 md:p-6 lg:p-12 space-y-12">
             <p>
               In 2016, I built an Excel spreadsheet that evolved into a PHP app
               to track my workouts. I obtained my first gig as a software
@@ -49,7 +49,10 @@ export default function About() {
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
               I love building software! In my latest personal project, I built a{' '}
-              <Link href="/space" className="text-interactive">
+              <Link
+                href="/space"
+                className="text-muted-gold hover:text-interactive"
+              >
                 3d animation scene{' '}
               </Link>
               with ThreeJS.
@@ -60,7 +63,7 @@ export default function About() {
                 href="https://github.com/Natasha08"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-interactive"
+                className="text-muted-gold hover:text-interactive"
               >
                 writing code
               </Link>
@@ -69,7 +72,7 @@ export default function About() {
                 href="https://github.com/Natasha08/LUA-EditMacroTargets"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-interactive"
+                className="text-muted-gold hover:text-interactive"
               >
                 World of Warcraft.
               </Link>

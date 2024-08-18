@@ -1,25 +1,18 @@
 import StealthItem from '@/components/stealth-item';
 import characterImage from '@/public/character_leaning.png';
-import shipImage from '@/public/satellite_1.jpg';
-import satelliteImage from '@/public/starbuck_ship.png';
 
 const Home = () => (
   <div>
-    <div className="bg-europa-illustration fixed inset-0 bg-cover bg-center z-0 w-screen">
-      <StealthItem
-        src={shipImage}
-        alt="satellite in orbit that is hidden until mousever"
-        positionClasses="top-40 right-36 opacity-0 md:opacity-100"
-      />
-      <StealthItem
-        src={satelliteImage}
-        alt="ship that is hidden until mouseover"
-        positionClasses="top-40 left-20 opacity-0 md:opacity-100"
-      />
+    <div
+      className="fixed inset-0 bg-cover bg-center z-0 w-screen home"
+      style={{
+        background: `radial-gradient(circle at center, rgb(26, 41, 92) 0%, rgb(42, 63, 136) 60%, rgb(19, 30, 67) 100%)`,
+      }}
+    >
       <div className="pt-40 flex flex-col h-screen w-full items-center"></div>
     </div>
-    <div className="pt-40 flex flex-col h-screen w-full items-center mx-auto">
-      <header className="block h-3 text-text text-xl pb-10 font-extralight z-10">
+    <div className="pt-40 flex flex-col h-screen w-screen items-center mx-auto">
+      <header className="text-center text-4xl pb-10 font-bold z-10 tracking-wider">
         NATASHA OSBORNE
         <StealthItem
           src={characterImage}
@@ -28,10 +21,10 @@ const Home = () => (
           width="12"
         />
       </header>
-      <p className="block h-3 text-interactive xs:text-lg text-2xl md:text-4xl font-[1200] pb-10">
+      <p className="text-center text-3xl font-semibold pb-6 hover:text-blue-500 transition-colors duration-300 text-muted-gold">
         Full Stack Software Engineer
       </p>
-      <p className="block h-3 text-text xs:text-sm text-1xl md:text-2xl pt-5 font-extralight">
+      <p className="text-center text-xl font-light pt-4">
         BASED IN COLORADO, USA
       </p>
     </div>
