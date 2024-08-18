@@ -6,10 +6,12 @@
   --text-white: #F8F8F8;
   --nebula-orange: rgb(173, 121, 95);
   --deep-blue: rgb(26, 41, 92);
+  --jupiter-dark-beige: rgb(133 123 102);
 }
 
 * {
   box-sizing: border-box;
+  @apply text-gray-300;
 }
 
 body {
@@ -38,6 +40,21 @@ p {
     text-wrap: balance;
   }
 }
+
+/************************************************************
+                          General
+*************************************************************/
+.main-container {
+  @apply flex flex-col text-text text-start items-center z-20 pb-48;
+}
+
+.main-container .content {
+  @apply w-3/4 xxs:w-full xs:w-3/4 md:w-1/2;
+}
+
+/************************************************************
+                            About
+*************************************************************/
 
 #about .content {
   margin-bottom: 50px;
@@ -148,7 +165,7 @@ p {
   height: 12px;
   background: var(--text-white);
   border-radius: 50%;
-  left: -48px;
+  left: -30px;
   top: 7px;
   transition: .3s;
 }
@@ -163,7 +180,7 @@ p {
   width: 1px;
   height: 145%;
   position: absolute;
-  left: -43px;
+  left: -25px;
   top: 10px;
   z-index: -1;
 }

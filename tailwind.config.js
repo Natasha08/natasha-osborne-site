@@ -10,20 +10,14 @@ export default {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'earth-sky-view': 'url(/a-sky-view-of-earth-from-suomi-npp.jpg)',
         'colorful-stars-and-nebulae': 'url(/colorful_stars_and_nebulae.jpg)',
-        'surface-of-europa': 'url(/surface_of_europa.png)',
         'europa-illustration': 'url(/europa_surface_illustration.jpg)',
-        'rocky-mountain-1': 'url(/rocky_mountain_1_cropped.jpg)',
-        'mobile-rocky-mountain-1': 'url(/mobile_rocky_mountain_1_cropped.jpg)',
-        'hubble-hd-189733b': 'url(/hubble_hd_189733b.jpg)',
-        'earth-center-view': 'url(/earth_center_view.jpg)'
+        'juno-jupiter': 'url(/juno_jupiter.jpg)'
       },
       screens: {
         'rotate': {'raw': '(orientation: landscape)'},
-        'xs': {'max': '450px'},
+        'xs': {'max': '639px'},
+        'xxs': {'max': '450px'}
       },
       colors: {
         'transparent': 'rgba(0, 0, 0, 0)',
@@ -36,7 +30,9 @@ export default {
         'europa-glow': 'rgba(79, 53, 17, 0.5)',
         'neon-blue': '#1F51FF',
         'glow-blue': 'rgb(0, 128, 255)',
-        'translucent-gray': 'rgba(128, 128, 128, 0.3)'
+        'translucent-gray': 'rgba(128, 128, 128, 0.3)',
+        'jupiter-dark-beige': 'var(--jupiter-dark-beige)',
+        'test': '#5C4D1A'
       },
     },
   },
