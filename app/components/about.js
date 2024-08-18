@@ -49,7 +49,10 @@ export default function About() {
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
               I love building software! In my latest personal project, I built a{' '}
-              <Link href="/space" className="text-muted-gold hover:text-interactive">
+              <Link
+                href="/space"
+                className="text-muted-gold hover:text-interactive"
+              >
                 3d animation scene{' '}
               </Link>
               with ThreeJS.

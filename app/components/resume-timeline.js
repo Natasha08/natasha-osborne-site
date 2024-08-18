@@ -51,9 +51,7 @@ const ResumeTimeline = () => {
             <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2024-Present
             </h2>
-            <p className="text-lg md:text-xl">
-              Full Stack Software Engineer
-            </p>
+            <p className="text-lg md:text-xl">Full Stack Software Engineer</p>
             <p className="text-muted-gold text-sm md:text-base font-extrabold">
               Freelance
             </p>
@@ -80,9 +78,7 @@ const ResumeTimeline = () => {
             <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2022-2024
             </h2>
-            <p className="text-lg md:text-xl">
-              Full Stack Software Engineer
-            </p>
+            <p className="text-lg md:text-xl">Full Stack Software Engineer</p>
             <p className="text-muted-gold text-sm md:text-base font-extrabold">
               ParentSquare
             </p>
@@ -135,9 +131,7 @@ const ResumeTimeline = () => {
             <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2018-2019
             </h2>
-            <p className="text-lg md:text-xl">
-              Full Stack Software Engineer
-            </p>
+            <p className="text-lg md:text-xl">Full Stack Software Engineer</p>
             <p className="text-muted-gold text-sm md:text-base font-extrabold">
               Origin Protocol
             </p>
