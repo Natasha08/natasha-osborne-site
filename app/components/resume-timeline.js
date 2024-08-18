@@ -37,9 +37,9 @@ const ResumeTimeline = () => {
   }, []);
 
   return (
-    <div ref={timelineRef} className="timeline main-container md:ml-24">
+    <div ref={timelineRef} className="timeline main-container">
       <div className="content group">
-        <div className="timeline-item mb-8 hover:bg-neon-blue hover:bg-opacity-15 group/a">
+        <div className="timeline-item mb-8 group/a">
           <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/a:opacity-100" />
           <Link
             href="/resume"
@@ -51,7 +51,7 @@ const ResumeTimeline = () => {
             <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2024-Present
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl">
+            <p className="text-lg md:text-xl">
               Full Stack Software Engineer
             </p>
             <p className="text-muted-gold text-sm md:text-base font-extrabold">
@@ -68,7 +68,7 @@ const ResumeTimeline = () => {
             </ul>
           </Link>
         </div>
-        <div className="timeline-item mb-8 hover:bg-neon-blue hover:bg-opacity-15 group/a">
+        <div className="timeline-item mb-8 hover:translucent-background group/a">
           <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/a:opacity-100" />
           <Link
             href="https://parentsquare.com"
@@ -80,7 +80,7 @@ const ResumeTimeline = () => {
             <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2022-2024
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl">
+            <p className="text-lg md:text-xl">
               Full Stack Software Engineer
             </p>
             <p className="text-muted-gold text-sm md:text-base font-extrabold">
@@ -94,7 +94,7 @@ const ResumeTimeline = () => {
             </ul>
           </Link>
         </div>
-        <div className="timeline-item mb-8 hover:bg-neon-blue hover:bg-opacity-15 group/b">
+        <div className="timeline-item mb-8 hover:translucent-background group/b">
           <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/b:opacity-100" />
           <Link
             href="https://radialdevgroup.com"
@@ -106,7 +106,7 @@ const ResumeTimeline = () => {
             <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2019-2022
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
+            <p className="text-lg md:text-xl">Developer Lead</p>
             <p className="text-muted-gold text-sm md:text-base font-extrabold">
               Radial Development Group
             </p>
@@ -123,7 +123,7 @@ const ResumeTimeline = () => {
             </ul>
           </Link>
         </div>
-        <div className="timeline-item mb-8 hover:bg-neon-blue hover:bg-opacity-15 group/c">
+        <div className="timeline-item mb-8 hover:translucent-background group/c">
           <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/c:opacity-100" />
           <Link
             href="https://originprotocol.com"
@@ -135,7 +135,7 @@ const ResumeTimeline = () => {
             <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2018-2019
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl">
+            <p className="text-lg md:text-xl">
               Full Stack Software Engineer
             </p>
             <p className="text-muted-gold text-sm md:text-base font-extrabold">
@@ -150,7 +150,7 @@ const ResumeTimeline = () => {
             </ul>
           </Link>
         </div>
-        <div className="timeline-item mb-8 hover:bg-neon-blue hover:bg-opacity-15 group/d">
+        <div className="timeline-item mb-8 hover:translucent-background group/d">
           <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/d:opacity-100" />
           <Link
             href="https://radialdevgroup.com"
@@ -162,7 +162,7 @@ const ResumeTimeline = () => {
             <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2017-2018
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
+            <p className="text-lg md:text-xl">Developer Lead</p>
             <p className="text-muted-gold text-sm md:text-base font-extrabold">
               Radial Development Group
             </p>
@@ -179,7 +179,7 @@ const ResumeTimeline = () => {
           </Link>
         </div>
         <div className="timeline-item mb-8 group/e">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-5 left-48 opacity-0 text-gray-500 group-hover/e:opacity-100" />
+          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-7 left-52 opacity-0 text-gray-500 group-hover/e:opacity-100" />
           <Link
             href="/resume"
             target="_blank"

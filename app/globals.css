@@ -16,7 +16,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: radial-gradient(circle at center, rgb(26, 41, 92) 0%, rgb(42, 63, 136) 60%, rgb(19, 30, 67) 100%);
 }
 
 html {
@@ -67,6 +67,13 @@ p {
 #about .content.in-view {
   opacity: 1;
   transform: translateX(0);
+}
+
+.translucent-background {
+  box-shadow: 0px6px12pxrgba(0, 0, 0, 0.25);
+  text-shadow: 1px1px2pxrgba(0, 0, 0, 0.35);
+  background: linear-gradient(135deg, rgba(26, 41, 92, 0.6) 20%, rgba(19, 30, 67, 0.6) 80%, rgba(10, 20, 48, 0.6) 100%);
+  border-radius: 10px;
 }
 
 /************************************************************
@@ -139,9 +146,15 @@ p {
   transform: translateX(0);
 }
 
+.timeline-item.in-view:not(:last-child):hover {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, rgba(26, 41, 92, 0.45) 20%, rgba(19, 30, 67, 0.45) 80%);
+}
+
 .timeline-content {
   display: block;
-  padding: 15px;
+  padding: 25px;
   border-radius: 6px;
   color: var(--text--white);
 
