@@ -38,7 +38,7 @@ export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
               <span
                 id={`tooltip-default-${index}`}
                 role="tooltip"
-                className="absolute inline-block px-3 text-sm font-medium text-white transition-opacity duration-300 rounded-lg shadow-sm tooltip z-20 hover:visible group-hover:opacity-100 group-hover:text-muted-gold"
+                className={`absolute inline-block px-3 text-sm font-medium transition-opacity duration-300 rounded-lg shadow-sm tooltip z-20 hover:visible group-hover:opacity-100 ${activeSection == page.id ? 'text-interactive' : 'text-white'} group-hover:text-muted-gold`}
               >
                 {page.label}
               </span>
