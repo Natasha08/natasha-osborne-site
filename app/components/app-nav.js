@@ -10,7 +10,7 @@ export const PAGES = [
 export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
   const setNavColors = () => {
     if (activeSection != 'home') {
-      return 'border-interactive ';
+      return 'border-muted-gold ';
     } else {
       return 'border-blue-500 ';
     }
@@ -38,7 +38,7 @@ export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
               <span
                 id={`tooltip-default-${index}`}
                 role="tooltip"
-                className="absolute inline-block px-3 text-sm font-medium text-white transition-opacity duration-300 bg-deep-blue rounded-lg shadow-sm tooltip z-20 hover:visible group-hover:opacity-100"
+                className="absolute inline-block px-3 text-sm font-medium text-white transition-opacity duration-300 rounded-lg shadow-sm tooltip z-20 hover:visible group-hover:opacity-100 group-hover:text-muted-gold"
               >
                 {page.label}
               </span>

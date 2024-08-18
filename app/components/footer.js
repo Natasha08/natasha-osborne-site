@@ -7,7 +7,7 @@ const Footer = ({sectionRefs}) => (
         © 2024{' '}
         <Link
           href="https://natasha-osborne.dev"
-          className="hover:underline hover:text-interactive"
+          className="hover:underline hover:text-muted-gold"
         >
           Natasha Osborne
         </Link>
@@ -17,7 +17,7 @@ const Footer = ({sectionRefs}) => (
         <li>
           <button
             href="#about"
-            className="hover:underline hover:text-interactive me-4 md:me-6"
+            className="hover:underline hover:text-muted-gold me-4 md:me-6"
             onClick={() => {
               sectionRefs
                 .find((ref) => ref.current.id == 'about')
@@ -32,7 +32,7 @@ const Footer = ({sectionRefs}) => (
         <li>
           <Link
             href="mailto: admin@natasha-osborne.dev"
-            className="font-medium hover:text-interactive hover:underline"
+            className="font-medium hover:text-muted-gold hover:underline"
           >
             Contact
           </Link>

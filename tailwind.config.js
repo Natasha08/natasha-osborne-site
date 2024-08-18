@@ -22,7 +22,6 @@ export default {
       colors: {
         'transparent': 'rgba(0, 0, 0, 0)',
         'deep-blue': 'var(--deep-blue)',
-        'translucent-background': 'rgba(26, 41, 92, 0.5)',   // deep space blue
         'interactive': 'var(--nebula-orange)', // nebula orange
         'text': 'var(--text-white)',                  // starlight white
         'important': '#8A2BE2',  // nebula purple
@@ -32,7 +31,7 @@ export default {
         'glow-blue': 'rgb(0, 128, 255)',
         'translucent-gray': 'rgba(128, 128, 128, 0.3)',
         'jupiter-dark-beige': 'var(--jupiter-dark-beige)',
-        'test': '#5C4D1A'
+        'muted-gold': 'var(--muted-gold)'
       },
     },
   },

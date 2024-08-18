@@ -49,7 +49,7 @@ export default function About() {
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
               I love building software! In my latest personal project, I built a{' '}
-              <Link href="/space" className="text-interactive">
+              <Link href="/space" className="text-muted-gold hover:text-interactive">
                 3d animation scene{' '}
               </Link>
               with ThreeJS.
@@ -60,7 +60,7 @@ export default function About() {
                 href="https://github.com/Natasha08"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-interactive"
+                className="text-muted-gold hover:text-interactive"
               >
                 writing code
               </Link>
@@ -69,7 +69,7 @@ export default function About() {
                 href="https://github.com/Natasha08/LUA-EditMacroTargets"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-interactive"
+                className="text-muted-gold hover:text-interactive"
               >
                 World of Warcraft.
               </Link>

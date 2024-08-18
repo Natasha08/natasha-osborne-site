@@ -48,13 +48,13 @@ const ResumeTimeline = () => {
             noreferrer"
             className="timeline-content"
           >
-            <h2 className="hover:text-interactive text-gray-400 text-md">
+            <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2024-Present
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl">
               Full Stack Software Engineer
             </p>
-            <p className="text-interactive text-sm md:text-base font-extrabold">
+            <p className="text-muted-gold text-sm md:text-base font-extrabold">
               Freelance
             </p>
             <ul className="mt-2 flex flex-wrap">
@@ -77,13 +77,13 @@ const ResumeTimeline = () => {
             noreferrer"
             className="timeline-content"
           >
-            <h2 className="hover:text-interactive text-gray-400 text-md">
+            <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2022-2024
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl">
               Full Stack Software Engineer
             </p>
-            <p className="text-interactive text-sm md:text-base font-extrabold">
+            <p className="text-muted-gold text-sm md:text-base font-extrabold">
               ParentSquare
             </p>
             <ul className="mt-2 flex flex-wrap">
@@ -103,11 +103,11 @@ const ResumeTimeline = () => {
             noreferrer"
             className="timeline-content"
           >
-            <h2 className="hover:text-interactive text-gray-400 text-md">
+            <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2019-2022
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
-            <p className="text-interactive text-sm md:text-base font-extrabold">
+            <p className="text-muted-gold text-sm md:text-base font-extrabold">
               Radial Development Group
             </p>
             <ul className="mt-2 flex flex-wrap">
@@ -132,13 +132,13 @@ const ResumeTimeline = () => {
             noreferrer"
             className="timeline-content"
           >
-            <h2 className="hover:text-interactive text-gray-400 text-md">
+            <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2018-2019
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl">
               Full Stack Software Engineer
             </p>
-            <p className="text-interactive text-sm md:text-base font-extrabold">
+            <p className="text-muted-gold text-sm md:text-base font-extrabold">
               Origin Protocol
             </p>
             <ul className="mt-2 flex flex-wrap">
@@ -159,11 +159,11 @@ const ResumeTimeline = () => {
             noreferrer"
             className="timeline-content"
           >
-            <h2 className="hover:text-interactive text-gray-400 text-md">
+            <h2 className="hover:text-muted-gold text-gray-400 text-md">
               2017-2018
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl">Developer Lead</p>
-            <p className="text-interactive text-sm md:text-base font-extrabold">
+            <p className="text-muted-gold text-sm md:text-base font-extrabold">
               Radial Development Group
             </p>
             <ul className="mt-2 flex flex-wrap">
@@ -184,7 +184,7 @@ const ResumeTimeline = () => {
             href="/resume"
             target="_blank"
             rel="noopener noreferrer"
-            className="timeline-content hover:text-interactive font-semibold md:text-lg lg:text-xl"
+            className="timeline-content hover:text-muted-gold font-semibold md:text-lg lg:text-xl"
           >
             View Full Résumé
           </Link>
