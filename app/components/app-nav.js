@@ -38,7 +38,7 @@ export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
               <span
                 id={`tooltip-default-${index}`}
                 role="tooltip"
-                className={`absolute inline-block px-3 text-sm font-medium transition-opacity duration-300 rounded-lg shadow-sm tooltip z-20 hover:visible group-hover:opacity-100 ${activeSection == page.id ? 'text-interactive' : 'text-white'} group-hover:text-muted-gold`}
+                className={`absolute inline-block px-3 text-sm font-medium transition-opacity duration-300 rounded-lg shadow-sm tooltip z-20 hover:visible group-hover:opacity-100 ml-1 ${activeSection == page.id ? 'selected-menu-item font-black' : 'text-white'} group-hover:text-muted-gold`}
               >
                 {page.label}
               </span>
@@ -50,7 +50,7 @@ export default function AppNav({activeSection, sectionRefs, pages = PAGES}) {
   );
 
   const navBackgroundClasses = () => {
-    return 'text-text fixed top-0 left-0 w-full z-10';
+    return 'text-text fixed top-0 left-0 z-10';
   };
 
   const NavigationList = ({containerClasses, navClasses}) => (

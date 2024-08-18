@@ -39,8 +39,8 @@ const ResumeTimeline = () => {
   return (
     <div ref={timelineRef} className="timeline main-container">
       <div className="content group">
-        <div className="timeline-item mb-8 group/a">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/a:opacity-100" />
+      <div className="timeline-item mb-8 hover:translucent-background group/f">
+          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/f:opacity-100" />
           <Link
             href="/resume"
             target="_blank"
