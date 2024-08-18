@@ -36,7 +36,7 @@ export default function About() {
   return (
     <main
       ref={aboutRef}
-      className="flex flex-col text-text text-start items-center z-20 pb-48 about"
+      className="flex flex-col text-text text-start items-center z-20 pt-28 about"
     >
       <div className="xs:w-auto md:w-1/2 content">
         <div className="flex col-span-1 flex-col w-full items-center text-gray-300 relative translucent-background z-10 py-5 px-5">
@@ -80,7 +80,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="xs:w-1/3 lg:w-1/2"></div>
+      <div className="xs:w-1/3 lg:w-1/2 pb-48"></div>
     </main>
   );
 }
