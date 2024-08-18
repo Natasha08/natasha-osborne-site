@@ -1,21 +1,9 @@
 import StealthItem from '@/components/stealth-item';
 import characterImage from '@/public/character_leaning.png';
-import shipImage from '@/public/satellite_1.jpg';
-import satelliteImage from '@/public/starbuck_ship.png';
 
 const Home = () => (
   <div>
     <div className="bg-deep-blue fixed inset-0 bg-cover bg-center z-0 w-screen">
-      <StealthItem
-        src={shipImage}
-        alt="satellite in orbit that is hidden until mousever"
-        positionClasses="top-40 right-36 opacity-0 md:opacity-100"
-      />
-      <StealthItem
-        src={satelliteImage}
-        alt="ship that is hidden until mouseover"
-        positionClasses="top-40 left-20 opacity-0 md:opacity-100"
-      />
       <div className="pt-40 flex flex-col h-screen w-full items-center"></div>
     </div>
     <div className="pt-40 flex flex-col h-screen w-full items-center mx-auto">
