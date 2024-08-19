@@ -1,5 +1,6 @@
-import {useRef, useEffect} from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { UserIcon } from '@heroicons/react/24/outline';
 
 export default function About() {
   const aboutRef = useRef(null);
@@ -34,13 +35,17 @@ export default function About() {
   }, []);
 
   return (
-    <main
-      ref={aboutRef}
-      className="flex flex-col text-text text-start items-center z-20 pt-28 about"
-    >
-      <div className="xs:w-auto md:w-1/2 content">
-        <div className="flex col-span-1 flex-col w-full items-center text-gray-300 relative translucent-background z-10 py-5 px-5">
-          <div className="p-4 md:p-6 lg:p-12 space-y-12">
+    <main ref={aboutRef} className="main-container lg:ml-52 lg:pt-36">
+      <div className="lg:ml-48 w-full lg:w-3/4">
+        <header className="relative z-10 ml-10 lg:ml-16 flex flex-row items-center">
+          <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
+          <span className="pl-2 flex items-center text-lg lg:text-xl font-medium text-[#f5f5f5]">
+            About
+          </span>
+        </header>
+
+        <div className="relative z-10 px-5">
+          <div className="p-4 md:p-6 lg:p-12 space-y-12 text-wrap leading-loose">
             <p>
               In 2016, I built an Excel spreadsheet that evolved into a PHP app
               to track my workouts. I obtained my first gig as a software
@@ -49,11 +54,8 @@ export default function About() {
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
               I love building software! In my latest personal project, I built a{' '}
-              <Link
-                href="/space"
-                className="text-muted-gold hover:text-interactive"
-              >
-                3d animation scene{' '}
+              <Link href="/space" className="text-[#ffcc80] hover:text-interactive">
+                3d animation h-ene{' '}
               </Link>
               with ThreeJS.
             </p>
@@ -63,7 +65,7 @@ export default function About() {
                 href="https://github.com/Natasha08"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-gold hover:text-interactive"
+                className="text-[#ffcc80] hover:text-interactive"
               >
                 writing code
               </Link>
@@ -72,7 +74,7 @@ export default function About() {
                 href="https://github.com/Natasha08/LUA-EditMacroTargets"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-gold hover:text-interactive"
+                className="text-[#ffcc80] hover:text-interactive"
               >
                 World of Warcraft.
               </Link>
@@ -80,7 +82,6 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="xs:w-1/3 lg:w-1/2 pb-48"></div>
     </main>
   );
 }
