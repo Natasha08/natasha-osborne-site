@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import StealthItem from '@/components/stealth-item';
-import characterImage from '@/public/character_leaning.png';
 import profileImage from '@/public/profile_image.jpg';
 import {EnvelopeIcon} from '@heroicons/react/24/solid';
 
@@ -13,12 +11,6 @@ const Sidebar = () => (
       <div className="pt-20 flex flex-col items-center justify-center mx-auto">
         <header className="text-center text-4xl pb-10 font-semibold z-20 tracking-wide text-[#f5f5f5]">
           Natasha Osborne
-          <StealthItem
-            src={characterImage}
-            alt="Natasha character that is hidden until mouseover"
-            positionClasses="top-32 inset-1/2 w-12 opacity-0 lg:opacity-100"
-            width="12"
-          />
         </header>
         <p className="text-center text-2xl font-medium pb-6 transition-colors duration-300 text-[#d4af37] z-20 hover:text-[#ffcc80]">
           Senior Software Engineer
