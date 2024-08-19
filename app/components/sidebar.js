@@ -15,7 +15,7 @@ const Sidebar = () => (
         <p className="text-center text-2xl font-medium pb-6 transition-colors duration-300 text-[#d4af37] z-20 hover:text-[#ffcc80]">
           Senior Software Engineer
         </p>
-        <p className="text-center text-md max-w-96 font-light pt-4 z-20 leading-relaxed text-[#f5f5f5]">
+        <p className="text-center text-md max-w-96 font-light pt-4 z-20 leading-loose text-[#f5f5f5]">
           Delivering complete app solutions, from database modeling to
           deployment on leading PaaS platforms, and publishing on the Google
           Play and Apple App Stores.

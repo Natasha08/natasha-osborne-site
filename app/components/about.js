@@ -36,8 +36,8 @@ export default function About() {
 
   return (
     <main ref={aboutRef} className="main-container lg:ml-52 lg:pt-36">
-      <div className="lg:ml-48 w-full lg:w-3/4">
-        <header className="relative z-10 ml-10 lg:ml-16 flex flex-row items-center">
+      <div className="lg:ml-48 w-full lg:w-3/4 max-w-4xl">
+        <header className="relative z-10 ml-10 lg:ml-16 2xl:ml-3 flex flex-row items-center">
           <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
           <span className="pl-2 flex items-center text-lg lg:text-xl font-medium text-[#f5f5f5]">
             About
@@ -45,7 +45,7 @@ export default function About() {
         </header>
 
         <div className="relative z-10 px-5">
-          <div className="p-4 md:p-6 lg:p-12 space-y-12 text-wrap leading-loose">
+          <div className="p-4 md:p-6 lg:p-12 2xl:px-0 space-y-12 text-wrap leading-loose 2xl:leading-relaxed">
             <p>
               In 2016, I built an Excel spreadsheet that evolved into a PHP app
               to track my workouts. I obtained my first gig as a software
@@ -58,7 +58,7 @@ export default function About() {
                 href="/space"
                 className="text-[#ffcc80] hover:text-interactive"
               >
-                3d animation h-ene{' '}
+                3d animation scene{' '}
               </Link>
               with ThreeJS.
             </p>
