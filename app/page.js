@@ -1,9 +1,8 @@
 'use client';
 
 import MouseGlow from '@/components/mouse-glow';
-import Footer from '@/components/footer';
 import useIntersection from '@/components/use-intersection';
-import Sidebar, {PAGES} from '@/components/app-nav';
+import Sidebar, {PAGES} from '@/components/sidebar';
 import Home from '@/components/home';
 import About from '@/components/about';
 import ResumeTimeline from '@/components/resume-timeline';
