@@ -1,6 +1,6 @@
-import { useRef, useEffect } from 'react';
+import {useRef, useEffect} from 'react';
 import Link from 'next/link';
-import { UserIcon } from '@heroicons/react/24/outline';
+import {UserIcon} from '@heroicons/react/24/outline';
 
 export default function About() {
   const aboutRef = useRef(null);
@@ -54,7 +54,10 @@ export default function About() {
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
               I love building software! In my latest personal project, I built a{' '}
-              <Link href="/space" className="text-[#ffcc80] hover:text-interactive">
+              <Link
+                href="/space"
+                className="text-[#ffcc80] hover:text-interactive"
+              >
                 3d animation h-ene{' '}
               </Link>
               with ThreeJS.

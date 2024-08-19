@@ -2,7 +2,7 @@ import {useEffect, useRef} from 'react';
 import Link from 'next/link';
 import {ArrowTopRightOnSquareIcon} from '@heroicons/react/20/solid';
 import SkillBubble from './skill-bubble';
-import { DocumentTextIcon } from '@heroicons/react/24/outline';
+import {DocumentTextIcon} from '@heroicons/react/24/outline';
 
 const ResumeTimeline = () => {
   const timelineRef = useRef(null);
@@ -42,9 +42,7 @@ const ResumeTimeline = () => {
       <div className="content group w-3/4 lg:w-1/2">
         <header className="relative z-10 flex flex-row">
           <DocumentTextIcon className="h-7 w-7 lg:ml-5 top-4 text-gray-500 hover:fill-[#d4af37]" />
-          <span className="pl-2 flex items-center">
-            Resume
-          </span>
+          <span className="pl-2 flex items-center">Resume</span>
         </header>
         <div className="timeline-item hover:bg-opacity-15 hover:bg-deep-blue mb-8 group/f">
           <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/f:opacity-100" />

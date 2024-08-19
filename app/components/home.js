@@ -1,8 +1,3 @@
-import Image from 'next/image';
-import StealthItem from '@/components/stealth-item';
-import characterImage from '@/public/character_leaning.png';
-import characterAtDesk from '@/public/character_at_desk.jpeg';
-
 const Home = () => (
   <div className="">
     <div

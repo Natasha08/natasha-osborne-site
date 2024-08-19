@@ -5,9 +5,9 @@ import Image from 'next/image';
 import StealthItem from '@/components/stealth-item';
 import characterImage from '@/public/character_leaning.png';
 import profileImage from '@/public/profile_image.jpg';
-import { EnvelopeIcon } from '@heroicons/react/24/solid';
+import {EnvelopeIcon} from '@heroicons/react/24/solid';
 
-const Sidebar = ({ activeSection, sectionRefs, pages }) => (
+const Sidebar = () => (
   <div className="lg:ml-12 lg:fixed lg:left-0 lg:top-0 h-fit justify-between p-4 pl-1 text-white z-10 lg:w-1/3 bg-opacity-0 w-screen col-span-1 lg:col-span-2 main-container">
     <div className="flex flex-col items-center space-y-4">
       <div className="pt-20 flex flex-col items-center justify-center mx-auto">
@@ -24,7 +24,9 @@ const Sidebar = ({ activeSection, sectionRefs, pages }) => (
           Senior Software Engineer
         </p>
         <p className="text-center text-md max-w-96 font-light pt-4 z-20 leading-relaxed text-[#f5f5f5]">
-          Delivering complete app solutions, from database modeling to deployment on leading PaaS platforms, and publishing on the Google Play and Apple App Stores.
+          Delivering complete app solutions, from database modeling to
+          deployment on leading PaaS platforms, and publishing on the Google
+          Play and Apple App Stores.
         </p>
         <div className="mt-10 mx-10 h-auto w-auto max-w-96 flex justify-center z-20">
           <div className="relative group">
@@ -35,15 +37,14 @@ const Sidebar = ({ activeSection, sectionRefs, pages }) => (
               style={{
                 border: '2px solid rgba(212, 175, 55, 0.6)',
                 borderRadius: '12px',
-                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3), 0px 6px 20px rgba(0, 0, 0, 0.6)',
+                boxShadow:
+                  '0px 4px 10px rgba(0, 0, 0, 0.3), 0px 6px 20px rgba(0, 0, 0, 0.6)',
                 filter: 'brightness(1.2)',
               }}
               priority
             />
 
-            <div
-              className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            >
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <span className="text-white text-sm">
                 <Link href="https://github.com/natasha08" target="_blank">
                   View Profile
@@ -69,7 +70,13 @@ const Sidebar = ({ activeSection, sectionRefs, pages }) => (
       </div>
       <div className="flex flex-row">
         <Link href="https://github.com/natasha08" target="_blank">
-          <Image src="/octocat.png" alt="Github Logo" height={30} width={30} className="h-auto w-auto" />
+          <Image
+            src="/octocat.png"
+            alt="Github Logo"
+            height={30}
+            width={30}
+            className="h-auto w-auto"
+          />
         </Link>
 
         <Link
@@ -85,9 +92,8 @@ const Sidebar = ({ activeSection, sectionRefs, pages }) => (
 
 export default Sidebar;
 
-
 export const PAGES = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'resume', label: 'Resume' },
+  {id: 'home', label: 'Home'},
+  {id: 'about', label: 'About'},
+  {id: 'resume', label: 'Resume'},
 ];
