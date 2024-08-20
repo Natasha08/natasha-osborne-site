@@ -40,7 +40,7 @@ const ResumeTimeline = () => {
   return (
     <div ref={timelineRef} className="timeline main-container lg:ml-72">
       <div className="content group w-3/4 lg:w-1/2">
-        <header className="relative z-10 flex flex-row items-center pb-16 resume-icon">
+        <header className="relative z-10 flex flex-row items-center pb-16 -ml-8">
           <DocumentTextIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
           <span className="pl-2 flex items-center">Resume</span>
         </header>

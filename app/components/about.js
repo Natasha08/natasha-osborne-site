@@ -40,14 +40,14 @@ export default function About() {
       className="main-container lg:ml-80 lg-mid:ml-72 xl-mid:ml-82 2xl:ml-98 3xl:ml-72 lg:pt-20"
     >
       <div className="w-full lg:w-3/4 max-w-4xl">
-        <header className="relative z-10 xs:ml-8 sm:ml-8-1/2 md:ml-10 lg:ml-16 2xl:ml-3 flex flex-row items-center">
+        <header className="relative z-10 ml-5 sm:ml-8-1/2 md:ml-10 lg:ml-16 2xl:ml-3 flex flex-row items-center">
           <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
           <span className="pl-2 flex items-center text-lg lg:text-xl font-medium text-[#f5f5f5]">
             About
           </span>
         </header>
 
-        <div className="relative z-10 px-5">
+        <div className="relative z-10 px-2 lg:px-5">
           <div className="p-4 md:p-6 lg:p-12 2xl:px-0 space-y-12 text-wrap leading-loose 2xl:leading-relaxed">
             <p>
               In 2016, I built an Excel spreadsheet that evolved into a PHP app
