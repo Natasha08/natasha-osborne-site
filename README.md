@@ -1,5 +1,7 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Natasha08/natasha-osborne-site/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Natasha08/natasha-osborne-site/tree/production)
 
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/beda36d4-4b58-4ecd-985e-c383e9949a19">
+
 Portfolio website created with [Next.js](https://nextjs.org/docs) (for future features)
 
 ## Forking the Repo
