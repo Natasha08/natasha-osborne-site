@@ -1,7 +1,7 @@
 const SkillBubble = ({
   text,
-  textColor = 'text-blue-500',
-  textBackground = 'bg-deep-blue',
+  textColor = 'text-sky-400',
+  textBackground = 'bg-sky-400/10',
 }) => (
   <li className="mr-1.5 mt-2">
     <div

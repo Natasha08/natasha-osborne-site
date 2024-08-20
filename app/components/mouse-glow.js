@@ -8,10 +8,10 @@ const BACKGROUNDS = [
   '.bg-deep-blue',
 ];
 
-const DEFAULT_GLOW = [0, 128, 255];
+const DEFAULT_GLOW = [216, 220, 225];
 
 const BACKGROUND_MOUSE_GLOW = {
-  '.bg-surface-of-europa': DEFAULT_GLOW,
+  '.bg-surface-of-europa': [0, 128, 255],
   '.bg-mobile-rocky-mountain-1': [157, 105, 193],
   '.bg-deep-blue': [216, 220, 225],
 };

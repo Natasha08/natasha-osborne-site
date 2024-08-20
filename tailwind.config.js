@@ -17,12 +17,14 @@ export default {
       screens: {
         'rotate': {'raw': '(orientation: landscape)'},
         'xs': {'max': '639px'},
-        'xxs': {'max': '450px'}
+        'xxs': {'max': '450px'},
+        'lg-mid': {'min': '1024px', 'max': '1180px'},
+        'xl-mid': {'min': '1400px', 'max': '1535px'},
+        '3xl': {'min': '1800px'}
       },
       colors: {
         'transparent': 'rgba(0, 0, 0, 0)',
         'deep-blue': 'var(--deep-blue)',
-        'translucent-background': 'rgba(26, 41, 92, 0.5)',   // deep space blue
         'interactive': 'var(--nebula-orange)', // nebula orange
         'text': 'var(--text-white)',                  // starlight white
         'important': '#8A2BE2',  // nebula purple
@@ -32,8 +34,14 @@ export default {
         'glow-blue': 'rgb(0, 128, 255)',
         'translucent-gray': 'rgba(128, 128, 128, 0.3)',
         'jupiter-dark-beige': 'var(--jupiter-dark-beige)',
-        'test': '#5C4D1A'
+        'muted-gold': 'var(--muted-gold)'
       },
+      spacing: {
+        '76': '19rem',
+        '82': '22rem',
+        '98': '26rem',
+        '8-1/2': '2.125rem'
+      }
     },
   },
   plugins: [],
