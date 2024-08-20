@@ -1,5 +1,6 @@
 import {useRef, useEffect} from 'react';
 import Link from 'next/link';
+import {UserIcon} from '@heroicons/react/24/outline';
 
 export default function About() {
   const aboutRef = useRef(null);
@@ -36,11 +37,18 @@ export default function About() {
   return (
     <main
       ref={aboutRef}
-      className="flex flex-col text-text text-start items-center z-20 pb-48 about"
+      className="main-container lg:ml-80 lg-mid:ml-72 xl-mid:ml-82 2xl:ml-98 3xl:ml-72 lg:pt-20"
     >
-      <div className="xs:w-auto md:w-1/2 content">
-        <div className="flex col-span-1 flex-col w-full items-center text-gray-300 relative bg-translucent-background z-10">
-          <div className="p-12 space-y-4">
+      <div className="w-full lg:w-3/4 max-w-4xl">
+        <header className="relative z-10 ml-5 md:ml-7 lg:ml-16 2xl:ml-3 flex flex-row items-center">
+          <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
+          <span className="pl-2 flex items-center text-lg lg:text-xl font-medium text-[#f5f5f5]">
+            About
+          </span>
+        </header>
+
+        <div className="relative z-10 px-2 lg:px-5">
+          <div className="p-4 md:p-6 lg:p-12 2xl:px-0 space-y-12 text-wrap leading-loose 2xl:leading-relaxed">
             <p>
               In 2016, I built an Excel spreadsheet that evolved into a PHP app
               to track my workouts. I obtained my first gig as a software
@@ -49,7 +57,10 @@ export default function About() {
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
               I love building software! In my latest personal project, I built a{' '}
-              <Link href="/space" className="text-interactive">
+              <Link
+                href="/space"
+                className="text-[#ffcc80] hover:text-interactive"
+              >
                 3d animation scene{' '}
               </Link>
               with ThreeJS.
@@ -60,7 +71,7 @@ export default function About() {
                 href="https://github.com/Natasha08"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-interactive"
+                className="text-[#ffcc80] hover:text-interactive"
               >
                 writing code
               </Link>
@@ -69,7 +80,7 @@ export default function About() {
                 href="https://github.com/Natasha08/LUA-EditMacroTargets"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-interactive"
+                className="text-[#ffcc80] hover:text-interactive"
               >
                 World of Warcraft.
               </Link>
@@ -77,7 +88,6 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="xs:w-1/3 lg:w-1/2"></div>
     </main>
   );
 }

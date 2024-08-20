@@ -51,7 +51,7 @@ const SpacePage = memo(function SpacePage() {
         <>
           <Link
             href="/"
-            className="text-text hover:text-interactive absolute z-10 left-0 right-0 text-center top-48"
+            className="text-text hover:text-muted-gold absolute z-10 left-0 right-0 text-center top-48"
           >
             Return Home{' '}
           </Link>

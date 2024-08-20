@@ -1,12 +1,21 @@
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useRef, createRef} from 'react';
 
 const useIntersection = (sections) => {
   const [activeSection, setActiveSection] = useState('');
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const sectionRefs = sections.map(() => useRef(null));
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const observerRefs = sections.map(() => useRef(null));
+  // Initialize refs only once using useRef, ensuring stable references across re-renders
+  const sectionRefs = useRef([]);
+  const observerRefs = useRef([]);
+
+  // Ensure sectionRefs and observerRefs have the correct length
+  if (sectionRefs.current.length !== sections.length) {
+    sectionRefs.current = Array(sections.length)
+      .fill()
+      .map((_, i) => sectionRefs.current[i] || createRef());
+    observerRefs.current = Array(sections.length)
+      .fill()
+      .map((_, i) => observerRefs.current[i] || createRef());
+  }
 
   useEffect(() => {
     const handleIntersect = (entries) => {
@@ -17,28 +26,27 @@ const useIntersection = (sections) => {
       });
     };
 
-    observerRefs.forEach((ref) => {
+    const observers = observerRefs.current.map((ref) => {
       if (ref.current) {
         const observer = new IntersectionObserver(handleIntersect, {
-          threshold: 0.6,
+          threshold: 0.3,
         });
         observer.observe(ref.current);
+        return observer;
       }
+      return null;
     });
 
     return () => {
-      observerRefs.forEach((ref) => {
-        if (ref.current) {
-          const observer = new IntersectionObserver(handleIntersect, {
-            threshold: 0.6,
-          });
-          observer.unobserve(ref.current);
+      observers.forEach((observer, index) => {
+        if (observer && observerRefs.current[index].current) {
+          observer.unobserve(observerRefs.current[index].current);
         }
       });
     };
-  }, [observerRefs]);
+  }, [sections]);
 
-  return [activeSection, sectionRefs, observerRefs];
+  return [activeSection, sectionRefs.current, observerRefs.current];
 };
 
 export default useIntersection;

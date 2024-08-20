@@ -1,40 +1,11 @@
-import StealthItem from '@/components/stealth-item';
-import characterImage from '@/public/character_leaning.png';
-import shipImage from '@/public/satellite_1.jpg';
-import satelliteImage from '@/public/starbuck_ship.png';
-
 const Home = () => (
-  <div>
-    <div className="bg-europa-illustration fixed inset-0 bg-cover bg-center z-0 w-screen">
-      <StealthItem
-        src={shipImage}
-        alt="satellite in orbit that is hidden until mousever"
-        positionClasses="top-40 right-36 opacity-0 md:opacity-100"
-      />
-      <StealthItem
-        src={satelliteImage}
-        alt="ship that is hidden until mouseover"
-        positionClasses="top-40 left-20 opacity-0 md:opacity-100"
-      />
-      <div className="pt-40 flex flex-col h-screen w-full items-center"></div>
-    </div>
-    <div className="pt-40 flex flex-col h-screen w-full items-center mx-auto">
-      <header className="block h-3 text-text text-xl pb-10 font-extralight z-10">
-        NATASHA OSBORNE
-        <StealthItem
-          src={characterImage}
-          alt="Natasha character that is hidden until mouseover"
-          positionClasses="top-32 inset-1/2 w-12 opacity-0 md:opacity-100"
-          width="12"
-        />
-      </header>
-      <p className="block h-3 text-interactive xs:text-lg text-2xl md:text-4xl font-[1200] pb-10">
-        Full Stack Software Engineer
-      </p>
-      <p className="block h-3 text-text xs:text-sm text-1xl md:text-2xl pt-5 font-extralight">
-        BASED IN COLORADO, USA
-      </p>
-    </div>
+  <div className="">
+    <div
+      className="fixed inset-0 bg-cover bg-center z-0"
+      style={{
+        background: `radial-gradient(circle at center, rgb(16, 26, 72) 20%, rgb(22, 38, 86) 60%, rgb(9, 14, 47) 100%)`,
+      }}
+    ></div>
   </div>
 );
 
