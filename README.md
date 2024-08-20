@@ -2,6 +2,9 @@
 
 Portfolio website created with [Next.js](https://nextjs.org/docs) (for future features)
 
+## Forking the Repo
+You are welcome to fork this repository and use the code in your own projects, provided that you give appropriate credit. Please include a link back to this repository in your project or documentation.
+
 ## Getting Started
 
 #### Node Version
