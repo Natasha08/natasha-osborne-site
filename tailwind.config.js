@@ -37,6 +37,7 @@ export default {
         'muted-gold': 'var(--muted-gold)'
       },
       spacing: {
+        '76': '19rem',
         '82': '22rem',
         '98': '26rem',
         '8-1/2': '2.125rem'

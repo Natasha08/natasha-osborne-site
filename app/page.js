@@ -37,7 +37,7 @@ export default function Main() {
                   sectionRefs[index].current = el;
                   observerRefs[index].current = el;
                 }}
-                className="h-fit w-screen"
+                className="h-fit lg:w-screen"
               >
                 {Component ? <Component /> : page.label}
               </section>
