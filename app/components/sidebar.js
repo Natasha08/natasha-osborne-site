@@ -70,7 +70,11 @@ const Sidebar = () => (
             className="h-auto w-auto"
           />
         </Link>
-        <Link href="https://www.linkedin.com/in/natashaosborne/" target="_blank" className="">
+        <Link
+          href="https://www.linkedin.com/in/natashaosborne/"
+          target="_blank"
+          className=""
+        >
           <Image
             src="/LI-Logo.png"
             alt="LinkedIn profile"
