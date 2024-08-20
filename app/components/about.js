@@ -35,9 +35,9 @@ export default function About() {
   }, []);
 
   return (
-    <main ref={aboutRef} className="main-container lg:ml-52 lg:pt-36">
-      <div className="lg:ml-48 w-full lg:w-3/4 max-w-4xl">
-        <header className="relative z-10 ml-10 lg:ml-16 2xl:ml-3 flex flex-row items-center">
+    <main ref={aboutRef} className="main-container lg:ml-80 lg-mid:ml-72 xl-mid:ml-82 2xl:ml-98 3xl:ml-72 lg:pt-20">
+      <div className="w-full lg:w-3/4 max-w-4xl">
+        <header className="relative z-10 xs:ml-8 sm:ml-8-1/2 md:ml-10 lg:ml-16 2xl:ml-3 flex flex-row items-center">
           <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
           <span className="pl-2 flex items-center text-lg lg:text-xl font-medium text-[#f5f5f5]">
             About
