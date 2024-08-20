@@ -2,6 +2,8 @@
 
 ### Screenshots
 
+### Responsiveness Testing
+
 ### Infrastructure Changes
 - [ ] Relevant environment variables (and s3 uploads) have been updated before deployment
 

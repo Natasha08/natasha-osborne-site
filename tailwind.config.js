@@ -17,7 +17,10 @@ export default {
       screens: {
         'rotate': {'raw': '(orientation: landscape)'},
         'xs': {'max': '639px'},
-        'xxs': {'max': '450px'}
+        'xxs': {'max': '450px'},
+        'lg-mid': {'min': '1024px', 'max': '1180px'},
+        'xl-mid': {'min': '1400px', 'max': '1535px'},
+        '3xl': {'min': '1800px'}
       },
       colors: {
         'transparent': 'rgba(0, 0, 0, 0)',
@@ -33,6 +36,12 @@ export default {
         'jupiter-dark-beige': 'var(--jupiter-dark-beige)',
         'muted-gold': 'var(--muted-gold)'
       },
+      spacing: {
+        '76': '19rem',
+        '82': '22rem',
+        '98': '26rem',
+        '8-1/2': '2.125rem'
+      }
     },
   },
   plugins: [],
