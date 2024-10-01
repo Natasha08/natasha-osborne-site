@@ -8,6 +8,7 @@
   --deep-blue: rgb(26, 41, 92);
   --jupiter-dark-beige: rgb(133 123 102);
   --muted-gold: rgb(197, 158, 92);
+  --muted-gold-translucent: rgba(197, 158, 92, 0.7);
 }
 
 * {
@@ -41,6 +42,62 @@ p {
     text-wrap: balance;
   }
 }
+
+
+
+.project-card {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.6); /* Fallback for older browsers */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/profile_image.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* Adjust opacity for a more subtle effect */
+}
+
+.project-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+.project-content h2,
+.project-content p,
+.project-content .project-tag {
+  margin: 0;
+  padding: 0;
+}
+
+.project-tag {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6); /* Background for the tag */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+
+
 
 /************************************************************
                           General

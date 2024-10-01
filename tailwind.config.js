@@ -34,7 +34,8 @@ export default {
         'glow-blue': 'rgb(0, 128, 255)',
         'translucent-gray': 'rgba(128, 128, 128, 0.3)',
         'jupiter-dark-beige': 'var(--jupiter-dark-beige)',
-        'muted-gold': 'var(--muted-gold)'
+        'muted-gold': 'var(--muted-gold)',
+        'muted-gold-translucent': 'var(--muted-gold-translucent)'
       },
       spacing: {
         '76': '19rem',

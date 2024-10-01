@@ -30,7 +30,7 @@ export default function Main() {
           {PAGES.map((page, index) => {
             const Component = SCROLL_COMPONENTS.find(
               (c) => c.id === page.id,
-            )?.Component;
+            ).Component;
 
             return (
               <section

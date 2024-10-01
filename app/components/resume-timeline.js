@@ -181,7 +181,7 @@ const ResumeTimeline = () => {
           </Link>
         </div>
         <div className="timeline-item mb-8 group/e">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-7 left-52 opacity-0 text-gray-500 group-hover/e:opacity-100" />
+          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-7 left-48 opacity-0 text-gray-500 group-hover/e:opacity-100" />
           <Link
             href="/resume"
             target="_blank"

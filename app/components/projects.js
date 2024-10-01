@@ -1,113 +1,102 @@
+import React, {useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
-import HorseImage from '@/public/my_right_horse.jpg';
-import PSQImage from '@/public/psq.jpg';
-import MPPileConfigImage from '@/public/mp_pile_config.png';
-import PTEIndexImage from '@/public/pte_index.png';
+import {UserIcon} from '@heroicons/react/24/outline';
 import {ArrowTopRightOnSquareIcon} from '@heroicons/react/20/solid';
 
-//#TODO: Convert this style to the card style
+import profileImage from '@/public/profile_image.jpg';
+import spaceImage from '@/public/space_project.jpg';
+import dockerImage from '@/public/docker_mark_blue_small.png';
+import SkillBubble from './skill-bubble';
+
+const projects = [
+  {
+    title: 'Mindful Budgeter',
+    year: 2024,
+    technologies: ['React Native'],
+    image: profileImage,
+    src: '/profile_image.jpg',
+    description: 'A budgeting app that focuses on bringing awareness to each transaction',
+    url: 'https://github.com/natasha08/mindful-budgeter-spa'
+  },
+  {
+    title: '3D Space',
+    year: 2024,
+    technologies: ['Three.js', 'Next.js'],
+    image: spaceImage,
+    src: '/space_project.jpg',
+    description: 'Another project description.',
+    url: 'https://natasha-osborne.dev/space'
+  },
+  {
+    title: 'Dockerize Legacy Project',
+    year: 2024,
+    technologies: ['Docker', 'Node.js'],
+    image: dockerImage,
+    src: '/docker_mark_blue_small.png',
+    description: 'A Medium blog post about dockerizing a legacy node project',
+    url: 'https://medium.com/@natasha08/how-to-dockerize-a-legacy-node-js-project-a-step-by-step-guide-4580b97286e7'
+  },
+];
 
 const ProjectsPage = () => {
+  const [selectedTechnology, setSelectedTechnology] = useState('All');
+
+  const filteredProjects =
+    selectedTechnology === 'All'
+      ? projects
+      : projects.filter((project) =>
+          project.technologies.includes(selectedTechnology),
+        );
+
   return (
-    <main className="main-container">
-      <div className="content">
-        <header className="relative">Featured Projects</header>
-        <div className="relative bg-translucent-background">
-          <div className="group relative grid gap-4 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-            <a
-              className="hover:bg-deep-blue sm:col-span-8 px-12 py-4 group/a"
-              href="https://www.myrighthorse.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute right-4 opacity-0 text-gray-500 group-hover/a:opacity-100" />
-              <Image
-                className="max-h-fit rounded-lg w-auto"
-                src={HorseImage}
-                alt=""
-                width="200"
-                height="auto"
-              ></Image>
-              <p className="pt-4 sm:col-span-8">
-                ASPCA web app for finding horses to foster or adopt.
-              </p>
-            </a>
-            <a
-              className="hover:bg-deep-blue sm:col-span-8 px-12 py-4 group/b"
-              href="https://parentsquare.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute right-4 opacity-0 text-gray-500 group-hover/b:opacity-100" />
-              <Image
-                className="max-h-fit rounded-lg w-auto"
-                src={PSQImage}
-                alt=""
-                width="200"
-                height="auto"
-              ></Image>
-              <p className="pt-4 sm:col-span-8 text-wrap">
-                Archive classes and rosters automatically after school year ends
-                (when configured)
-              </p>
-              <p className="pt-4 sm:col-span-8 text-wrap">
-                Allow schools & districts to invite and send posts to guests
-              </p>
-            </a>
-            <a
-              className="grid grid-cols-8 sm:col-span-8 sm:gap-8 md:gap-4 hover:bg-deep-blue px-12 py-4 group/c"
-              href="https://www.magnumpiering.com/magnum-geo-app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute right-4 opacity-0 text-gray-500 group-hover/c:opacity-100" />
-              <Image
-                className="max-w-fit rounded-lg h-auto xs:col-span-4 sm:col-span-3"
-                src={MPPileConfigImage}
-                alt=""
-                width="auto"
-                height="400"
-              ></Image>
-              <p className="self-center xs:col-span-4 sm:col-span-5 col-span-auto">
-                Civil engineering app that allows the user to customize the load
-                options, soil profile and pile configurations, displays whether
-                the required capacity was achieved as well as torque graphs.
-              </p>
-            </a>
-            <a
-              className="grid grid-cols-8 sm:col-span-8 sm:gap-8 md:gap-4 hover:bg-deep-blue px-12 py-4 group/d"
-              href="https://www.plantoeat.com/welcome/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute right-4 opacity-0 text-gray-500 group-hover/d:opacity-100" />
-              <Image
-                className="max-w-fit rounded-lg h-auto xs:col-span-4 sm:col-span-3"
-                src={PTEIndexImage}
-                alt=""
-                width="auto"
-                height="400"
-              ></Image>
-              <p className="self-center xs:col-span-4 sm:col-span-5 col-span-auto">
-                Meal planning app (Android/iOS version) that allows you to
-                collect recipes from anywhere online, plan meals, and create an
-                automated shopping list.
-              </p>
-            </a>
+    <main
+      className="main-container lg:ml-80 lg-mid:ml-72 xl-mid:ml-82 2xl:ml-98 3xl:ml-72 lg:pt-20 relative"
+    >
+      <div className="w-full lg:w-3/4 max-w-4xl">
+        <header className="relative z-10 ml-5 md:ml-7 lg:ml-16 2xl:ml-3 flex flex-row items-center">
+          <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
+          <span className="pl-2 flex items-center text-lg lg:text-xl font-medium text-[#f5f5f5]">
+            Latest Projects
+          </span>
+        </header>
+        <div className="p-6 flex items-center">
+          <div className="grid grid-cols-1 gap-6 z-10 list-none">
+            {filteredProjects.map((project, index) => (
+              <div class="project-card relative rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                <div class="absolute inset-0 bg-cover bg-center opacity-40" style={{backgroundImage: `url(${project.src});`}}></div>
+
+                <div class="relative p-4 text-white z-10">
+                  <h2 class="text-2xl font-semibold mb-1">{project.title}</h2>
+                  <p class="text-sm text-gray-300 mb-2">{project.year}</p>
+                  <div className="flex flex-wrap mt-2">
+                    {project.technologies.map((tech, index) => (
+                      <SkillBubble
+                        key={index}
+                        textBackground="bg-deep-blue"
+                        text={tech}
+                      />
+                    ))}
+                  </div>
+                  <p class="mt-3">{project.description}</p>
+                </div>
+              </div>
+
+            ))}
           </div>
-          <Link
-            href="/projects"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-1/2 hover:text-interactive font-semibold md:text-lg lg:text-xl"
-          >
-            View All Projects
-          </Link>
+          <div className="m-8 ml-0 group/projects relative">
+            <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-1 left-40 opacity-0 text-gray-500 group-hover/projects:opacity-100" />
+            <Link
+              href="/projects"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pt-12 hover:text-muted-gold font-semibold md:text-lg lg:text-xl"
+            >
+              View All Projects
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="xs:w-1/3 lg:w-1/2"></div>
     </main>
   );
 };
