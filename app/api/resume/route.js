@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import { getS3SignedUrl } from '@/lib/api/';
+import {NextResponse} from 'next/server';
+import {getS3SignedUrl} from '@/lib/api/';
 
 export async function GET() {
   try {
@@ -12,7 +12,6 @@ export async function GET() {
       },
     });
   } catch (error) {
-    return new NextResponse('Failed to load resume', { status: 500 });
+    return new NextResponse('Failed to load resume', {status: 500});
   }
 }
-
