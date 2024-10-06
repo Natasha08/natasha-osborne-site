@@ -63,12 +63,12 @@ const ProjectsPage = () => {
         <div className="p-6 flex items-center">
           <div className="grid grid-cols-1 gap-6 z-10 list-none">
             {filteredProjects.map((project, index) => (
-              <div class="project-card relative rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
-                <div class="absolute inset-0 bg-cover bg-center opacity-40" style={{backgroundImage: `url(${project.src});`}}></div>
+              <div key={index} className="project-card relative rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{backgroundImage: `url(${project.src});`}}></div>
 
-                <div class="relative p-4 text-white z-10">
-                  <h2 class="text-2xl font-semibold mb-1">{project.title}</h2>
-                  <p class="text-sm text-gray-300 mb-2">{project.year}</p>
+                <div className="relative p-4 text-white z-10">
+                  <h2 className="text-2xl font-semibold mb-1">{project.title}</h2>
+                  <p className="text-sm text-gray-300 mb-2">{project.year}</p>
                   <div className="flex flex-wrap mt-2">
                     {project.technologies.map((tech, index) => (
                       <SkillBubble
@@ -78,7 +78,7 @@ const ProjectsPage = () => {
                       />
                     ))}
                   </div>
-                  <p class="mt-3">{project.description}</p>
+                  <p className="mt-3">{project.description}</p>
                 </div>
               </div>
 
