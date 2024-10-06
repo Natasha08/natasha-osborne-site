@@ -1,8 +1,49 @@
-import {useEffect, useRef} from 'react';
+"use client";
+
+import {useRef, useId} from 'react';
 import Link from 'next/link';
 import {ArrowTopRightOnSquareIcon} from '@heroicons/react/20/solid';
-import SkillBubble from './skill-bubble';
 import {DocumentTextIcon} from '@heroicons/react/24/outline';
+
+import SkillBubble from './skill-bubble';
+import useObserver from './use-observer';
+import technologies from '@/lib/data/technologies.json';
+
+const SkillBubbles = ({timeRange}) => {
+  return (
+    <ul className="mt-2 flex flex-wrap">
+      {technologies[timeRange]?.map((technology) => (
+        <SkillBubble text={technology} key={useId()} />
+      ))}
+    </ul>
+  );
+};
+
+const TimelineItem = ({ href, timeRange, position, company }) => {
+  const groupId = useId();
+
+  return (
+    <div className="timeline-item hover:bg-opacity-15 hover:bg-deep-blue mb-8" data-group={groupId}>
+      <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500" data-group-hover={groupId} />
+      <Link
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="timeline-content"
+        data-group-hover={groupId}
+      >
+        <h2 className="text-gray-400 text-md" data-group-hover={groupId}>
+          {timeRange}
+        </h2>
+        <p className="text-lg md:text-xl">{position}</p>
+        <p className="text-muted-gold text-sm md:text-base font-extrabold">
+          {company}
+        </p>
+        <SkillBubbles timeRange={timeRange} />
+      </Link>
+    </div>
+  );
+};
 
 const ResumeTimeline = () => {
   const timelineRef = useRef(null);
@@ -18,139 +59,13 @@ const ResumeTimeline = () => {
           <DocumentTextIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
           <span className="pl-2 flex items-center">Resume</span>
         </header>
-        <div className="timeline-item hover:bg-opacity-15 hover:bg-deep-blue mb-8 group/f">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/f:opacity-100" />
-          <Link
-            href="/resume"
-            target="_blank"
-            rel="noopener
-            noreferrer"
-            className="timeline-content"
-          >
-            <h2 className="group-hover/f:text-muted-gold text-gray-400 text-md">
-              2024-Present
-            </h2>
-            <p className="text-lg md:text-xl">Full Stack Software Engineer</p>
-            <p className="text-muted-gold text-sm md:text-base font-extrabold">
-              Freelance
-            </p>
-            <ul className="mt-2 flex flex-wrap">
-              <SkillBubble text="React Native" />
-              <SkillBubble text="Ruby on Rails" />
-              <SkillBubble text="NextJS" />
-              <SkillBubble text="ThreeJS" />
-              <SkillBubble text="HTML & CSS" />
-              <SkillBubble text="Building APIs" />
-              <SkillBubble text="Technical blog posts" />
-            </ul>
-          </Link>
-        </div>
-        <div className="timeline-item hover:bg-opacity-15 hover:bg-deep-blue mb-8 group/a">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/a:opacity-100" />
-          <Link
-            href="https://parentsquare.com"
-            target="_blank"
-            rel="noopener
-            noreferrer"
-            className="timeline-content"
-          >
-            <h2 className="group-hover/a:text-muted-gold text-gray-400 text-md">
-              2022-2024
-            </h2>
-            <p className="text-lg md:text-xl">Software Engineer</p>
-            <p className="text-muted-gold text-sm md:text-base font-extrabold">
-              ParentSquare
-            </p>
-            <ul className="mt-2 flex flex-wrap">
-              <SkillBubble text="Javascript" />
-              <SkillBubble text="Ruby on Rails" />
-              <SkillBubble text="Building APIs" />
-              <SkillBubble text="HTML & CSS" />
-            </ul>
-          </Link>
-        </div>
-        <div className="timeline-item hover:bg-opacity-15 hover:bg-deep-blue mb-8 group/b">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/b:opacity-100" />
-          <Link
-            href="https://radialdevgroup.com"
-            target="_blank"
-            rel="noopener
-            noreferrer"
-            className="timeline-content"
-          >
-            <h2 className="group-hover/b:text-muted-gold text-gray-400 text-md">
-              2019-2022
-            </h2>
-            <p className="text-lg md:text-xl">Developer Lead</p>
-            <p className="text-muted-gold text-sm md:text-base font-extrabold">
-              Radial Development Group
-            </p>
-            <ul className="mt-2 flex flex-wrap">
-              <SkillBubble text="React" />
-              <SkillBubble text="Ruby on Rails" />
-              <SkillBubble text="Cordova" />
-              <SkillBubble text="Swift" />
-              <SkillBubble text="HTML & CSS" />
-              <SkillBubble text="Building APIs" />
-              <SkillBubble text="Testing" />
-              <SkillBubble text="Project Management" />
-              <SkillBubble text="Mentorship" />
-            </ul>
-          </Link>
-        </div>
-        <div className="timeline-item hover:bg-opacity-15 hover:bg-deep-blue mb-8 group/c">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/c:opacity-100" />
-          <Link
-            href="https://originprotocol.com"
-            target="_blank"
-            rel="noopener
-            noreferrer"
-            className="timeline-content"
-          >
-            <h2 className="group-hover/c:text-muted-gold text-gray-400 text-md">
-              2018-2019
-            </h2>
-            <p className="text-lg md:text-xl">Full Stack Software Engineer</p>
-            <p className="text-muted-gold text-sm md:text-base font-extrabold">
-              Origin Protocol
-            </p>
-            <ul className="mt-2 flex flex-wrap">
-              <SkillBubble text="Python" />
-              <SkillBubble text="React" />
-              <SkillBubble text="GraphQL" />
-              <SkillBubble text="HTML & CSS" />
-              <SkillBubble text="Building APIs" />
-            </ul>
-          </Link>
-        </div>
-        <div className="timeline-item hover:bg-opacity-15 hover:bg-deep-blue mb-8 group/d">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500 group-hover/d:opacity-100" />
-          <Link
-            href="https://radialdevgroup.com"
-            target="_blank"
-            rel="noopener
-            noreferrer"
-            className="timeline-content"
-          >
-            <h2 className="group-hover/d:text-muted-gold text-gray-400 text-md">
-              2017-2018
-            </h2>
-            <p className="text-lg md:text-xl">Developer Lead</p>
-            <p className="text-muted-gold text-sm md:text-base font-extrabold">
-              Radial Development Group
-            </p>
-            <ul className="mt-2 flex flex-wrap">
-              <SkillBubble text="React" />
-              <SkillBubble text="Ruby on Rails" />
-              <SkillBubble text="Django" />
-              <SkillBubble text="HTML & CSS" />
-              <SkillBubble text="Building APIs" />
-              <SkillBubble text="Testing" />
-              <SkillBubble text="Project Management" />
-              <SkillBubble text="Technical blog posts" />
-            </ul>
-          </Link>
-        </div>
+
+        <TimelineItem href="/resume" timeRange="2024-Present" position="Full Stack Software Engineer" company="Freelance" />
+        <TimelineItem href="https://parentsquare.com" timeRange="2022-2024" position="Software Engineer" company="ParentSquare" />
+        <TimelineItem href="https://radialdevgroup.com" timeRange="2019-2022" position="Developer Lead" company="Radial Development Group" />
+        <TimelineItem href="https://originprotocol.com" timeRange="2018-2019" position="Full Stack Software Engineer" company="Origin Protocol" />
+        <TimelineItem href="https://radialdevgroup.com" timeRange="2017-2018" position="Developer Lead" company="Radial Development Group" />
+
         <div className="timeline-item mb-8 group/e">
           <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-7 left-48 opacity-0 text-gray-500 group-hover/e:opacity-100" />
           <Link

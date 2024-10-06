@@ -97,8 +97,6 @@ p {
 }
 
 
-
-
 /************************************************************
                           General
 *************************************************************/
@@ -245,4 +243,10 @@ p {
   left: -25px;
   top: 10px;
   z-index: -1;
+}
+
+/* Apply opacity and color change when hovering over the timeline-item */
+[data-group]:hover [data-group-hover] {
+  opacity: 1;
+  color: #d4af37;
 }
