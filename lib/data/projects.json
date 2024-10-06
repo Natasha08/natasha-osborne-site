@@ -1,0 +1,86 @@
+[
+  {
+    "title": "JSPry",
+    "year": "2024",
+    "technologies": ["TypeScript", "Javascript"],
+    "madeAt": "Personal Project",
+    "link": "https://github.com/Natasha08/JSPry"
+  },
+  {
+    "title": "Portfolio Website",
+    "year": "2024",
+    "technologies": ["NextJS"],
+    "madeAt": "Personal Project",
+    "link": "https://github.com/Natasha08/natasha-osborne-site"
+  },
+  {
+    "title": "Post Visibility",
+    "year": "2023",
+    "technologies": ["Ruby on Rails", "Javascript"],
+    "madeAt": "ParentSquare",
+    "link": null
+  },
+  {
+    "title": "Class Archiving Tool",
+    "year": "2023",
+    "technologies": ["Ruby on Rails", "Javascript"],
+    "madeAt": "ParentSquare",
+    "link": null
+  },
+  {
+    "title": "School Terms",
+    "year": "2022",
+    "technologies": ["Ruby on Rails", "Javascript"],
+    "madeAt": "ParentSquare",
+    "link": null
+  },
+  {
+    "title": "Fitness Tracker",
+    "year": "2022",
+    "technologies": ["React"],
+    "madeAt": "Personal Project",
+    "link": "https://github.com/Natasha08/fitness-tracker"
+  },
+  {
+    "title": "Edit Macro Targets",
+    "year": "2021",
+    "technologies": ["LUA"],
+    "madeAt": "Personal Project",
+    "link": "https://github.com/Natasha08/LUA-EditMacroTargets"
+  },
+  {
+    "title": "Data Scraper",
+    "year": "2019",
+    "technologies": ["Python", "Flask"],
+    "madeAt": "Origin Protocol",
+    "link": "https://github.com/OriginProtocol/origin-website/pull/342/files"
+  },
+  {
+    "title": "Custom In-App Messaging",
+    "year": "2019",
+    "technologies": ["React"],
+    "madeAt": "Origin Protocol",
+    "link": "https://github.com/OriginProtocol/origin/pulls?q=is%3Apr+is%3Aclosed+author%3ANatasha08+message"
+  },
+  {
+    "title": "Custom Image Uploader",
+    "year": "2018",
+    "technologies": ["React"],
+    "madeAt": "Origin Protocol",
+    "link": "https://github.com/OriginProtocol/origin/pulls?q=is%3Apr+is%3Aclosed+author%3ANatasha08+upload"
+  },
+  {
+    "title": "React Middleware Workers",
+    "year": "2017",
+    "technologies": ["React", "Redux"],
+    "madeAt": "Radial Development Group",
+    "link": "https://github.com/Natasha08/redux-middleware-workers"
+  },
+  {
+    "title": "Original Portfolio Website",
+    "year": "2016",
+    "technologies": ["PHP"],
+    "madeAt": "Personal Project",
+    "link": "https://github.com/Natasha08/natasha"
+  }
+]
