@@ -28,7 +28,7 @@ const useObserver = (ref, queryClass) => {
         intersectionObserver.unobserve(item);
       });
     };
-  }, []);
-}
+  }, [ref, queryClass]);
+};
 
 export default useObserver;

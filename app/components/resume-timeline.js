@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {useRef, useId} from 'react';
 import Link from 'next/link';
@@ -12,19 +12,25 @@ import technologies from '@/lib/data/technologies.json';
 const SkillBubbles = ({timeRange}) => {
   return (
     <ul className="mt-2 flex flex-wrap">
-      {technologies[timeRange]?.map((technology) => (
-        <SkillBubble text={technology} key={useId()} />
+      {technologies[timeRange]?.map((technology, index) => (
+        <SkillBubble text={technology} key={index} />
       ))}
     </ul>
   );
 };
 
-const TimelineItem = ({ href, timeRange, position, company }) => {
+const TimelineItem = ({href, timeRange, position, company}) => {
   const groupId = useId();
 
   return (
-    <div className="timeline-item hover:bg-opacity-15 hover:bg-deep-blue mb-8" data-group={groupId}>
-      <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500" data-group-hover={groupId} />
+    <div
+      className="timeline-item hover:bg-opacity-15 hover:bg-deep-blue mb-8"
+      data-group={groupId}
+    >
+      <ArrowTopRightOnSquareIcon
+        className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500"
+        data-group-hover={groupId}
+      />
       <Link
         href={href}
         target="_blank"
@@ -60,11 +66,36 @@ const ResumeTimeline = () => {
           <span className="pl-2 flex items-center">Resume</span>
         </header>
 
-        <TimelineItem href="/resume" timeRange="2024-Present" position="Full Stack Software Engineer" company="Freelance" />
-        <TimelineItem href="https://parentsquare.com" timeRange="2022-2024" position="Software Engineer" company="ParentSquare" />
-        <TimelineItem href="https://radialdevgroup.com" timeRange="2019-2022" position="Developer Lead" company="Radial Development Group" />
-        <TimelineItem href="https://originprotocol.com" timeRange="2018-2019" position="Full Stack Software Engineer" company="Origin Protocol" />
-        <TimelineItem href="https://radialdevgroup.com" timeRange="2017-2018" position="Developer Lead" company="Radial Development Group" />
+        <TimelineItem
+          href="/resume"
+          timeRange="2024-Present"
+          position="Full Stack Software Engineer"
+          company="Freelance"
+        />
+        <TimelineItem
+          href="https://parentsquare.com"
+          timeRange="2022-2024"
+          position="Software Engineer"
+          company="ParentSquare"
+        />
+        <TimelineItem
+          href="https://radialdevgroup.com"
+          timeRange="2019-2022"
+          position="Developer Lead"
+          company="Radial Development Group"
+        />
+        <TimelineItem
+          href="https://originprotocol.com"
+          timeRange="2018-2019"
+          position="Full Stack Software Engineer"
+          company="Origin Protocol"
+        />
+        <TimelineItem
+          href="https://radialdevgroup.com"
+          timeRange="2017-2018"
+          position="Developer Lead"
+          company="Radial Development Group"
+        />
 
         <div className="timeline-item mb-8 group/e">
           <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-7 left-48 opacity-0 text-gray-500 group-hover/e:opacity-100" />

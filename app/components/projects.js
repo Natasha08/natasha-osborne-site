@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {UserIcon} from '@heroicons/react/24/outline';
 import {ArrowTopRightOnSquareIcon} from '@heroicons/react/20/solid';
 
@@ -16,8 +15,9 @@ const projects = [
     technologies: ['React Native'],
     image: profileImage,
     src: '/profile_image.jpg',
-    description: 'A budgeting app that focuses on bringing awareness to each transaction',
-    url: 'https://github.com/natasha08/mindful-budgeter-spa'
+    description:
+      'A budgeting app that focuses on bringing awareness to each transaction',
+    url: 'https://github.com/natasha08/mindful-budgeter-spa',
   },
   {
     title: '3D Space',
@@ -26,7 +26,7 @@ const projects = [
     image: spaceImage,
     src: '/space_project.jpg',
     description: 'Another project description.',
-    url: 'https://natasha-osborne.dev/space'
+    url: 'https://natasha-osborne.dev/space',
   },
   {
     title: 'Dockerize Legacy Project',
@@ -35,24 +35,13 @@ const projects = [
     image: dockerImage,
     src: '/docker_mark_blue_small.png',
     description: 'A Medium blog post about dockerizing a legacy node project',
-    url: 'https://medium.com/@natasha08/how-to-dockerize-a-legacy-node-js-project-a-step-by-step-guide-4580b97286e7'
+    url: 'https://medium.com/@natasha08/how-to-dockerize-a-legacy-node-js-project-a-step-by-step-guide-4580b97286e7',
   },
 ];
 
 const ProjectsPage = () => {
-  const [selectedTechnology, setSelectedTechnology] = useState('All');
-
-  const filteredProjects =
-    selectedTechnology === 'All'
-      ? projects
-      : projects.filter((project) =>
-          project.technologies.includes(selectedTechnology),
-        );
-
   return (
-    <main
-      className="main-container lg:ml-80 lg-mid:ml-72 xl-mid:ml-82 2xl:ml-98 3xl:ml-72 lg:pt-20 relative"
-    >
+    <main className="main-container lg:ml-80 lg-mid:ml-72 xl-mid:ml-82 2xl:ml-98 3xl:ml-72 lg:pt-20 relative">
       <div className="w-full lg:w-3/4 max-w-4xl">
         <header className="relative z-10 ml-5 md:ml-7 lg:ml-16 2xl:ml-3 flex flex-row items-center">
           <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
@@ -62,12 +51,20 @@ const ProjectsPage = () => {
         </header>
         <div className="p-6 flex items-center">
           <div className="grid grid-cols-1 gap-6 z-10 list-none">
-            {filteredProjects.map((project, index) => (
-              <div key={index} className="project-card relative rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{backgroundImage: `url(${project.src});`}}></div>
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="project-card relative rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105"
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center opacity-40"
+                  style={{backgroundImage: `url(${project.src});`}}
+                ></div>
 
                 <div className="relative p-4 text-white z-10">
-                  <h2 className="text-2xl font-semibold mb-1">{project.title}</h2>
+                  <h2 className="text-2xl font-semibold mb-1">
+                    {project.title}
+                  </h2>
                   <p className="text-sm text-gray-300 mb-2">{project.year}</p>
                   <div className="flex flex-wrap mt-2">
                     {project.technologies.map((tech, index) => (
@@ -81,7 +78,6 @@ const ProjectsPage = () => {
                   <p className="mt-3">{project.description}</p>
                 </div>
               </div>
-
             ))}
           </div>
           <div className="m-8 ml-0 group/projects relative">
