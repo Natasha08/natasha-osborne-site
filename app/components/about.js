@@ -1,38 +1,12 @@
-import {useRef, useEffect} from 'react';
+import {useRef} from 'react';
 import Link from 'next/link';
 import {UserIcon} from '@heroicons/react/24/outline';
 
+import useObserver from './use-observer';
+
 export default function About() {
   const aboutRef = useRef(null);
-
-  useEffect(() => {
-    const aboutItems = aboutRef.current.querySelectorAll('.content');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          } else {
-            entry.target.classList.remove('in-view');
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      },
-    );
-
-    aboutItems.forEach((item) => {
-      observer.observe(item);
-    });
-
-    return () => {
-      aboutItems.forEach((item) => {
-        observer.unobserve(item);
-      });
-    };
-  }, []);
+  useObserver(aboutRef, '.content');
 
   return (
     <main

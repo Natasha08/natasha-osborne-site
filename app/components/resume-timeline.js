@@ -6,36 +6,7 @@ import {DocumentTextIcon} from '@heroicons/react/24/outline';
 
 const ResumeTimeline = () => {
   const timelineRef = useRef(null);
-
-  useEffect(() => {
-    const timelineItems =
-      timelineRef.current.querySelectorAll('.timeline-item');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          } else {
-            entry.target.classList.remove('in-view');
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      },
-    );
-
-    timelineItems.forEach((item) => {
-      observer.observe(item);
-    });
-
-    return () => {
-      timelineItems.forEach((item) => {
-        observer.unobserve(item);
-      });
-    };
-  }, []);
+  useObserver(timelineRef, '.timeline-item');
 
   return (
     <div
