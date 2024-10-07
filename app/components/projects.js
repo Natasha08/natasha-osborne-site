@@ -10,14 +10,14 @@ import SkillBubble from './skill-bubble';
 
 const projects = [
   {
-    title: 'Mindful Budgeter',
+    title: 'JSPry',
     year: 2024,
-    technologies: ['React Native'],
+    technologies: ['Typescript'],
     image: profileImage,
     src: '/profile_image.jpg',
     description:
-      'A budgeting app that focuses on bringing awareness to each transaction',
-    url: 'https://github.com/natasha08/mindful-budgeter-spa',
+      'A more full featured debugger for testing',
+    url: 'https://github.com/Natasha08/JSPry',
   },
   {
     title: '3D Space',
@@ -25,7 +25,7 @@ const projects = [
     technologies: ['Three.js', 'Next.js'],
     image: spaceImage,
     src: '/space_project.jpg',
-    description: 'Another project description.',
+    description: 'Travel through a wormhole in this 3D experience',
     url: 'https://natasha-osborne.dev/space',
   },
   {
@@ -79,17 +79,17 @@ const ProjectsPage = () => {
                 </div>
               </div>
             ))}
-          </div>
-          <div className="m-8 ml-0 group/projects relative">
-            <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-1 left-40 opacity-0 text-gray-500 group-hover/projects:opacity-100" />
-            <Link
-              href="/projects"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pt-12 hover:text-muted-gold font-semibold md:text-lg lg:text-xl"
-            >
-              View All Projects
-            </Link>
+            <div className="m-8 ml-0 group/projects relative">
+              <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-1 left-40 opacity-0 text-gray-500 group-hover/projects:opacity-100" />
+              <Link
+                href="/projects"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pt-12 hover:text-muted-gold font-semibold md:text-lg lg:text-xl"
+              >
+                View All Projects
+              </Link>
+            </div>
           </div>
         </div>
       </div>
