@@ -31,12 +31,12 @@ export default function About() {
             <p>
               Since then, I&apos;ve worked with many technologies and projects.
               I love building software! In my latest personal project, I built a{' '}
-              <Link
-                href="/space"
+              <a
+                href={process.env.NEXT_PUBLIC_SPACE_URL}
                 className="text-[#ffcc80] hover:text-interactive"
               >
                 3d animation scene{' '}
-              </Link>
+              </a>
               with ThreeJS.
             </p>
             <p>
