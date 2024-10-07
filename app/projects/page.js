@@ -1,9 +1,24 @@
 'use client';
 
 import {useState} from 'react';
+import Fuse from 'fuse.js';
+
 import MouseGlow from '@/components/mouse-glow';
 import SkillBubble from '@/components/skill-bubble';
 import projectsData from '@/lib/data/projects.json';
+
+const fuseOptions = {
+  threshold: 0.2,
+	keys: [
+    "title",
+    "year",
+    "technologies",
+    "madeAt",
+    "link",
+	]
+};
+
+const fuse = new Fuse(projectsData, fuseOptions);
 
 const DisplaySkillBubbles = ({skills = []}) => {
   return (
@@ -22,16 +37,7 @@ const DisplaySkillBubbles = ({skills = []}) => {
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState('');
-
-  const filteredProjects = projectsData.filter(
-    (project) =>
-      project.title.toLowerCase().includes(filter.toLowerCase()) ||
-      project.year.toString().includes(filter) ||
-      project.technologies
-        .map((t) => t.toLowerCase())
-        .includes(filter.toLowerCase()) ||
-      project.madeAt.toLowerCase().includes(filter.toLowerCase()),
-  );
+  const filteredProjects = filter ? fuse.search(filter).map((result) => result.item) : projectsData;
 
   return (
     <main className="grid grid-cols-1">
