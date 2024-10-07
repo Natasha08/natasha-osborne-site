@@ -68,10 +68,10 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/profile_image.jpg'); /* Replace with your image path */
+  background-image: url('/profile_image.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.3; /* Adjust opacity for a more subtle effect */
+  opacity: 0.3;
 }
 
 .project-content {
@@ -89,7 +89,7 @@ p {
 
 .project-tag {
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0.6); /* Background for the tag */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.9em;

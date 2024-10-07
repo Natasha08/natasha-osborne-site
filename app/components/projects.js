@@ -58,7 +58,7 @@ const ProjectsPage = () => {
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center opacity-40"
-                  style={{backgroundImage: `url(${project.src});`}}
+                  style={{backgroundImage: `url(${project.src})`}}
                 ></div>
 
                 <div className="relative p-4 text-white z-10">
