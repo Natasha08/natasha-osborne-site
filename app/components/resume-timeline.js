@@ -28,7 +28,7 @@ const TimelineItem = ({href, timeRange, position, company}) => {
       data-group={groupId}
     >
       <ArrowTopRightOnSquareIcon
-        className="h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500"
+        className="arrow h-5 w-5 ml-2 absolute top-4 right-4 opacity-0 text-gray-500"
         data-group-hover={groupId}
       />
       <Link
@@ -98,7 +98,7 @@ const ResumeTimeline = () => {
         />
 
         <div className="timeline-item mb-8 group/e">
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-7 left-48 opacity-0 text-gray-500 group-hover/e:opacity-100" />
+          <ArrowTopRightOnSquareIcon className="arrow h-5 w-5 ml-2 absolute top-7 left-48 opacity-0 text-gray-500 group-hover/e:opacity-100 group-hover/e:fill-[#d4af37]" />
           <Link
             href="/resume"
             target="_blank"

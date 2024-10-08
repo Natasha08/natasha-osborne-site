@@ -15,7 +15,7 @@ const projects = [
     technologies: ['Typescript'],
     image: profileImage,
     src: '/javascript_logo.png',
-    description: 'A more full featured debugger for testing',
+    description: 'A full featured debugger for testing',
     url: 'https://github.com/Natasha08/JSPry',
   },
   {
@@ -82,7 +82,7 @@ const ProjectsPage = () => {
               </a>
             ))}
             <div className="m-8 ml-0 group/projects relative">
-              <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 absolute top-1 left-40 opacity-0 text-gray-500 group-hover/projects:opacity-100" />
+              <ArrowTopRightOnSquareIcon className="arrow h-5 w-5 ml-2 absolute top-1 left-40 opacity-0 text-gray-500 group-hover/projects:opacity-100 group-hover/projects:fill-[#d4af37]" />
               <Link
                 href="/projects"
                 target="_blank"

@@ -253,3 +253,7 @@ p {
   opacity: 1;
   color: #d4af37;
 }
+
+[data-group]:hover [data-group-hover].arrow {
+  fill: #d4af37;
+}
