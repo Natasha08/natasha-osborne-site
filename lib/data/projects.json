@@ -1,0 +1,163 @@
+[
+  {
+    "title": "Mindful Budgeter",
+    "year": "2024",
+    "technologies": ["React Native"],
+    "madeAt": "Freelance",
+    "link": null
+  },
+  {
+    "title": "JSPry",
+    "year": "2024",
+    "technologies": ["TypeScript", "Javascript"],
+    "madeAt": null,
+    "link": "https://github.com/Natasha08/JSPry"
+  },
+  {
+    "title": "Portfolio Website",
+    "year": "2024",
+    "technologies": ["Next.js"],
+    "madeAt": null,
+    "link": "https://github.com/Natasha08/natasha-osborne-site"
+  },
+  {
+    "title": "3D Space",
+    "year": "2024",
+    "technologies": ["Three.js", "Next.js"],
+    "madeAt": null,
+    "link": "https://space.natasha-osborne.dev"
+  },
+  {
+    "title": "Dockerize Legacy Project",
+    "year": "2024",
+    "technologies": ["Docker", "Node.js"],
+    "madeAt": null,
+    "link": "https://medium.com/p/4580b97286e7"
+  },
+  {
+    "title": "Post Visibility",
+    "year": "2023",
+    "technologies": ["Ruby on Rails", "Javascript"],
+    "madeAt": "ParentSquare",
+    "link": null
+  },
+  {
+    "title": "Class Archiving Tool",
+    "year": "2023",
+    "technologies": ["Ruby on Rails", "Javascript"],
+    "madeAt": "ParentSquare",
+    "link": null
+  },
+  {
+    "title": "School Terms",
+    "year": "2022",
+    "technologies": ["Ruby on Rails", "Javascript"],
+    "madeAt": "ParentSquare",
+    "link": null
+  },
+  {
+    "title": "Fitness Tracker",
+    "year": "2022",
+    "technologies": ["React", "Ruby on Rails"],
+    "madeAt": null,
+    "link": "https://github.com/Natasha08/fitness-tracker"
+  },
+  {
+    "title": "Edit Macro Targets",
+    "year": "2021",
+    "technologies": ["LUA"],
+    "madeAt": null,
+    "link": "https://github.com/Natasha08/LUA-EditMacroTargets"
+  },
+  {
+    "title": "VetMeasure",
+    "year": "2021",
+    "technologies": ["Project Management", "React", "Redux", "Django", "Python", "Cordova"],
+    "madeAt": "Radial Development Group",
+    "link": "https://vetmeasure.com"
+  },
+  {
+    "title": "Storing Apple Watch fitness data",
+    "year": "2020",
+    "technologies": ["Swift", "Project Management"],
+    "madeAt": "Radial Development Group",
+    "link": null
+  },
+  {
+    "title": "Magnum Geo App",
+    "year": "2020",
+    "technologies": ["React", "Redux", "Django", "Python", "Project Management"],
+    "madeAt": "Radial Development Group",
+    "link": "https://www.magnumpiering.com/magnum-geo-app/"
+  },
+  {
+    "title": "Hapyn",
+    "year": "2020",
+    "technologies": ["Vue.js", "Node.js", "AWS", "Project Management"],
+    "madeAt": "Radial Development Group",
+    "link": "https://hapyn.com"
+  },
+  {
+    "title": "Data Scraper",
+    "year": "2019",
+    "technologies": ["Python", "Flask"],
+    "madeAt": "Origin Protocol",
+    "link": "https://github.com/OriginProtocol/origin-website/pull/342/files"
+  },
+  {
+    "title": "Custom In-App Messaging",
+    "year": "2019",
+    "technologies": ["React"],
+    "madeAt": "Origin Protocol",
+    "link": "https://github.com/OriginProtocol/origin/pulls?q=is%3Apr+is%3Aclosed+author%3ANatasha08+message"
+  },
+  {
+    "title": "Custom Image Uploader",
+    "year": "2018",
+    "technologies": ["React"],
+    "madeAt": "Origin Protocol",
+    "link": "https://github.com/OriginProtocol/origin/pulls?q=is%3Apr+is%3Aclosed+author%3ANatasha08+upload"
+  },
+  {
+    "title": "My Right Horse",
+    "year": "2018",
+    "technologies": ["React on Rails", "Ruby on Rails"],
+    "madeAt": "Radial Development Group",
+    "link": "https://www.myrighthorse.org"
+  },
+  {
+    "title": "Plan to Eat mobile",
+    "year": "2017",
+    "technologies": ["React", "Redux", "Ruby on Rails"],
+    "madeAt": "Radial Development Group",
+    "link": "https://www.plantoeat.com/welcome/"
+  },
+  {
+    "title": "React Middleware Workers",
+    "year": "2017",
+    "technologies": ["React", "Redux"],
+    "madeAt": "Radial Development Group",
+    "link": "https://github.com/Natasha08/redux-middleware-workers"
+  },
+  {
+    "title": "Donotrail",
+    "year": "2017",
+    "technologies": ["React", "Redux", "Cordova", "Django", "Python", "Project Management"],
+    "madeAt": "Radial Development Group",
+    "link": "https://fcfoothillsrotary.com/5246/Page/Show?ClassCode=Page&Slug=zz-foodie-and-ale-trails!"
+  },
+  {
+    "title": "Hearth",
+    "year": "2016",
+    "technologies": ["AngularJS"],
+    "madeAt": "Hearth Design Inc",
+    "link": null
+  },
+  {
+    "title": "Original Portfolio Website",
+    "year": "2016",
+    "technologies": ["PHP"],
+    "madeAt": null,
+    "link": "https://github.com/Natasha08/natasha"
+  }
+]

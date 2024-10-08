@@ -1,38 +1,12 @@
-import {useRef, useEffect} from 'react';
+import {useRef} from 'react';
 import Link from 'next/link';
 import {UserIcon} from '@heroicons/react/24/outline';
 
+import useObserver from './use-observer';
+
 export default function About() {
   const aboutRef = useRef(null);
-
-  useEffect(() => {
-    const aboutItems = aboutRef.current.querySelectorAll('.content');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          } else {
-            entry.target.classList.remove('in-view');
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      },
-    );
-
-    aboutItems.forEach((item) => {
-      observer.observe(item);
-    });
-
-    return () => {
-      aboutItems.forEach((item) => {
-        observer.unobserve(item);
-      });
-    };
-  }, []);
+  useObserver(aboutRef, '.content');
 
   return (
     <main
@@ -42,7 +16,7 @@ export default function About() {
       <div className="w-full lg:w-3/4 max-w-4xl">
         <header className="relative z-10 ml-5 md:ml-7 lg:ml-16 2xl:ml-3 flex flex-row items-center">
           <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
-          <span className="pl-2 flex items-center text-lg lg:text-xl font-medium text-[#f5f5f5]">
+          <span className="pl-2 flex items-center text-lg font-medium text-[#f5f5f5]">
             About
           </span>
         </header>
@@ -75,7 +49,7 @@ export default function About() {
               >
                 writing code
               </Link>
-              , I&apos;m reading or playing the latest Zelda game or{' '}
+              , I&apos;m reading, playing the latest Zelda game or{' '}
               <Link
                 href="https://github.com/Natasha08/LUA-EditMacroTargets"
                 target="_blank"
