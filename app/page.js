@@ -19,14 +19,14 @@ export default function Main() {
   const [activeSection, sectionRefs, observerRefs] = useIntersection(PAGES);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 max-w-screen-xl">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 max-w-screen-xl overflow-hidden">
       <Sidebar
         activeSection={activeSection}
         sectionRefs={sectionRefs}
         visible={false}
       />
       <main className="col-span-1 lg:col-span-3">
-        <div className="mx-auto px-4">
+        <div className="mx-0 lg:mx-24">
           {PAGES.map((page, index) => {
             const Component = SCROLL_COMPONENTS.find(
               (c) => c.id === page.id,

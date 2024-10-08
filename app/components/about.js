@@ -16,7 +16,7 @@ export default function About() {
       <div className="w-full lg:w-3/4 max-w-4xl">
         <header className="relative z-10 ml-5 md:ml-7 lg:ml-16 2xl:ml-3 flex flex-row items-center">
           <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
-          <span className="pl-2 flex items-center text-lg lg:text-xl font-medium text-[#f5f5f5]">
+          <span className="pl-2 flex items-center text-lg font-medium text-[#f5f5f5]">
             About
           </span>
         </header>

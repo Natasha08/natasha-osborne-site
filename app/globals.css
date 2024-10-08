@@ -17,7 +17,8 @@
 }
 
 body {
-  background-color: radial-gradient(circle at center, rgb(26, 41, 92) 0%, rgb(42, 63, 136) 60%, rgb(19, 30, 67) 100%);
+  background: radial-gradient(circle at center, rgb(26, 41, 92) 0%, rgb(42, 63, 136) 60%, rgb(19, 30, 67) 100%);
+  background-color: black;
 }
 
 html {
@@ -43,7 +44,20 @@ p {
   }
 }
 
+/************************************************************
+                          General
+*************************************************************/
+.main-container {
+  @apply flex flex-col text-text text-start items-center z-20 pb-24;
+}
 
+.character {
+  box-shadow: inset 2px 2px 15px rgba(255,255,255,.5);
+}
+
+/************************************************************
+                          Projects
+*************************************************************/
 
 .project-card {
   position: relative;
@@ -51,8 +65,9 @@ p {
   max-width: 350px;
   height: 250px;
   border-radius: 12px;
-  overflow: hidden;
+  margin-bottom: 20px;
   color: #ffffff;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.6); /* Fallback for older browsers */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease-in-out;
@@ -94,18 +109,6 @@ p {
   border-radius: 5px;
   font-size: 0.9em;
   margin-bottom: 10px;
-}
-
-
-/************************************************************
-                          General
-*************************************************************/
-.main-container {
-  @apply flex flex-col text-text text-start items-center z-20 pb-24;
-}
-
-.character {
-  box-shadow: inset 2px 2px 15px rgba(255,255,255,.5);
 }
 
 /************************************************************

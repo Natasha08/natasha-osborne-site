@@ -41,7 +41,7 @@ const TimelineItem = ({href, timeRange, position, company}) => {
         <h2 className="text-gray-400 text-md" data-group-hover={groupId}>
           {timeRange}
         </h2>
-        <p className="text-lg md:text-xl">{position}</p>
+        <p className="text-lg">{position}</p>
         <p className="text-muted-gold text-sm md:text-base font-extrabold">
           {company}
         </p>
@@ -61,7 +61,7 @@ const ResumeTimeline = () => {
       className="timeline main-container xxs:ml-2 xs:-ml-6 sm:-ml-10 lg:ml-76"
     >
       <div className="content group w-3/4 lg:w-1/2">
-        <header className="relative z-10 flex flex-row items-center pb-16 -ml-8 lg:-ml-8">
+        <header className="relative z-10 flex flex-row items-center pb-12 -ml-8 lg:-ml-8">
           <DocumentTextIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
           <span className="pl-2 flex items-center">Resume</span>
         </header>
@@ -103,7 +103,7 @@ const ResumeTimeline = () => {
             href="/resume"
             target="_blank"
             rel="noopener noreferrer"
-            className="timeline-content hover:text-muted-gold font-semibold md:text-lg lg:text-xl"
+            className="timeline-content hover:text-muted-gold font-semibold md:text-lg"
           >
             View Full Résumé
           </Link>
