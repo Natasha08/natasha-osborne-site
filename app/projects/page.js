@@ -34,8 +34,6 @@ const DisplaySkillBubbles = ({skills = []}) => {
         <SkillBubble
           text={skill}
           key={index}
-          textColor="text-text"
-          textBackground="bg-neon-blue"
         />
       ))}
     </ul>
@@ -79,7 +77,7 @@ const ProjectsDisplay = ({projects}) =>
           {project.link ? (
             <a
               href={project.link}
-              className="flex items-center"
+              className="flex items-center text-sky-400 hover:text-muted-gold"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -125,15 +123,15 @@ const ProjectsPage = () => {
       <SearchInput filter={filter} setFilter={setFilter} />
 
       <div className="main-container">
-        <table className="table-auto max-w-6xl mx-auto shadow-md rounded-lg bg-translucent-background mt-12 border-collapse text-left">
+        <table className="table-auto max-w-6xl mx-auto shadow-md rounded-lg bg-translucent-background mt-12 border-collapse text-left text-sm">
           <thead className="">
             <tr>
               <th className="px-4 py-2 text-left">Year</th>
-              <th className="px-4 py-2 text-left ">Project</th>
-              <th className="px-4 py-2 text-left hidden sm:table-cell">
+              <th className="px-4 py-2 text-left w-2/3 sm:w-1/3 md:w-1/6">Project</th>
+              <th className="px-4 py-2 text-left hidden sm:table-cell w-1/2 md:w-1/3">
                 Built with
               </th>
-              <th className="px-4 py-2 text-left hidden md:table-cell">
+              <th className="px-4 py-2 text-left hidden md:table-cell w-1/6">
                 Made at
               </th>
               <th className="px-4 py-2 text-left hidden md:table-cell">Link</th>
