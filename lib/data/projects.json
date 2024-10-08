@@ -1,5 +1,12 @@
 [
   {
+    "title": "Mindful Budgeter",
+    "year": "2024",
+    "technologies": ["React Native"],
+    "madeAt": "Freelance",
+    "link": null
+  },
+  {
     "title": "JSPry",
     "year": "2024",
     "technologies": ["TypeScript", "Javascript"],
@@ -12,6 +19,13 @@
     "technologies": ["NextJS"],
     "madeAt": "Personal Project",
     "link": "https://github.com/Natasha08/natasha-osborne-site"
+  },
+  {
+    "title": "3D Space",
+    "year": "2024",
+    "technologies": ["ThreeJS", "NextJS"],
+    "madeAt": "Personal Project",
+    "link": "https://space.natasha-osborne.dev"
   },
   {
     "title": "Post Visibility",
@@ -68,6 +82,13 @@
     "technologies": ["React"],
     "madeAt": "Origin Protocol",
     "link": "https://github.com/OriginProtocol/origin/pulls?q=is%3Apr+is%3Aclosed+author%3ANatasha08+upload"
+  },
+  {
+    "title": "My Right Horse conversion",
+    "year": "2018",
+    "technologies": ["React on Rails", "Ruby on Rails"],
+    "madeAt": "Radial Development Group",
+    "link": "https://www.myrighthorse.org"
   },
   {
     "title": "React Middleware Workers",
