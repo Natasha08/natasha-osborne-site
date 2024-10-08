@@ -38,6 +38,10 @@ p {
   position: relative;
 }
 
+input {
+  @apply text-gray-400;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
