@@ -121,7 +121,7 @@ const ProjectsPage = () => {
 
       <div className="main-container">
         <table className="table-auto max-w-6xl mx-auto shadow-md rounded-lg bg-translucent-background mt-12 border-collapse text-left text-sm">
-          <thead className="">
+          <thead>
             <tr>
               <th className="px-4 py-2 text-left">Year</th>
               <th className="px-4 py-2 text-left w-2/3 sm:w-1/3 md:w-1/6">
