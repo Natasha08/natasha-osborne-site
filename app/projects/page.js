@@ -15,16 +15,16 @@ const fuseOptions = {
 
 const fuse = new Fuse(projectsData, fuseOptions);
 
-const SearchInput = ({filter="", setFilter}) => (
+const SearchInput = ({filter = '', setFilter}) => (
   <div className="flex justify-center mb-6 mx-12">
-  <input
-    type="text"
-    placeholder="Filter projects..."
-    value={filter}
-    onChange={(e) => setFilter(e.target.value)}
-    className="p-2 rounded border border-gray-300 w-full max-w-md z-10"
-  />
-</div>
+    <input
+      type="text"
+      placeholder="Filter projects..."
+      value={filter}
+      onChange={(e) => setFilter(e.target.value)}
+      className="p-2 rounded border border-gray-300 w-full max-w-md z-10"
+    />
+  </div>
 );
 
 const DisplaySkillBubbles = ({skills = []}) => {
@@ -42,7 +42,7 @@ const DisplaySkillBubbles = ({skills = []}) => {
   );
 };
 
-const ProjectsDisplay = ({projects}) => (
+const ProjectsDisplay = ({projects}) =>
   projects.length > 0 ? (
     projects.map((project, index) => (
       <tr
@@ -50,7 +50,10 @@ const ProjectsDisplay = ({projects}) => (
         className="border-2 border-x-0 border-gray-500 hover:bg-gray-500 hover:border-dotted"
       >
         <td className="px-4 py-4">{project.year}</td>
-        <td className={`px-4 py-4 md:hidden ${project.link ? 'cursor-pointer' : ''}`} data-group={index}>
+        <td
+          className={`px-4 py-4 md:hidden ${project.link ? 'cursor-pointer' : ''}`}
+          data-group={index}
+        >
           <a
             href={project.link}
             className="relative flex flex-row"
@@ -60,17 +63,18 @@ const ProjectsDisplay = ({projects}) => (
           >
             {project.title}
             {project.link ? (
-              <ArrowTopRightOnSquareIcon className="arrow h-5 w-5 ml-2 text-gray-500" data-group-hover={index} />
-            ): null}
+              <ArrowTopRightOnSquareIcon
+                className="arrow h-5 w-5 ml-2 text-gray-500"
+                data-group-hover={index}
+              />
+            ) : null}
           </a>
         </td>
         <td className="px-4 py-2 hidden md:table-cell">{project.title}</td>
         <td className="px-4 py-2 list-none hidden sm:table-cell">
           <DisplaySkillBubbles skills={project.technologies} />
         </td>
-        <td className="px-4 py-4 hidden md:table-cell">
-          {project.madeAt}
-        </td>
+        <td className="px-4 py-4 hidden md:table-cell">{project.madeAt}</td>
         <td className="px-4 py-2 text-blue-600 hover:text-blue-800 hidden md:table-cell">
           {project.link ? (
             <a
@@ -105,8 +109,7 @@ const ProjectsDisplay = ({projects}) => (
         No projects found.
       </td>
     </tr>
-  )
-);
+  );
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState('');
@@ -127,8 +130,12 @@ const ProjectsPage = () => {
             <tr>
               <th className="px-4 py-2 text-left">Year</th>
               <th className="px-4 py-2 text-left ">Project</th>
-              <th className="px-4 py-2 text-left hidden sm:table-cell">Built with</th>
-              <th className="px-4 py-2 text-left hidden md:table-cell">Made at</th>
+              <th className="px-4 py-2 text-left hidden sm:table-cell">
+                Built with
+              </th>
+              <th className="px-4 py-2 text-left hidden md:table-cell">
+                Made at
+              </th>
               <th className="px-4 py-2 text-left hidden md:table-cell">Link</th>
             </tr>
           </thead>
