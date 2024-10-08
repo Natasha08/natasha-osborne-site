@@ -9,13 +9,7 @@ import projectsData from '@/lib/data/projects.json';
 
 const fuseOptions = {
   threshold: 0.2,
-	keys: [
-    "title",
-    "year",
-    "technologies",
-    "madeAt",
-    "link",
-	]
+  keys: ['title', 'year', 'technologies', 'madeAt', 'link'],
 };
 
 const fuse = new Fuse(projectsData, fuseOptions);
@@ -37,7 +31,9 @@ const DisplaySkillBubbles = ({skills = []}) => {
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState('');
-  const filteredProjects = filter ? fuse.search(filter).map((result) => result.item) : projectsData;
+  const filteredProjects = filter
+    ? fuse.search(filter).map((result) => result.item)
+    : projectsData;
 
   return (
     <main className="grid grid-cols-1">
@@ -82,7 +78,12 @@ const ProjectsPage = () => {
                   </td>
                   <td className="px-4 py-2 text-blue-600 hover:text-blue-800">
                     {project.link ? (
-                      <a href={project.link} className="flex items-center" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.link}
+                        className="flex items-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         {project.link.includes('github') ? (
                           <>
                             <svg
@@ -95,7 +96,9 @@ const ProjectsPage = () => {
                             </svg>
                             Github
                           </>
-                        ) : project.link}
+                        ) : (
+                          project.link
+                        )}
                       </a>
                     ) : null}
                   </td>

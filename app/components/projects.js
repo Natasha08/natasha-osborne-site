@@ -15,8 +15,7 @@ const projects = [
     technologies: ['Typescript'],
     image: profileImage,
     src: '/javascript_logo.png',
-    description:
-      'A more full featured debugger for testing',
+    description: 'A more full featured debugger for testing',
     url: 'https://github.com/Natasha08/JSPry',
   },
   {
