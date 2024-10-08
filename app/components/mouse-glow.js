@@ -53,7 +53,7 @@ const MouseGlow = () => {
   return (
     <div
       ref={mouseRef}
-      className="fixed top-0 left-0 pointer-events-none z-40"
+      className="fixed top-0 left-0 pointer-events-none z-40 hidden md:block"
       style={{
         width: '100vw',
         height: '100vh',
