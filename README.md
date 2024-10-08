@@ -1,4 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Natasha08/natasha-osborne-site/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Natasha08/natasha-osborne-site/tree/production)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Natasha08/natasha-osborne-site/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Natasha08/natasha-osborne-site/tree/production) <a href="https://codeclimate.com/github/Natasha08/natasha-osborne-site/maintainability"><img src="https://api.codeclimate.com/v1/badges/a6edc104cb41d0464448/maintainability" /></a>
 
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/beda36d4-4b58-4ecd-985e-c383e9949a19">
 
