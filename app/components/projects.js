@@ -3,9 +3,6 @@ import Link from 'next/link';
 import {FolderOpenIcon} from '@heroicons/react/24/outline';
 import {ArrowTopRightOnSquareIcon} from '@heroicons/react/20/solid';
 
-import profileImage from '@/public/profile_image.jpg';
-import spaceImage from '@/public/space_project.jpg';
-import dockerImage from '@/public/docker_mark_blue_small.png';
 import SkillBubble from './skill-bubble';
 
 const projects = [
@@ -13,7 +10,6 @@ const projects = [
     title: 'JSPry',
     year: 2024,
     technologies: ['Typescript'],
-    image: profileImage,
     src: '/javascript_logo.png',
     description: 'A full featured debugger for testing',
     url: 'https://github.com/Natasha08/JSPry',
@@ -22,7 +18,6 @@ const projects = [
     title: '3D Space',
     year: 2024,
     technologies: ['Three.js', 'Next.js'],
-    image: spaceImage,
     src: '/space_project.jpg',
     description: 'Travel through a wormhole in this 3D experience',
     url: 'https://space.natasha-osborne.dev',
@@ -31,7 +26,6 @@ const projects = [
     title: 'Dockerize Legacy Project',
     year: 2024,
     technologies: ['Docker', 'Node.js'],
-    image: dockerImage,
     src: '/code.png',
     description: 'A Medium blog post about dockerizing a legacy node project',
     url: 'https://medium.com/@natasha08/how-to-dockerize-a-legacy-node-js-project-a-step-by-step-guide-4580b97286e7',

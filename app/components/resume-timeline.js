@@ -58,7 +58,7 @@ const ResumeTimeline = () => {
   return (
     <div
       ref={timelineRef}
-      className="timeline main-container xxs:ml-2 xs:-ml-6 sm:-ml-10 lg:ml-76"
+      className="timeline main-container xxs-max:ml-2 xs-max:-ml-6 sm:-ml-10 lg:ml-76"
     >
       <div className="content group w-3/4 lg:w-1/2">
         <header className="relative z-10 flex flex-row items-center pb-12 -ml-8 lg:-ml-8">
