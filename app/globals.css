@@ -52,7 +52,7 @@ input {
                           General
 *************************************************************/
 .main-container {
-  @apply flex flex-col text-text text-start items-center z-20 pb-24;
+  @apply text-text text-start items-center z-20 pb-24;
 }
 
 .character {

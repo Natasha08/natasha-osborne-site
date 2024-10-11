@@ -15,6 +15,7 @@ export default {
         'xxs': {'min': '344px'},
         'xs-max': {'max': '639px'},
         'xxs-max': {'max': '450px'},
+        'md-max': {'max': '1023px'},
         'lg-mid': {'min': '1024px', 'max': '1180px'},
         'xl-mid': {'min': '1400px', 'max': '1535px'},
         '3xl': {'min': '1800px'}
