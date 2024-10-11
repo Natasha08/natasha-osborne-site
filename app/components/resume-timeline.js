@@ -56,10 +56,7 @@ const ResumeTimeline = () => {
   useObserver(timelineRef, '.timeline-item');
 
   return (
-    <div
-      ref={timelineRef}
-      className="timeline main-container"
-    >
+    <div ref={timelineRef} className="timeline main-container">
       <div className="content group">
         <header className="relative z-10 flex flex-row items-center pl-6 pb-12">
           <DocumentTextIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />

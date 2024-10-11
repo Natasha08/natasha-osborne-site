@@ -57,9 +57,7 @@ const ProjectsPage = () => {
               ></div>
 
               <div className="relative p-4 text-white z-10">
-                <h2 className="text-2xl font-semibold mb-1">
-                  {project.title}
-                </h2>
+                <h2 className="text-2xl font-semibold mb-1">{project.title}</h2>
                 <p className="text-sm text-gray-300 mb-2">{project.year}</p>
                 <div className="flex flex-wrap mt-2">
                   {project.technologies.map((tech, index) => (

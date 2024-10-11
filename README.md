@@ -20,7 +20,7 @@ nvm use
 To install the correct node version
 
 ```bash
-nvm use
+nvm install v20.15.0
 ```
 
 #### Install Packages
@@ -53,6 +53,20 @@ To run tests:
 
 ```bash
 npm test
+```
+
+Lint commands:
+
+See lint errors:
+
+```bash
+npm run lint
+```
+
+See and correct lint errors:
+
+```bash
+npm run lint-fix
 ```
 
 Open [http://localhost:3000](http://localhost:3000) (or the url in the terminal if you're binding to `0.0.0.0`) with your browser to see the result.

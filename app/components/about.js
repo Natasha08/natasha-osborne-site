@@ -9,10 +9,7 @@ export default function About() {
   useObserver(aboutRef, '.content');
 
   return (
-    <main
-      ref={aboutRef}
-      className="main-container overflow-hidden"
-    >
+    <main ref={aboutRef} className="main-container overflow-hidden">
       <div className="w-screen  lg:max-w-lg xl:max-w-xl max-w-2xl content">
         <header className="relative z-10 pl-6 flex flex-row items-center">
           <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
