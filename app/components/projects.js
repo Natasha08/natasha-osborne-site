@@ -4,6 +4,7 @@ import {FolderOpenIcon} from '@heroicons/react/24/outline';
 import {ArrowTopRightOnSquareIcon} from '@heroicons/react/20/solid';
 
 import SkillBubble from './skill-bubble';
+import SectionHeader from './section-header';
 
 const projects = [
   {
@@ -35,12 +36,8 @@ const projects = [
 const ProjectsPage = () => {
   return (
     <main className="main-container lg:pt-20 relative">
-      <header className="relative z-10 pl-6 pb-10 flex flex-row items-center">
-        <FolderOpenIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
-        <span className="pl-2 flex items-center text-lg font-medium text-[#f5f5f5]">
-          Featured Projects
-        </span>
-      </header>
+      <SectionHeader Icon={FolderOpenIcon} text="Featured Projects" />
+
       <div className="p-6 flex items-center">
         <div className="grid grid-cols-1 gap-6 z-10 list-none">
           {projects.map((project, index) => (
