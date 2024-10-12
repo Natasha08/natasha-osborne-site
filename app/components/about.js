@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {UserIcon} from '@heroicons/react/24/outline';
 
 import useObserver from './use-observer';
+import SectionHeader from './section-header';
 
 export default function About() {
   const aboutRef = useRef(null);
@@ -10,16 +11,11 @@ export default function About() {
 
   return (
     <main ref={aboutRef} className="main-container overflow-hidden">
-      <div className="w-screen  lg:max-w-lg xl:max-w-xl max-w-2xl content">
-        <header className="relative z-10 pl-6 flex flex-row items-center">
-          <UserIcon className="h-7 w-7 lg:h-8 lg:w-8 text-gray-500 hover:fill-[#d4af37] lg:mr-2" />
-          <span className="pl-2 flex items-center text-lg font-medium text-[#f5f5f5]">
-            About
-          </span>
-        </header>
+      <div className="w-screen lg:max-w-lg xl:max-w-xl max-w-2xl content">
+        <SectionHeader Icon={UserIcon} text="About" />
 
         <div className="relative z-10">
-          <div className="p-4 md:p-6 lg:py-12 2xl:py-0 space-y-4 text-wrap leading-loose 2xl:leading-relaxed">
+          <div className="p-4 md:p-6 2xl:py-0 space-y-4 text-wrap leading-loose 2xl:leading-relaxed">
             <p>
               In 2016, I built an Excel spreadsheet that evolved into a PHP app
               to track my workouts. I obtained my first gig as a software
