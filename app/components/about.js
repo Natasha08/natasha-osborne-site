@@ -11,7 +11,7 @@ export default function About() {
 
   return (
     <main ref={aboutRef} className="main-container overflow-hidden">
-      <div className="w-screen lg:max-w-lg xl:max-w-xl max-w-2xl content">
+      <div className="lg:max-w-lg xl:max-w-xl max-w-2xl content">
         <SectionHeader Icon={UserIcon} text="About" />
 
         <div className="relative z-10">
