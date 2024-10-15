@@ -15,7 +15,7 @@ export default function About() {
         <SectionHeader Icon={UserIcon} text="About" />
 
         <div className="relative z-10">
-          <div className="p-4 md:p-6 2xl:py-0 space-y-4 text-wrap leading-loose 2xl:leading-relaxed">
+          <div className="p-6 2xl:py-0 space-y-4 text-wrap leading-loose 2xl:leading-relaxed">
             <p>
               In 2016, I built an Excel spreadsheet that evolved into a PHP app
               to track my workouts. I obtained my first gig as a software
