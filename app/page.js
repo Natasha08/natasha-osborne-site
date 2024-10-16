@@ -27,7 +27,7 @@ export default function Main() {
       />
       <div className="lg:col-span-1"></div>
       <main className="lg:col-span-1">
-        <div className="ml-4 md:ml-16 2xl:ml-48">
+        <div className="ml-4 md:ml-16 lg:m-0 2xl:ml-48">
           {PAGES.map((page, index) => {
             const Component = SCROLL_COMPONENTS.find(
               (c) => c.id === page.id,
