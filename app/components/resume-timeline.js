@@ -62,14 +62,21 @@ const ResumeTimeline = () => {
         <SectionHeader Icon={DocumentTextIcon} text="Resume" />
 
         <TimelineItem
+          href="https://unabridgedsoftware.com/"
+          timeRange="October 2024-Present"
+          position="Software Developer"
+          company="Unabridged Software"
+        />
+
+        <TimelineItem
           href="/resume"
-          timeRange="2024-Present"
+          timeRange="July 2024-October 2024"
           position="Full Stack Software Engineer"
           company="Freelance"
         />
         <TimelineItem
           href="https://parentsquare.com"
-          timeRange="2022-2024"
+          timeRange="May 2022-January 2024"
           position="Software Engineer"
           company="ParentSquare"
         />
@@ -84,12 +91,6 @@ const ResumeTimeline = () => {
           timeRange="2018-2019"
           position="Full Stack Software Engineer"
           company="Origin Protocol"
-        />
-        <TimelineItem
-          href="https://radialdevgroup.com"
-          timeRange="2017-2018"
-          position="Developer Lead"
-          company="Radial Development Group"
         />
 
         <div className="timeline-item mb-8 group/e">
